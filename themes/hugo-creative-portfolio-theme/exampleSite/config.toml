@@ -1,7 +1,7 @@
-baseURL = 'https://cindy-cao-portfolio.netlify.app/'
-languageCode = 'en-us'
-title = "Cindy Cao's Portfolio"
+baseurl = "https://example.org/"
+title = "Creative portfolio"
 theme = "hugo-creative-portfolio-theme"
+languageCode = "en-us"
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
 # Enable Google Analytics by entering your tracking code
@@ -43,7 +43,7 @@ googleAnalytics = ""
   # Nav links in the side bar
   [[params.navlinks]]
   name = "Home"
-  url = "posts/"
+  url = "portfolio/"
   home = true
 
   [[params.navlinks]]
