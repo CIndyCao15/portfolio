@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 12 Jan 2023 15:19:42 +0800</lastBuildDate><atom:link href="https://cindy-cao-portfolio.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Name of the work 1</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/work1/</link>
+      <pubDate>Sat, 05 Nov 2016 18:25:22 +0530</pubDate>
+      
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work1/</guid>
+      <description>&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life. One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Name of the work 2</title>
       <link>https://cindy-cao-portfolio.netlify.app/portfolio/work2/</link>
       <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
@@ -105,15 +114,6 @@
       <guid>https://cindy-cao-portfolio.netlify.app/posts/project1/</guid>
       <description>Introduction This is bold text, and this is emphasized text.
 Visit the Hugo website!</description>
-    </item>
-    
-    <item>
-      <title>Name of the work 1</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/work1/</link>
-      <pubDate>Sat, 05 Nov 2016 18:25:22 +0530</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work1/</guid>
-      <description>&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life. One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;</description>
     </item>
     
   </channel>
