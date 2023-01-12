@@ -12,7 +12,7 @@ googleAnalytics = ""
   # Use custom.css for your custom styling
   style = "default"
   description = "Describe your website"
-  copyright = "&copy;2016 Your name or company"
+  copyright = "&copy;2023 Cindy Cao"
   sidebarAbout = [
     "I am a creative illustrator and graphic designer with more than 10 years of experience.",
     "Originally from Toronto, currently based in London."
@@ -29,7 +29,7 @@ googleAnalytics = ""
      # - send a dummy email yourself to confirm your account
      # - click the confirm link in the email from www.formspree.io
      # - you're done. Happy mailing!
-  email = "you@yoursite.com"
+  email = "cindycao15@hotmail.com"
 
     # Optional Matomo analytics (formerly piwik)
       # [params.analytics.matomo]
