@@ -8,48 +8,51 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 05 Nov 2016 20:23:59 +0530</lastBuildDate><atom:link href="https://cindy-cao-portfolio.netlify.app/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Name of the work 1</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/work1/</link>
+      <title>ShaderGraph Effects - Shield Effect Collection</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effects/</link>
       <pubDate>Sat, 05 Nov 2016 18:25:22 +0530</pubDate>
       
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work1/</guid>
-      <description>&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life. One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;</description>
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effects/</guid>
+      <description>&lt;p&gt;Figure 1 is a traced work, and Figure 2 is a secondary creation using the hexagonal shield explosion effect.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Name of the work 2</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/work2/</link>
+      <title>Unity ink painting effect rendering VR scene</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/unity-ink-painting-effect-rendering-vr-scene/</link>
       <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
       
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work2/</guid>
-      <description>&lt;p&gt;When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.&lt;/p&gt;</description>
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/unity-ink-painting-effect-rendering-vr-scene/</guid>
+      <description>&lt;p&gt;Use Unity&amp;rsquo;s built-in pipeline to achieve a small ink style.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Name of the work 3</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/work3/</link>
+      <title>VFX Graph</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/vfx-graph/</link>
       <pubDate>Sat, 05 Nov 2016 19:44:32 +0530</pubDate>
       
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work3/</guid>
-      <description>&lt;p&gt;Fifth abundantly made Give sixth hath. Cattle creature i be don&amp;rsquo;t them.&lt;/p&gt;</description>
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/vfx-graph/</guid>
+      <description>&lt;p&gt;I made fireworks 🎇 following a VFX Graph tutorial.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Item without image</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/work4/</link>
+      <title>ShaderGraph Effect Works</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effect-works/</link>
       <pubDate>Sat, 05 Nov 2016 19:50:47 +0530</pubDate>
       
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work4/</guid>
-      <description>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.&lt;/p&gt;</description>
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effect-works/</guid>
+      <description>Followed the tutorials of bilibili&amp;rsquo;s 浮生若梦Jason, I got started with HDRP and ShaderGraph
+This flame is an outer flame, inner flame, flame core, halo, fire sparks, and smoke, made from sequence images
+Iron flower. Particle collision was added so that there is a fire sparks flying effect on the ground; added point lights to particles; particles stretch with speed
+A meteor/fireball summoning spell. Using Sub Emitters, this feature can also be used for fireworks and the like!</description>
     </item>
     
     <item>
-      <title>Name of the work 5</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/work5/</link>
-      <pubDate>Sat, 05 Nov 2016 19:53:42 +0530</pubDate>
+      <title>[ UE4 ] Rainy Night Street Scene</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/ue4-rainy-night-street-scene/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work5/</guid>
-      <description>&lt;p&gt;Fifth abundantly made Give sixth hath. Cattle creature i be don&amp;rsquo;t them.&lt;/p&gt;</description>
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ue4-rainy-night-street-scene/</guid>
+      <description> </description>
     </item>
     
     <item>
@@ -80,12 +83,12 @@
     </item>
     
     <item>
-      <title>Item with image</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/work9/</link>
+      <title>PS &amp; AI - Graphic Design</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/ps-ai-graphic-design/</link>
       <pubDate>Sat, 05 Nov 2016 20:02:19 +0530</pubDate>
       
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work9/</guid>
-      <description>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.&lt;/p&gt;</description>
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ps-ai-graphic-design/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -104,6 +107,63 @@
       
       <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work11/</guid>
       <description>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Unity 2D coloring game - Doodle Party</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/unity-2d-coloring-game-doodle-party/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/unity-2d-coloring-game-doodle-party/</guid>
+      <description>A two-player Unity game assignment.
+Curatorial idea is inspired by the fantastic coloring mode in BattleBlock Theater.
+Art &amp;amp; Animation: Me and 烤鱼菌
+Program: 风舞夜蓝</description>
+    </item>
+    
+    <item>
+      <title>the Witcher 3 editing - I See Fire</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/the-witcher-3-editing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/the-witcher-3-editing/</guid>
+      <description>Self-made Editing class assignment_(:3&amp;quot;∠)_ Materials are from the official CG and 黑桐谷歌&amp;rsquo;s recorded video (♥) Music is Ed Sheeran&amp;rsquo;s I See Fire, with cut</description>
+    </item>
+    
+    <item>
+      <title>[ AE MG Animation ] Patchwork of Broken Sounds</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/ae-mg-animation-patchwork-of-broken-sounds/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ae-mg-animation-patchwork-of-broken-sounds/</guid>
+      <description>MG animation exercise.</description>
+    </item>
+    
+    <item>
+      <title>[ Maya Animation ] Cats and Monster</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/maya-animation-cats-and-monster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/maya-animation-cats-and-monster/</guid>
+      <description>Maya 3D animation. Maya modeling and animation, Mental Ray rendering, and AE post-production packaging.</description>
+    </item>
+    
+    <item>
+      <title>[ AE Animation ] Nice Day</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/ae-character-animation-nice-day/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ae-character-animation-nice-day/</guid>
+      <description>AE character animation, with the scene built in C4D.</description>
+    </item>
+    
+    <item>
+      <title>[ Live-action &#43; Compositing ] Hercraft</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/live-action-plus-compositing-hercraft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/live-action-plus-compositing-hercraft/</guid>
+      <description>A short-semester assignment during the second half of my junior year. It is a creative short film derived from the game &amp;ldquo;Minecraft&amp;rdquo;. It includes live-action footage, C4D animation, and AE compositing.</description>
     </item>
     
   </channel>
