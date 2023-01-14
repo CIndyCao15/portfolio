@@ -3,16 +3,16 @@ showonlyimage = false
 draft = false
 image = "img/portfolio/ShaderGraph-Effects-2.jpg"
 date = "2016-11-05T18:25:22+05:30"
-title = "ShaderGraph Effects - Shield Effect Collection"
+title = "Shader Graph Effects - Shield Effect Collection"
 weight = 1
 +++
 
-Figure 1 is a traced work, and Figure 2 is a secondary creation using the hexagonal shield explosion effect.
+Figure 1 is a traced work, and Figure 2 is a secondary creation using the hexagonal shield pop-out effect.
 <!--more-->
 
-{{< youtube id="CH7Ro8B77GQ" title="ShaderGraph Effects 1" >}}
+{{< youtube id="rUbK8Ig5P7Q" title="Shader Graph Effects 1" >}}
 \
-{{< youtube id="CH7Ro8B77GQ" title="ShaderGraph Effects 2" >}}
+{{< youtube id="H18ceH9K5-8" title="Shader Graph Effects 2" >}}
 \
 [![title of image1][1]][1]
 

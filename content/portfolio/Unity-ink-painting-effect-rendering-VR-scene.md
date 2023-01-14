@@ -7,14 +7,13 @@ showonlyimage = false
 weight = 2
 +++
 
-Use Unity's built-in pipeline to achieve a small ink style.
-<!--more-->
+Using Unity's built-in pipeline, I implemented a small project in the style of Chinese brush painting.
 
-The character is primarily soft-edged using the VdotN concept, and there are two sets of shaders: character and mountain. The semi-Lambert lighting model's coloring results are stepped using the deformation function after the mountain stone has been hard stroked ("hooked") using the Shell Method, a model curvature-based chapping method (which is not very effective and is not applicable to models with low distant surface numbers, so it is not shown), and the Shell Method. Finally, Triplanar was used to superimpose each splash stroke.
+The project is divided into two shaders, one for characters and one for rocks. The characters mainly use the VdotN principle to implement soft edges, while the rocks use the Shell Method to implement hard edges ("勾"). The rocks also use a curvature-based method (pitting) to produce a bumpy surface, but this method is not suitable for models with low face counts at a distance and is not shown in the final result. The final result uses the Triplanar method to add brush strokes.
 
-Using VRTK, the bridge to the Oculus Rift S device was manually built (Virtual Reality Toolkit). Performance analysis was conducted using the official tool UPR (Unity Performance Report).
+I used VRTK (Virtual Reality Toolkit) to manually complete the connection with the Oculus Rift S device. I also used the official Unity tool UPR (Unity Performance Report) to analyze performance.
 
-For the characters, only the main and normal maps from the original model were used, and for the rocks, only the normal maps. (P3 is the result of the original model.) The ramp map and the stroke texture map were added.
+The characters only used the original model's main texture and normal map, while the rocks only used the original model's normal map. (The original model effect is Figure 3.) I also added texture maps for brush strokes and ramp maps.
 
 {{< youtube id="CH7Ro8B77GQ" title="Unity ink painting effect rendering VR scene" >}}
 \

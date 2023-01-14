@@ -37,9 +37,13 @@
   <div class="sidebar-content">
     <h1 class="sidebar-heading"><a href="https://cindy-cao-portfolio.netlify.app/">Cindy Cao&#39;s Portfolio</a></h1>
     
-      <p class="sidebar-p">I am a creative illustrator and graphic designer with more than 10 years of experience.</p>
+      <p class="sidebar-p">Engine: Unity 3D, Unreal Engine</p>
     
-      <p class="sidebar-p">Originally from Toronto, currently based in London.</p>
+      <p class="sidebar-p">DCC Tools: Maya, 3ds Max, Cinema 4D, Blender, Substance Designer</p>
+    
+      <p class="sidebar-p">Motion Pictures: Silverstack, DaVinci Resolve, Final Cut Pro, Premiere</p>
+    
+      <p class="sidebar-p">Miscellaneous: Photoshop, Illustrator, After Effects, Lightroom</p>
     
     <ul class="sidebar-menu">
       
@@ -102,19 +106,20 @@
     <div class="col-lg-8">
       <div class="content-column-content">
          <h1>Unity ink painting effect rendering VR scene</h1>
-         <p>Use Unity&rsquo;s built-in pipeline to achieve a small ink style.</p>
-<p>The character is primarily soft-edged using the VdotN concept, and there are two sets of shaders: character and mountain. The semi-Lambert lighting model&rsquo;s coloring results are stepped using the deformation function after the mountain stone has been hard stroked (&ldquo;hooked&rdquo;) using the Shell Method, a model curvature-based chapping method (which is not very effective and is not applicable to models with low distant surface numbers, so it is not shown), and the Shell Method. Finally, Triplanar was used to superimpose each splash stroke.</p>
-<p>Using VRTK, the bridge to the Oculus Rift S device was manually built (Virtual Reality Toolkit). Performance analysis was conducted using the official tool UPR (Unity Performance Report).</p>
-<p>For the characters, only the main and normal maps from the original model were used, and for the rocks, only the normal maps. (P3 is the result of the original model.) The ramp map and the stroke texture map were added.</p>
+         <p>Using Unity&rsquo;s built-in pipeline, I implemented a small project in the style of Chinese brush painting.</p>
+<p>The project is divided into two shaders, one for characters and one for rocks. The characters mainly use the VdotN principle to implement soft edges, while the rocks use the Shell Method to implement hard edges (&ldquo;勾&rdquo;). The rocks also use a curvature-based method (pitting) to produce a bumpy surface, but this method is not suitable for models with low face counts at a distance and is not shown in the final result. The final result uses the Triplanar method to add brush strokes.</p>
+<p>I used VRTK (Virtual Reality Toolkit) to manually complete the connection with the Oculus Rift S device. I also used the official Unity tool UPR (Unity Performance Report) to analyze performance.</p>
+<p>The characters only used the original model&rsquo;s main texture and normal map, while the rocks only used the original model&rsquo;s normal map. (The original model effect is Figure 3.) I also added texture maps for brush strokes and ramp maps.</p>
 <p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/CH7Ro8B77GQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Unity ink painting effect rendering VR scene"></iframe>
 </div>
 
 <br>
-<a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png" alt="title of image1"></a></p>
-<p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-2.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-2.png" alt="title of image2"></a></p>
-<p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png" alt="title of image2"></a></p>
+<a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png" alt="Snapshot 1 of Unity ink painting effect rendering VR scene"></a></p>
+<p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-2.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-2.png" alt="Snapshot 2 of Unity ink painting effect rendering VR scene"></a></p>
+<p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png" alt="Snapshot 3 of Unity ink painting effect rendering VR scene"></a></p>
+
          
       </div>
     </div>

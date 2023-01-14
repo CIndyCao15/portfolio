@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Nov 2016 13:00:25 +0530</lastBuildDate><atom:link href="https://cindy-cao-portfolio.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ShaderGraph Effects - Shield Effect Collection</title>
+      <title>Shader Graph Effects - Shield Effect Collection</title>
       <link>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effects/</link>
       <pubDate>Sat, 05 Nov 2016 18:25:22 +0530</pubDate>
       
       <guid>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effects/</guid>
-      <description>&lt;p&gt;Figure 1 is a traced work, and Figure 2 is a secondary creation using the hexagonal shield explosion effect.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Figure 1 is a traced work, and Figure 2 is a secondary creation using the hexagonal shield pop-out effect.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -22,7 +22,8 @@
       <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
       
       <guid>https://cindy-cao-portfolio.netlify.app/portfolio/unity-ink-painting-effect-rendering-vr-scene/</guid>
-      <description>&lt;p&gt;Use Unity&amp;rsquo;s built-in pipeline to achieve a small ink style.&lt;/p&gt;</description>
+      <description>Using Unity&amp;rsquo;s built-in pipeline, I implemented a small project in the style of Chinese brush painting.
+The project is divided into two shaders, one for characters and one for rocks. The characters mainly use the VdotN principle to implement soft edges, while the rocks use the Shell Method to implement hard edges (&amp;ldquo;勾&amp;rdquo;). The rocks also use a curvature-based method (pitting) to produce a bumpy surface, but this method is not suitable for models with low face counts at a distance and is not shown in the final result.</description>
     </item>
     
     <item>
@@ -35,12 +36,12 @@
     </item>
     
     <item>
-      <title>ShaderGraph Effect Works</title>
+      <title>Shader Graph Effect Works</title>
       <link>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effect-works/</link>
       <pubDate>Sat, 05 Nov 2016 19:50:47 +0530</pubDate>
       
       <guid>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effect-works/</guid>
-      <description>Followed the tutorials of bilibili&amp;rsquo;s 浮生若梦Jason, I got started with HDRP and ShaderGraph
+      <description>Followed the tutorials of bilibili&amp;rsquo;s 浮生若梦Jason, I got started with HDRP and Shader Graph
 This flame is an outer flame, inner flame, flame core, halo, fire sparks, and smoke, made from sequence images
 Iron flower. Particle collision was added so that there is a fire sparks flying effect on the ground; added point lights to particles; particles stretch with speed
 A meteor/fireball summoning spell. Using Sub Emitters, this feature can also be used for fireworks and the like!</description>
@@ -56,30 +57,38 @@ A meteor/fireball summoning spell. Using Sub Emitters, this feature can also be 
     </item>
     
     <item>
-      <title>Name of the work 6</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/work6/</link>
+      <title>Unity Shader Works</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/unity-shader-works/</link>
       <pubDate>Sat, 05 Nov 2016 19:56:17 +0530</pubDate>
       
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work6/</guid>
-      <description>&lt;p&gt;Fifth abundantly made Give sixth hath. Cattle creature i be don&amp;rsquo;t them.&lt;/p&gt;</description>
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/unity-shader-works/</guid>
+      <description>RenderTexture red-cyan 3D effect
+Billboard Effect
+Water surface - transparency, Fresnel, focal dispersion, perturbation Effect
+Effect shader adjusts brightness, transparency, disturbance intensity, and disturbance amplitude
+Color affected by absolute height, viewing angle and light angle
+UV flow</description>
     </item>
     
     <item>
-      <title>Name of the work 7</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/work7/</link>
+      <title>Substance Designer Material Works</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/substance-designer-material-works/</link>
       <pubDate>Sat, 05 Nov 2016 19:57:40 +0530</pubDate>
       
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work7/</guid>
-      <description>&lt;p&gt;Fifth abundantly made Give sixth hath. Cattle creature i be don&amp;rsquo;t them.&lt;/p&gt;</description>
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/substance-designer-material-works/</guid>
+      <description>Substance Designer PBR ground
+Substance Designer brick ground Tiling
+Substance Designer brick ground details
+Brick ground graph in Substance Designer</description>
     </item>
     
     <item>
-      <title>Name of the work 8</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/work8/</link>
+      <title>UI for VR weather</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/ui-vr-weather/</link>
       <pubDate>Sat, 05 Nov 2016 19:59:22 +0530</pubDate>
       
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work8/</guid>
-      <description>&lt;p&gt;Fifth abundantly made Give sixth hath. Cattle creature i be don&amp;rsquo;t them.&lt;/p&gt;</description>
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ui-vr-weather/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -92,21 +101,12 @@ A meteor/fireball summoning spell. Using Sub Emitters, this feature can also be 
     </item>
     
     <item>
-      <title>Item with image</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/work10/</link>
+      <title>Delicacies VR: Demo Showcase Video</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/delicacies-vr-demo-video/</link>
       <pubDate>Sat, 05 Nov 2016 20:22:08 +0530</pubDate>
       
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work10/</guid>
-      <description>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Item with image</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/work11/</link>
-      <pubDate>Sat, 05 Nov 2016 20:23:59 +0530</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/work11/</guid>
-      <description>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.&lt;/p&gt;</description>
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/delicacies-vr-demo-video/</guid>
+      <description>The demo video of the Delicacies VR project. Modeling done in C4D, 3D scene built in Unity, and finally implemented on a DPVR all-in-one VR device.</description>
     </item>
     
     <item>
@@ -164,6 +164,16 @@ Program: 风舞夜蓝</description>
       
       <guid>https://cindy-cao-portfolio.netlify.app/portfolio/live-action-plus-compositing-hercraft/</guid>
       <description>A short-semester assignment during the second half of my junior year. It is a creative short film derived from the game &amp;ldquo;Minecraft&amp;rdquo;. It includes live-action footage, C4D animation, and AE compositing.</description>
+    </item>
+    
+    <item>
+      <title>TV animation made with the Slate plugin in Substance Designer</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/tv-animation-made-with-slate-plugin-in-substance-designer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/tv-animation-made-with-slate-plugin-in-substance-designer/</guid>
+      <description>Perfect World volume animation purchased
+TV animation (screenshot of Perfect World&amp;rsquo;s App Store release)</description>
     </item>
     
   </channel>
