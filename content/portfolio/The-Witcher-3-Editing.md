@@ -3,7 +3,7 @@ draft = false
 image = "img/portfolio/the-witcher-3-editing.jpg"
 showonlyimage = false
 title = "the Witcher 3 editing - I See Fire"
-weight = 12
+weight = 13
 +++
 
 Self-made Editing class assignment_(:3"∠)_

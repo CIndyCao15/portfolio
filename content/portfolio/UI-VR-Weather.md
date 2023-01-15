@@ -4,7 +4,7 @@ draft = false
 image = "img/portfolio/UI-VR-Weather.jpg"
 date = "2016-11-05T19:59:22+05:30"
 title = "UI for VR weather"
-weight = 8
+weight = 9
 +++
 
 [![Screenshot 1 of UI for VR weather][1]][1]

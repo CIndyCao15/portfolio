@@ -4,7 +4,7 @@ title = "Unity ink painting effect rendering VR scene"
 draft = false
 image = "img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png"
 showonlyimage = false
-weight = 2
+weight = 3
 +++
 
 Using Unity's built-in pipeline, I implemented a small project in the style of Chinese brush painting.

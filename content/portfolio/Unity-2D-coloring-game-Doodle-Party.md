@@ -3,7 +3,7 @@ draft = false
 image = "img/portfolio/Unity-2D-coloring-game-Doodle-Party.jpg"
 showonlyimage = false
 title = "Unity 2D coloring game - Doodle Party"
-weight = 11
+weight = 12
 +++
 
 A two-player Unity game assignment.

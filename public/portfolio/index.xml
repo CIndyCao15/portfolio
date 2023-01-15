@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 05 Nov 2016 20:22:08 +0530</lastBuildDate><atom:link href="https://cindy-cao-portfolio.netlify.app/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>[ UE5 Animation ] Harvest Day</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/ue5-animation-harvest-day/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ue5-animation-harvest-day/</guid>
+      <description>This project is a 3D animated short film made in Unreal Engine 5. The film is about the digital labor that humans are forced to engage in today and the information cocoon that binds us.</description>
+    </item>
+    
+    <item>
       <title>Shader Graph Effects - Shield Effect Collection</title>
       <link>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effects/</link>
       <pubDate>Sat, 05 Nov 2016 18:25:22 +0530</pubDate>

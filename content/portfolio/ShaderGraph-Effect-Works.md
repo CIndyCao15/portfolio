@@ -4,7 +4,7 @@ image = "img/portfolio/ShaderGraph-Effect.jpg"
 showonlyimage = false
 date = "2016-11-05T19:50:47+05:30"
 title = "Shader Graph Effect Works"
-weight = 4
+weight = 5
 +++
 
 Followed the tutorials of bilibili's 浮生若梦Jason, I got started with HDRP and Shader Graph

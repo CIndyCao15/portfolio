@@ -4,7 +4,7 @@ showonlyimage = false
 date = "2016-11-05T19:44:32+05:30"
 title = "VFX Graph"
 draft = false
-weight = 3
+weight = 4
 +++
 
 I made fireworks 🎇 following a VFX Graph tutorial.
