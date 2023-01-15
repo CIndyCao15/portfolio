@@ -15,7 +15,7 @@ I used VRTK (Virtual Reality Toolkit) to manually complete the connection with t
 
 The characters only used the original model's main texture and normal map, while the rocks only used the original model's normal map. (The original model effect is Figure 3.) I also added texture maps for brush strokes and ramp maps.
 
-{{< youtube id="CH7Ro8B77GQ" title="Unity ink painting effect rendering VR scene" >}}
+{{< youtube id="YdPf6S08NT0" title="Unity ink painting effect rendering VR scene" >}}
 \
 [![Snapshot 1 of Unity ink painting effect rendering VR scene][1]][1]
 
