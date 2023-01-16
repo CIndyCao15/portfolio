@@ -8,7 +8,7 @@ weight = 1
 
 This project is a 3D animated short film made in Unreal Engine 5. The film is about the digital labor that humans are forced to engage in today and the information cocoon that binds us.
 
-{{< youtube id="rUbK8Ig5P7Q" title="[ UE5 Animation ] Harvest Day" >}}
+{{< youtube id="eE5CZFgZtYY" title="[ UE5 Animation ] Harvest Day" >}}
 \
 [![\[ UE5 Animation \] Harvest Day Figure 1][1]][1]
 
