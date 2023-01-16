@@ -2,9 +2,9 @@
 image = "img/portfolio/VFX-Graph.jpg"
 showonlyimage = false
 date = "2016-11-05T19:44:32+05:30"
-title = "VFX Graph"
+title = "[ #Misc ] VFX Graph"
 draft = false
-weight = 4
+weight = 7
 +++
 
 I made fireworks 🎇 following a VFX Graph tutorial.

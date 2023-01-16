@@ -2,8 +2,8 @@
 draft = false
 image = "img/portfolio/rainy-night-street-scene.jpg"
 showonlyimage = true
-title = "[ UE4 ] Rainy Night Street Scene"
-weight = 6
+title = "[ #Misc ] UE4 - Rainy Night Street Scene"
+weight = 9
 +++
 
 {{< youtube id="cWwVFhojjyc" title="[ UE4 ] Rainy Night Street Scene" >}}

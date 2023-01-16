@@ -2,7 +2,7 @@
 draft = false
 image = "img/portfolio/perfect-world-volume-animation-purchased.png"
 showonlyimage = true
-title = "TV animation made with the Slate plugin in Substance Designer"
+title = "[ #Misc ] TV animation made with the Slate plugin in Substance Designer"
 weight = 18
 +++
 

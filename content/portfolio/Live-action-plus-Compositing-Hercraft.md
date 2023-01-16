@@ -2,8 +2,8 @@
 draft = false
 image = "img/portfolio/Hercraft.jpg"
 showonlyimage = false
-title = "[ Live-action + Compositing ] Hercraft"
-weight = 17
+title = "[ #Project 3 ] Live-action + Compositing - Hercraft"
+weight = 3
 +++
 
 A short-semester assignment during the second half of my junior year. It is a creative short film derived from the game "Minecraft". It includes live-action footage, C4D animation, and AE compositing.

@@ -3,8 +3,8 @@ showonlyimage = false
 draft = false
 image = "img/portfolio/ShaderGraph-Effects-2.jpg"
 date = "2016-11-05T18:25:22+05:30"
-title = "Shader Graph Effects - Shield Effect Collection"
-weight = 2
+title = "[ #Misc ] Shader Graph Effects - Shield Effect Collection"
+weight = 6
 +++
 
 Figure 1 is a traced work, and Figure 2 is a secondary creation using the hexagonal shield pop-out effect.

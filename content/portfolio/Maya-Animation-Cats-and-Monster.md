@@ -2,8 +2,8 @@
 draft = false
 image = "img/portfolio/cats-and-monster.jpg"
 showonlyimage = false
-title = "[ Maya Animation ] Cats and Monster"
-weight = 15
+title = "[ #Misc ] Maya Animation - Cats and Monster"
+weight = 17
 +++
 
 Maya 3D animation. Maya modeling and animation, Mental Ray rendering, and AE post-production packaging.

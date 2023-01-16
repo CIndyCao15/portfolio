@@ -1,10 +1,10 @@
 +++
 date = "2016-11-05T19:41:01+05:30"
-title = "Unity ink painting effect rendering VR scene"
+title = "[ #Project 2 ] Unity - ink painting effect rendering VR scene"
 draft = false
 image = "img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png"
 showonlyimage = false
-weight = 3
+weight = 2
 +++
 
 Using Unity's built-in pipeline, I implemented a small project in the style of Chinese brush painting.

@@ -3,8 +3,8 @@ draft = false
 image = "img/portfolio/PS-AI-Graphic-Design.jpg"
 showonlyimage = true
 date = "2016-11-05T20:02:19+05:30"
-title = "PS & AI - Graphic Design"
-weight = 10
+title = "[ #Misc ] PS & AI - Graphic Design"
+weight = 13
 +++
 
 [![【PS&AI】byr平面1运动会进站][1]][1]

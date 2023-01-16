@@ -2,8 +2,8 @@
 draft = false
 image = "img/portfolio/nice-day.jpg"
 showonlyimage = false
-title = "[ AE Animation ] Nice Day"
-weight = 16
+title = "[ #Project 4 ] AE Animation - Nice Day"
+weight = 4
 +++
 
 AE character animation, with the scene built in C4D.

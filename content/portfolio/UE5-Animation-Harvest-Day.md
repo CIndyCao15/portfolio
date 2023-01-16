@@ -2,7 +2,7 @@
 draft = false
 image = "img/portfolio/UE5-Animation-Harvest-Day.png"
 showonlyimage = false
-title = "[ UE5 Animation ] Harvest Day"
+title = "[ #Project 1 ] UE5 Animation - Harvest Day"
 weight = 1
 +++
 

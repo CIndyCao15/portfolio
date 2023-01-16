@@ -2,8 +2,8 @@
 draft = false
 image = "img/portfolio/patchwork-of-broken-sounds.jpg"
 showonlyimage = false
-title = "[ AE MG Animation ] Patchwork of Broken Sounds"
-weight = 14
+title = "[ #Project 5 ] AE MG Animation - Patchwork of Broken Sounds"
+weight = 5
 +++
 
 MG animation exercise.
