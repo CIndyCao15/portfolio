@@ -14,5 +14,8 @@ A motion graphics design. This is a group assignment, done by 4 other students a
 
 [![title of image2][2]][2]
 
+[![storyboard][3]][3]
+
 [1]: /img/portfolio/patchwork-of-broken-sounds-1.png
 [2]: /img/portfolio/patchwork-of-broken-sounds-2.png
+[3]: /img/portfolio/patchwork-of-broken-sounds-storyboard.jpg
