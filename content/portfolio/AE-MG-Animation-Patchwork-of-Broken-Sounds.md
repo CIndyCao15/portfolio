@@ -2,13 +2,13 @@
 draft = false
 image = "img/portfolio/patchwork-of-broken-sounds.jpg"
 showonlyimage = false
-title = "[ #Project 5 ] AE MG Animation - Patchwork of Broken Sounds"
+title = "[ #Project 5 ] AE MG Animation - Patchwork Staccato (ツギハギスタッカート) Music Video"
 weight = 5
 +++
 
-MG animation exercise.
+A motion graphics design. This is a group assignment, done by 4 other students and me.
 
-{{< youtube id="-dwwIEk8tag" title="[ AE Animation ] Patchwork of broken sounds" >}}
+{{< youtube id="dfZ5_DT2Y28" title="[ Ae Animation ] Patchwork Staccato (ツギハギスタッカート) Music Video - Full Version" >}}
 \
 [![title of image1][1]][1]
 
