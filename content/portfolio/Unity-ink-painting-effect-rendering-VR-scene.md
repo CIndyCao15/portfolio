@@ -7,7 +7,7 @@ showonlyimage = false
 weight = 2
 +++
 
-The VR experience focuses on Climate Emergency. The first scene shows a utopian scene from a long time ago, the second scene shows the current Climate Emergency facing mankind (inspired by the Chongqing wildfire in 2022), and the third scene shows a cyberspace, where the player can make a commitment.
+The VR experience focuses on Climate Emergency. The first scene shows a utopian scene from a long time ago, the second scene shows the current Climate Emergency facing humanity (inspired by the Chongqing wildfire in 2022), and the third scene shows a cyberspace, where the player can make a commitment.
 
 > There was a time when meadow, grove, and stream,
 \
@@ -31,6 +31,8 @@ The VR experience focuses on Climate Emergency. The first scene shows a utopian 
 
 {{< youtube id="NW-UrDA5nq0" title="Unity ink painting effect rendering VR scene" >}}
 \
+You can find the playable build shown in the video [here](https://drive.google.com/drive/folders/1O-hnS8qAkfEFtwk0FRUm3RVPHHwUvIW8?usp=sharing). The game runs on Oculus Rift S, so if you don't have the VR headset I'm afraid you won't get the full experience. You can still use the spacebar to switch between scenes, which is a backdoor I left, but other interactions (moving, teleporting, picking up props, dialogue, etc.) are not available.
+
 Chinese brush painting rendering is the part where I spend the most effort. For the brush painting-only version, please check out my other video:
 
 {{< youtube id="YdPf6S08NT0" title="Unity ink painting effect rendering VR scene" >}}
