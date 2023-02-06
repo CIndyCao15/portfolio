@@ -9,7 +9,8 @@ weight = 4
 A motion graphics design. This is a group assignment, done by 4 other students and me.
 
 {{< youtube id="dfZ5_DT2Y28" title="[ Ae Animation ] Patchwork Staccato (ツギハギスタッカート) Music Video - Full Version" >}}
-\
+<br>
+
 [![title of image1][1]][1]
 
 [![title of image2][2]][2]

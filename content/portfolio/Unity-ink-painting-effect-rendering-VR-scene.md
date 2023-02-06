@@ -30,13 +30,15 @@ The VR experience focuses on Climate Emergency. The first scene shows a utopian 
 *["The Creation of Adam"](https://skfb.ly/6RnWL) by Loïc Norgeot is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).*
 
 {{< youtube id="NW-UrDA5nq0" title="Unity ink painting effect rendering VR scene" >}}
-\
+<br>
+
 You can find the playable build shown in the video [here](https://drive.google.com/drive/folders/1O-hnS8qAkfEFtwk0FRUm3RVPHHwUvIW8?usp=sharing). The game runs on Oculus Rift S, so if you don't have the VR headset I'm afraid you won't get the full experience. You can still use the spacebar to switch between scenes, which is a backdoor I left, but other interactions (moving, teleporting, picking up props, dialogue, etc.) are not available.
 
 Chinese brush painting rendering is the part where I spend the most effort. For the brush painting-only version, please check out my other video:
 
 {{< youtube id="YdPf6S08NT0" title="Unity ink painting effect rendering VR scene" >}}
-\
+<br>
+
 Using Unity's built-in pipeline, I implemented a small project in the style of Chinese brush painting.
 
 The project is divided into two shaders, one for characters and one for rocks. The characters mainly use the VdotN principle to implement soft edges, while the rocks use the Shell Method to implement hard edges ("勾"). The rocks also use a curvature-based method (pitting) to produce a bumpy surface, but this method is not suitable for models with low face counts at a distance and is not shown in the final result. The final result uses the Triplanar method to add brush strokes.

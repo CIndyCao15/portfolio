@@ -7,7 +7,7 @@ draft = false
 weight = 7
 +++
 
-I made fireworks 🎇 following a VFX Graph tutorial.
+I made fireworks 🎇 with the new VFX Graph tool.
 <!--more-->
 
 [![fireworks.gif][1]][1]

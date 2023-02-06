@@ -9,7 +9,8 @@ weight = 5
 AE character animation, with the scene built in C4D.
 
 {{< youtube id="hlNSC-_D-6U" title="[ AE Animation ] Nice Day" >}}
-\
+<br>
+
 [![snapshot 1 of nice day][1]][1]
 
 [![snapshot 2 of nice day][2]][2]

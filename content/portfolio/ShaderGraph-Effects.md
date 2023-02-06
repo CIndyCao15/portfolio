@@ -11,9 +11,11 @@ Figure 1 is a traced work, and Figure 2 is a secondary creation using the hexago
 <!--more-->
 
 {{< youtube id="rUbK8Ig5P7Q" title="Shader Graph Effects 1" >}}
-\
+<br>
+
 {{< youtube id="H18ceH9K5-8" title="Shader Graph Effects 2" >}}
-\
+<br>
+
 [![title of image1][1]][1]
 
 [![title of image2][2]][2]
