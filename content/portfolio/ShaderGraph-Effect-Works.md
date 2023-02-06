@@ -18,19 +18,23 @@ Followed the tutorials of bilibili's 浮生若梦Jason, I got started with HDRP 
 {{< figure src="/img/portfolio/ShaderGraph-Effect-4.gif" alt="Blade light" caption="Blade light" >}}
 
 {{< youtube id="oLc3u134dcY" title="Fire + Distortion" >}}
-\
+<br>
+
 {{< figure src="/img/portfolio/ShaderGraph-Effect-5.gif" alt="This flame is made using scrolling noise method" caption="This flame is made using scrolling noise method" >}}
 
 {{< youtube id="9klKhFsGN-8" title="Fire + Effects" >}}
 
 {{< youtube id="I4-5msGkTDA" title="Ball of Blood" >}}
-\
+<br>
+
 {{< figure src="/img/portfolio/ShaderGraph-Effect-6.gif" alt="Ball of Blood" caption="Ball of Blood" >}}
 
 {{< youtube id="Cq5njgx_df0" title="Bad TV" >}}
-\
+<br>
+
 {{< figure src="/img/portfolio/ShaderGraph-Effect-7.gif" alt="Bad TV" caption="Bad TV<br>" >}}
 
 {{< youtube id="XjGUToo8zro" title="Vortex" >}}
-\
+<br>
+
 {{< figure src="/img/portfolio/ShaderGraph-Effect-8.gif" alt="Vortex" caption="Vortex<br>" >}}
