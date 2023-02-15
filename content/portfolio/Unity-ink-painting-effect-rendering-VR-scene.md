@@ -102,5 +102,28 @@ This one-dimensional lookup table has black on the left and white on the right, 
 
 {{< figure src="/img/portfolio/Unity-ink-人物轮廓abcde.png" alt="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C<sub>edge</sub>*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)" caption="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C<sub>edge</sub>*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)" >}}
 
+The relevant shader code is as follows:
 
+```hlsl
+fixed vdotn = abs(dot(viewDir, bump));
+fixed edge = vdotn / _Range;
+edge = edge > _Thred ? 1 : edge;
+edge = pow(edge, _Pow);
+fixed4 edgeColor = tex2D(_SilhouetteRampTex, fixed2(edge, 0.5));
+// col is the internal shading result
+col = edgeColor > col ? col : edgeColor * (1 - edge) + col * edge;
+col = pow(col, _ColorPow);
+return col;
+```
 
+The flow map of the brush painting character rendering scheme is as follows:
+
+[![Snapshot 3 of Unity ink painting effect rendering VR scene][4]][4]
+
+[4]: /img/portfolio/Unity-ink-人物渲染方案.png
+
+Step by step output result of the scheme:
+
+[![Snapshot 3 of Unity ink painting effect rendering VR scene][5]][5]
+
+[5]: /img/portfolio/Unity-ink-MonkeyKing.png
