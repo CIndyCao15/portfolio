@@ -122,7 +122,7 @@ The flow map of the brush painting character rendering scheme is as follows:
 
 [4]: /img/portfolio/Unity-ink-人物渲染方案.png
 
-Step by step output result of the scheme:
+Step-by-step output result of the scheme:
 
 [![Snapshot 3 of Unity ink painting effect rendering VR scene][5]][5]
 
