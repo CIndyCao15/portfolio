@@ -79,3 +79,28 @@ In character rendering part, I choose to simulate modern-style brush painting ch
 There are four techniques of traditional Chinese brush painting: sketching, rubbing, dotting, and shading (勾、皴、点、染). Among them, "dotting" refers to drawing moss, which is not a necessary step for painting. Therefore, I slightly changed these four steps to "sketching, rubbing, shading, and coloring (勾、皴、染、设色)", which correspond to the four parts that need to be implemented in realtime rendering: contour rendering, texture mapping/curvature, lighting model, and main texture.
 
 {{< figure src="/img/portfolio/Unity-ink-勾皴染设色.png" >}}
+
+### Chinese Brush Painting Character Rendering Scheme
+
+In the Chinese brush painting character rendering scheme, I propose a rendering method based on the viewing direction and bump map for contour rendering, that is, **Surface Angle Silhouetting**. A one-dimensional look-up table is used to map the results, so that the pleats of the clothes get a soft willow leaf drawing (柳叶描) effect, and normal scale is used to control the fineness of the stroke. In the internal coloring part, the grayscale adjustment of the color is realized. At the same time, a triplanar stroke map based on object space is proposed to simulate the effect of randomly splashing ink. Finally, the contour line, internal coloring and splashing ink strokes are mixed by texture blending.
+
+On a smooth surface, the definition of point P on the Silhouette is ***v*** ∙ ***n*** =0.
+
+{{< figure src="/img/portfolio/Unity-ink-VdotN.png" width="300px" >}}
+
+But an actual 3D model is composed of many planes. What's more, in order to make the silhouette have a certain width, the judgment condition needs to be relaxed as follows:
+
+{{< figure src="/img/portfolio/Unity-ink-人物轮廓线公式.png" width="300px" >}}
+
+Among them, *C<sub>edge</sub>* is the color of the contour; *r* can control the edge range, which can make the edge transition smoother; *t* controls the threshold; *p* is used to perform exponential operations on the edge and adjust the shade of edge color.
+
+In order to narrow the gradient range between black and white, make the gradient range more natural, and simulate the effect of ink diffusion, I introduce a one-dimensional lookup table:
+
+{{< figure src="/img/portfolio/Unity-ink-1DLUT.jpg" >}}
+
+This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of *C<sub>edge</sub>* as input, and use this ramp texture for warping. The final effect is as follows:
+
+{{< figure src="/img/portfolio/Unity-ink-人物轮廓abcde.png" alt="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C<sub>edge</sub>*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)" caption="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C<sub>edge</sub>*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)" >}}
+
+
+

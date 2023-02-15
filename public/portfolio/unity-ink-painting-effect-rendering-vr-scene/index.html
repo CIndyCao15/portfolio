@@ -180,6 +180,28 @@ The things which I have seen I now can see no more.</p>
 <figure><img src="/img/portfolio/Unity-ink-%e5%8b%be%e7%9a%b4%e6%9f%93%e8%ae%be%e8%89%b2.png"/>
 </figure>
 
+<h3 id="chinese-brush-painting-character-rendering-scheme">Chinese Brush Painting Character Rendering Scheme</h3>
+<p>In the Chinese brush painting character rendering scheme, I propose a rendering method based on the viewing direction and bump map for contour rendering, that is, <strong>Surface Angle Silhouetting</strong>. A one-dimensional look-up table is used to map the results, so that the pleats of the clothes get a soft willow leaf drawing (柳叶描) effect, and normal scale is used to control the fineness of the stroke. In the internal coloring part, the grayscale adjustment of the color is realized. At the same time, a triplanar stroke map based on object space is proposed to simulate the effect of randomly splashing ink. Finally, the contour line, internal coloring and splashing ink strokes are mixed by texture blending.</p>
+<p>On a smooth surface, the definition of point P on the Silhouette is <em><strong>v</strong></em> ∙ <em><strong>n</strong></em> =0.</p>
+<figure><img src="/img/portfolio/Unity-ink-VdotN.png" width="300px"/>
+</figure>
+
+<p>But an actual 3D model is composed of many planes. What&rsquo;s more, in order to make the silhouette have a certain width, the judgment condition needs to be relaxed as follows:</p>
+<figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%85%ac%e5%bc%8f.png" width="300px"/>
+</figure>
+
+<p>Among them, <em>C<!-- raw HTML omitted -->edge<!-- raw HTML omitted --></em> is the color of the contour; <em>r</em> can control the edge range, which can make the edge transition smoother; <em>t</em> controls the threshold; <em>p</em> is used to perform exponential operations on the edge and adjust the shade of edge color.</p>
+<p>In order to narrow the gradient range between black and white, make the gradient range more natural, and simulate the effect of ink diffusion, I introduce a one-dimensional lookup table:</p>
+<figure><img src="/img/portfolio/Unity-ink-1DLUT.jpg"/>
+</figure>
+
+<p>This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of <em>C<!-- raw HTML omitted -->edge<!-- raw HTML omitted --></em> as input, and use this ramp texture for warping. The final effect is as follows:</p>
+<figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93abcde.png"
+         alt="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C&lt;sub&gt;edge&lt;/sub&gt;*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)"/><figcaption>
+            <p>a) The original model shaded according to the Blinn-Phong lighting model; b) The result of <em><strong>v</strong></em> ∙ <em><strong>n</strong></em>; c) The result of calculating <em>C<!-- raw HTML omitted -->edge<!-- raw HTML omitted --></em>; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)</p>
+        </figcaption>
+</figure>
+
 
          
       </div>
