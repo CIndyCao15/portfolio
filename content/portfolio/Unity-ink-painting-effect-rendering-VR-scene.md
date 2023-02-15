@@ -72,7 +72,7 @@ When drawing the contours of an object (sketch, 勾), the technique of using a b
 
 There are two very different styles of **figures in Chinese brush paintings**. The traditional style, such as the *Drunken Immortal in Splashed Ink Style* (泼墨仙人图) by Liang Kai of Song Dynasty, has vivid spiritual consonance and a high degree of refinement and exaggeration of the characters; the modern style, such as *Whisper* (悄悄话), is combined with pencil sketch techniques. The characters are perfectly shaped in rich details, while the background is blurred. 
 
-{{< figure src="/img/portfolio/Unity-ink-泼墨仙人图悄悄话.png" alt="Left: *Drunken Immortal in Splashed Ink Style*    Right: *Whisper*" caption="Left: *Drunken Immortal in Splashed Ink Style*    Right: *Whisper*" width="600px" >}}
+{{< figure src="/img/portfolio/Unity-ink-泼墨仙人图悄悄话.png" alt="Left: *Drunken Immortal in Splashed Ink Style*(1200s);   Right: *Whisper*(1979)" caption="Left: *Drunken Immortal in Splashed Ink Style*(1200s);   Right: *Whisper*(1979)" width="600px" >}}
 
 In character rendering part, I choose to simulate modern-style brush painting characters.
 
