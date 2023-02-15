@@ -75,3 +75,7 @@ There are two very different styles of **figures in Chinese brush paintings**. T
 {{< figure src="/img/portfolio/Unity-ink-泼墨仙人图悄悄话.png" alt="Left: *Drunken Immortal in Splashed Ink Style*    Right: *Whisper*" caption="Left: *Drunken Immortal in Splashed Ink Style*    Right: *Whisper*" width="600px" >}}
 
 In character rendering part, I choose to simulate modern-style brush painting characters.
+
+There are four techniques of traditional Chinese brush painting: sketching, rubbing, dotting, and shading (勾、皴、点、染). Among them, "dotting" refers to drawing moss, which is not a necessary step for painting. Therefore, I slightly changed these four steps to "sketching, rubbing, shading, and coloring (勾、皴、染、设色)", which correspond to the four parts that need to be implemented in realtime rendering: contour rendering, texture mapping/curvature, lighting model, and main texture.
+
+{{< figure src="/img/portfolio/Unity-ink-勾皴染设色.png" >}}
