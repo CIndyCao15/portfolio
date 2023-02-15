@@ -153,12 +153,29 @@ The things which I have seen I now can see no more.</p>
 
 <!-- raw HTML omitted --></p>
 <p>Using Unity&rsquo;s built-in pipeline, I implemented a small project in the style of Chinese brush painting.</p>
-<p>The project is divided into two shaders, one for characters and one for rocks. The characters mainly use the VdotN principle to implement soft edges, while the rocks use the Shell Method to implement hard edges (&ldquo;勾&rdquo;). The rocks also use a curvature-based method (pitting) to produce a bumpy surface, but this method is not suitable for models with low face counts at a distance and is not shown in the final result. The final result uses the Triplanar method to add brush strokes.</p>
-<p>I used VRTK (Virtual Reality Toolkit) to manually complete the connection with the Oculus Rift S device. I also used the official Unity tool UPR (Unity Performance Report) to analyze performance.</p>
-<p>The characters only used the original model&rsquo;s main texture and normal map, while the rocks only used the original model&rsquo;s normal map. (The original model effect is Figure 3.) I also added texture maps for brush strokes and ramp maps.</p>
+<p>I first analyze the aesthetic characteristics of landscape and figure paintings, and then proposed two methods for Chinese brush painting effect, one for characters and one for mountains and rocks. I use Oculus Rift S as a development device and developed this project based on the new XR plug-in architecture provided by Unity 2019.3.0, and finally use Oculus Debug Tool and Unity UPR (Unity Performance Report) for performance testing.</p>
 <p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png" alt="Snapshot 1 of Unity ink painting effect rendering VR scene"></a></p>
 <p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-2.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-2.png" alt="Snapshot 2 of Unity ink painting effect rendering VR scene"></a></p>
+<p>This picture shows what the models look like originally in Unity Standard shader.</p>
 <p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png" alt="Snapshot 3 of Unity ink painting effect rendering VR scene"></a></p>
+<h1 id="chinese-brush-painting-rendering">Chinese Brush Painting Rendering</h1>
+<h2 id="aesthetic-characteristics-of-chinese-brush-painting">Aesthetic Characteristics of Chinese Brush Painting</h2>
+<p>For <strong>brush painting mountains and stones</strong>, there are two characteristics that need to be reflected:</p>
+<p>1.The stone has many sides (石分三面)</p>
+<p>A stone should have a sense of space and volume, and a sense of impermeability is the top priority. The two steps of &ldquo;rub (皴)&rdquo; and &ldquo;dye (染)&rdquo; are the key steps to enhance the sense of volume of rocks.</p>
+<p>2.Structural use of the brush (骨法用笔)</p>
+<p>When drawing the contours of an object (sketch, 勾), the technique of using a brush must be strong, thus forming the structure of the object like bones.</p>
+<figure><img src="/img/portfolio/Unity-ink-%e6%b0%b4%e5%a2%a8%e7%94%bb%e7%89%b9%e7%82%b9%e5%88%86%e6%9e%90.jpg"/>
+</figure>
+
+<p>There are two very different styles of <strong>figures in Chinese brush paintings</strong>. The traditional style, such as the <em>Drunken Immortal in Splashed Ink Style</em> (泼墨仙人图) by Liang Kai of Song Dynasty, has vivid spiritual consonance and a high degree of refinement and exaggeration of the characters; the modern style, such as <em>Whisper</em> (悄悄话), is combined with pencil sketch techniques. The characters are perfectly shaped in rich details, while the background is blurred.</p>
+<figure><img src="/img/portfolio/Unity-ink-%e6%b3%bc%e5%a2%a8%e4%bb%99%e4%ba%ba%e5%9b%be%e6%82%84%e6%82%84%e8%af%9d.png"
+         alt="Left: *Drunken Immortal in Splashed Ink Style*    Right: *Whisper*" width="600px"/><figcaption>
+            <p>Left: <em>Drunken Immortal in Splashed Ink Style</em>    Right: <em>Whisper</em></p>
+        </figcaption>
+</figure>
+
+<p>In character rendering part, I choose to simulate modern-style brush painting characters.</p>
 
          
       </div>

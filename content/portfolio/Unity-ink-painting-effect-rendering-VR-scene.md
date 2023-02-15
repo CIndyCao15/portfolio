@@ -41,18 +41,37 @@ Chinese brush painting rendering is the part where I spend the most effort. For 
 
 Using Unity's built-in pipeline, I implemented a small project in the style of Chinese brush painting.
 
-The project is divided into two shaders, one for characters and one for rocks. The characters mainly use the VdotN principle to implement soft edges, while the rocks use the Shell Method to implement hard edges ("勾"). The rocks also use a curvature-based method (pitting) to produce a bumpy surface, but this method is not suitable for models with low face counts at a distance and is not shown in the final result. The final result uses the Triplanar method to add brush strokes.
-
-I used VRTK (Virtual Reality Toolkit) to manually complete the connection with the Oculus Rift S device. I also used the official Unity tool UPR (Unity Performance Report) to analyze performance.
-
-The characters only used the original model's main texture and normal map, while the rocks only used the original model's normal map. (The original model effect is Figure 3.) I also added texture maps for brush strokes and ramp maps.
+I first analyze the aesthetic characteristics of landscape and figure paintings, and then proposed two methods for Chinese brush painting effect, one for characters and one for mountains and rocks. I use Oculus Rift S as a development device and developed this project based on the new XR plug-in architecture provided by Unity 2019.3.0, and finally use Oculus Debug Tool and Unity UPR (Unity Performance Report) for performance testing.
 
 [![Snapshot 1 of Unity ink painting effect rendering VR scene][1]][1]
 
 [![Snapshot 2 of Unity ink painting effect rendering VR scene][2]][2]
 
-[![Snapshot 3 of Unity ink painting effect rendering VR scene][3]][3]
-
 [1]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png
 [2]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-2.png
+
+This picture shows what the models look like originally in Unity Standard shader.
+
+[![Snapshot 3 of Unity ink painting effect rendering VR scene][3]][3]
+
 [3]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png
+
+# Chinese Brush Painting Rendering
+## Aesthetic Characteristics of Chinese Brush Painting
+For **brush painting mountains and stones**, there are two characteristics that need to be reflected:
+
+1.The stone has many sides (石分三面)
+
+A stone should have a sense of space and volume, and a sense of impermeability is the top priority. The two steps of "rub (皴)" and "dye (染)" are the key steps to enhance the sense of volume of rocks.
+
+2.Structural use of the brush (骨法用笔)
+
+When drawing the contours of an object (sketch, 勾), the technique of using a brush must be strong, thus forming the structure of the object like bones.
+
+{{< figure src="/img/portfolio/Unity-ink-水墨画特点分析.jpg" >}}
+
+There are two very different styles of **figures in Chinese brush paintings**. The traditional style, such as the *Drunken Immortal in Splashed Ink Style* (泼墨仙人图) by Liang Kai of Song Dynasty, has vivid spiritual consonance and a high degree of refinement and exaggeration of the characters; the modern style, such as *Whisper* (悄悄话), is combined with pencil sketch techniques. The characters are perfectly shaped in rich details, while the background is blurred. 
+
+{{< figure src="/img/portfolio/Unity-ink-泼墨仙人图悄悄话.png" alt="Left: *Drunken Immortal in Splashed Ink Style*    Right: *Whisper*" caption="Left: *Drunken Immortal in Splashed Ink Style*    Right: *Whisper*" width="600px" >}}
+
+In character rendering part, I choose to simulate modern-style brush painting characters.
