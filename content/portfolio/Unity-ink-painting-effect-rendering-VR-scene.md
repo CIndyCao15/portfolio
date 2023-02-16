@@ -79,6 +79,7 @@ A stone should have a sense of space and volume, and a sense of impermeability i
 When drawing the contours of an object (sketch, 勾), the technique of using a brush must be strong, thus forming the structure of the object like bones.
 
 {{< figure src="/img/portfolio/Unity-ink-水墨画特点分析.jpg" >}}
+<br>
 
 There are two very different styles of **figures in Chinese brush paintings**. The traditional style, such as the *Drunken Immortal in Splashed Ink Style* (泼墨仙人图) by Liang Kai of Song Dynasty, has vivid spiritual consonance and a high degree of refinement and exaggeration of the characters; the modern style, such as *Whisper* (悄悄话), is combined with pencil sketch techniques. The characters are perfectly shaped in rich details, while the background is blurred. 
 
@@ -89,6 +90,7 @@ In character rendering part, I choose to simulate modern-style brush painting ch
 There are four techniques of traditional Chinese brush painting: sketching, rubbing, dotting, and shading (勾、皴、点、染). Among them, "dotting" refers to drawing moss, which is not a necessary step for painting. Therefore, I slightly changed these four steps to "sketching, rubbing, shading, and coloring (勾、皴、染、设色)", which correspond to the four parts that need to be implemented in realtime rendering: contour rendering, texture mapping/curvature, lighting model, and main texture.
 
 {{< figure src="/img/portfolio/Unity-ink-勾皴染设色.png" >}}
+<br>
 
 ### Chinese Brush Painting Character Rendering Scheme {#catalog-item-3}
 
@@ -159,6 +161,21 @@ The comparison between my silhouette rendering scheme on the terrain and the exi
 #### Rubbing simulation based on model curvature {#catalog-item-6}
 
 #### Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function {#catalog-item-7}
+
+Since the mountain rock has the aesthetic characteristic of "space and volume", a lighting model should be used to render the mountain rock to create a sense of volume. In an empirical lighting model, lighting consists of 3 components: diffuse, specular, and ambient lighting. Brush painting mountain and stone mainly reflects diffuse light.
+
+The diffuse warp function should be a step function. It is used to divide the ink color.
+
+{{< figure src="/img/portfolio/Unity-ink-漫反射公式.png" width="400px" >}}
+
+Among them, *C{{< sub "i" >}}* is the original diffuse color, which is the input color of the *C{{< sub "0" >}}* function. In actual use, to make the transition between different colors more natural, I roughly add a transition color between adjacent gradients.
+
+{{< figure src="/img/portfolio/Unity-ink-漫反射函数图片.png" caption="Diffuse warp function" width="550px" >}}
+
+The result of this step, a shading method based on Half-Lambert lighting model and diffuse warping function, is as follows.
+
+{{< figure src="/img/portfolio/Unity-ink-漫反射结果图片.png" >}}
+
 #### Stroke texture simulation based on triplanar and Gaussian blur {#catalog-item-8}
 
 The flow map of the brush painting mountain and rock rendering scheme is as follows:
