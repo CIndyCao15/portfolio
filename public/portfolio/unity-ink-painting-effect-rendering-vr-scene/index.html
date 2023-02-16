@@ -242,6 +242,21 @@ The things which I have seen I now can see no more.</p>
 <h3 id="catalog-item-4">Chinese Brush Painting Mountain&amp;Rock Rendering Scheme</h3>
 <p>In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.</p>
 <h4 id="catalog-item-5">Contour rendering based on dual-pass Shell Method</h4>
+<p>Traditional Shell Method offset the back of the shell geometry along the -z axis, causing the contour and object to have a strong sense of misalignment, especially at the edge of the view frustum. I eliminate this artifact by offsetting the geometry along the view direction.</p>
+<figure><img src="/img/portfolio/Unity-ink-frustum.png"
+         alt="Left: the view frustum; Right: the contour misalignment gets worse as the object gets closer to the edge of the viewport. This is unsatisfactory, especially in VR, when the player has a huge FOV." width="600px"/><figcaption>
+            <p><strong>Left</strong>: the view frustum; <strong>Right</strong>: the contour misalignment gets worse as the object gets closer to the edge of the viewport. This is unsatisfactory, especially in VR, when the player has a huge FOV.</p>
+        </figcaption>
+</figure>
+
+<p>To simulate whitewash and dry brush, the contour rendering requires two passes. Each pass samples a Perlin noise, and the vertices are offset according to the noise map. To sample a texture in the vertex shader, I use the <em>tex2Dlod</em> method in cg.</p>
+<p>The comparison between my silhouette rendering scheme on the terrain and the existing scheme is as follows:</p>
+<figure><img src="/img/portfolio/Unity-ink-mountainContour.png"
+         alt="a) My silhouette rendering effect; b) The silhouette rendering effect in the reference. The circled area is where the stroke thickness is uneven near the edge of the frustum."/><figcaption>
+            <p>a) My silhouette rendering effect; b) The silhouette rendering effect in the reference. The circled area is where the stroke thickness is uneven near the edge of the frustum.</p>
+        </figcaption>
+</figure>
+
 <h4 id="catalog-item-6">Rubbing simulation based on model curvature</h4>
 <h4 id="catalog-item-7">Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function</h4>
 <h4 id="catalog-item-8">Stroke texture simulation based on triplanar and Gaussian blur</h4>

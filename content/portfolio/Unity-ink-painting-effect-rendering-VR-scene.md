@@ -145,6 +145,17 @@ Step-by-step output result of the scheme:
 In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.
 
 #### Contour rendering based on dual-pass Shell Method {#catalog-item-5}
+
+Traditional Shell Method offset the back of the shell geometry along the -z axis, causing the contour and object to have a strong sense of misalignment, especially at the edge of the view frustum. I eliminate this artifact by offsetting the geometry along the view direction. 
+
+{{< figure src="/img/portfolio/Unity-ink-frustum.png" caption="**Left**: the view frustum; **Right**: the contour misalignment gets worse as the object gets closer to the edge of the viewport. This is unsatisfactory, especially in VR, when the player has a huge FOV." width="600px" >}}
+
+To simulate whitewash and dry brush, the contour rendering requires two passes. Each pass samples a Perlin noise, and the vertices are offset according to the noise map. To sample a texture in the vertex shader, I use the *tex2Dlod* method in cg.
+
+The comparison between my silhouette rendering scheme on the terrain and the existing scheme is as follows:
+
+{{< figure src="/img/portfolio/Unity-ink-mountainContour.png" caption="a) My silhouette rendering effect; b) The silhouette rendering effect in the reference. The circled area is where the stroke thickness is uneven near the edge of the frustum." >}}
+
 #### Rubbing simulation based on model curvature {#catalog-item-6}
 
 #### Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function {#catalog-item-7}
