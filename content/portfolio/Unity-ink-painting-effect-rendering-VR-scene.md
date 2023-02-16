@@ -114,7 +114,7 @@ This one-dimensional lookup table has black on the left and white on the right, 
 
 The relevant shader code is as follows:
 
-{{< highlight hlsl >}}
+{{< highlight java >}}
 fixed vdotn = abs(dot(viewDir, bump));
 fixed edge = vdotn / _Range;
 edge = edge > _Thred ? 1 : edge;
@@ -154,7 +154,7 @@ To simulate whitewash and dry brush, the contour rendering requires two passes. 
 
 The comparison between my silhouette rendering scheme on the terrain and the existing scheme is as follows:
 
-{{< figure src="/img/portfolio/Unity-ink-mountainContour.png" caption="a) My silhouette rendering effect; b) The silhouette rendering effect in the reference. The circled area is where the stroke thickness is uneven near the edge of the frustum." >}}
+{{< figure src="/img/portfolio/Unity-ink-mountainContour.png" caption="a) My silhouette rendering effect; b) The silhouette rendering effect in the reference. The circled area is where the stroke thickness is uneven near the edge of the frustum." width="550px" >}}
 
 #### Rubbing simulation based on model curvature {#catalog-item-6}
 
