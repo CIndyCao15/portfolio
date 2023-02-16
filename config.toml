@@ -83,5 +83,5 @@ googleAnalytics = "G-G0F7Z00VB5"
     lineNumbersInTable = true
     noClasses = true
     noHl = false
-    style = 'monokai'
+    style = 'fruity'
     tabWidth = 4

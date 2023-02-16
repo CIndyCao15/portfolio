@@ -114,7 +114,7 @@ This one-dimensional lookup table has black on the left and white on the right, 
 
 The relevant shader code is as follows:
 
-{{< highlight java >}}
+{{< highlight go >}}
 fixed vdotn = abs(dot(viewDir, bump));
 fixed edge = vdotn / _Range;
 edge = edge > _Thred ? 1 : edge;
