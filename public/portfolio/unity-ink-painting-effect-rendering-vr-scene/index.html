@@ -215,7 +215,7 @@ The things which I have seen I now can see no more.</p>
 <p>This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of <em>C<sub>edge</sub></em> as input, and use this ramp texture for warping. The final effect is as follows:</p>
 <figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93abcde.png"
          alt="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of v ∙ n; c) The result of calculating Cedge; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)"/><figcaption>
-            <p>a) The original model shaded according to the Blinn-Phong lighting model; b) The result of <em><strong>v</strong></em> ∙ <em><strong>n</strong></em>; c) The result of calculating <em>C<sub>edge</sub></em>; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)</p>
+            <p>a) The original model shaded according to the Blinn-Phong lighting model; b) The result of <em><strong>v</strong></em> ∙ <em><strong>n</strong></em>; c) The result of calculating <em>Cedge</em>; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)</p>
         </figcaption>
 </figure>
 
@@ -228,8 +228,8 @@ The things which I have seen I now can see no more.</p>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// col is the internal shading result</span>
 </span></span><span style="display:flex;"><span>col <span style="color:#f92672">=</span> edgeColor <span style="color:#f92672">&gt;</span> col <span style="color:#f92672">?</span> col <span style="color:#f92672">:</span> edgeColor <span style="color:#f92672">*</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> edge) <span style="color:#f92672">+</span> col <span style="color:#f92672">*</span> edge;
 </span></span><span style="display:flex;"><span>col <span style="color:#f92672">=</span> pow(col, _ColorPow);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> col;
-</span></span></code></pre></div><p>The flow map of the brush painting character rendering scheme is as follows:</p>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> col;</span></span></code></pre></div>
+<p>The flow map of the brush painting character rendering scheme is as follows:</p>
 <p><a href="/img/portfolio/Unity-ink-%E4%BA%BA%E7%89%A9%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png"><img src="/img/portfolio/Unity-ink-%E4%BA%BA%E7%89%A9%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png" alt="Snapshot 4 of Unity ink painting effect rendering VR scene"></a></p>
 <p>Step-by-step output result of the scheme:</p>
 <p><a href="/img/portfolio/Unity-ink-MonkeyKing.png"><img src="/img/portfolio/Unity-ink-MonkeyKing.png" alt="Snapshot 5 of Unity ink painting effect rendering VR scene"></a></p>
