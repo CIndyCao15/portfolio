@@ -150,6 +150,7 @@ In the Chinese brush painting mountain and rock rendering scheme, the Shell Meth
 #### Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function {#catalog-item-7}
 #### Stroke texture simulation based on triplanar and Gaussian blur {#catalog-item-8}
 
+
 The flow map of the brush painting mountain and rock rendering scheme is as follows:
 
 [![Snapshot 6 of Unity ink painting effect rendering VR scene][6]][6]
