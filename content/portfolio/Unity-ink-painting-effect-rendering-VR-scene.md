@@ -124,13 +124,13 @@ return col;
 
 The flow map of the brush painting character rendering scheme is as follows:
 
-[![Snapshot 3 of Unity ink painting effect rendering VR scene][4]][4]
+[![Snapshot 4 of Unity ink painting effect rendering VR scene][4]][4]
 
 [4]: /img/portfolio/Unity-ink-人物渲染方案.png
 
 Step-by-step output result of the scheme:
 
-[![Snapshot 3 of Unity ink painting effect rendering VR scene][5]][5]
+[![Snapshot 5 of Unity ink painting effect rendering VR scene][5]][5]
 
 [5]: /img/portfolio/Unity-ink-MonkeyKing.png
 
@@ -139,3 +139,17 @@ Step-by-step output result of the scheme:
 ### Chinese Brush Painting Mountain&Rock Rendering Scheme {#catalog-item-4}
 
 In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.
+
+The flow map of the brush painting mountain and rock rendering scheme is as follows:
+
+[![Snapshot 6 of Unity ink painting effect rendering VR scene][6]][6]
+
+[6]: /img/portfolio/Unity-ink-水墨山石渲染方案.png
+
+Step-by-step output result of the scheme:
+
+[![Snapshot 3 of Unity ink painting effect rendering VR scene][7]][7]
+
+[7]: /img/portfolio/Unity-ink-MountainStone.png
+
+{{< figure src="/img/portfolio/Unity-ink-山石界面截图.png" alt="A material panel in Unity" caption="A material panel in Unity" width="250px" >}}
