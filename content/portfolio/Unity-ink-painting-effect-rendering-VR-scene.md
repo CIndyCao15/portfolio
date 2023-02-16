@@ -134,6 +134,6 @@ Step-by-step output result of the scheme:
 
 {{< figure src="/img/portfolio/Unity-ink-人物界面截图.png" alt="A material panel in Unity" caption="A material panel in Unity" width="250px" >}}
 
-### Chinese Brush Painting Mountain&Rock Rendering Scheme (#catalog-item-4)
+### Chinese Brush Painting Mountain&Rock Rendering Scheme {#catalog-item-4}
 
 In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.
