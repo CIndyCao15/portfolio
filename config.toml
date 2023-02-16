@@ -70,3 +70,18 @@ googleAnalytics = "G-G0F7Z00VB5"
 #   stackoverflow = "full profile url in stackoverflow"
 #   gitlab        = "full profile url in gitlab"
 #   whatsapp      = "wa.me service link"
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'monokai'
+    tabWidth = 4
