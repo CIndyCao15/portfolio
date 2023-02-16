@@ -158,8 +158,17 @@ The things which I have seen I now can see no more.</p>
 <p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-2.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-2.png" alt="Snapshot 2 of Unity ink painting effect rendering VR scene"></a></p>
 <p>This picture shows what the models look like originally in Unity Standard shader.</p>
 <p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png" alt="Snapshot 3 of Unity ink painting effect rendering VR scene"></a></p>
-<h2 id="chinese-brush-painting-rendering">Chinese Brush Painting Rendering</h2>
-<h3 id="aesthetic-characteristics-of-chinese-brush-painting">Aesthetic Characteristics of Chinese Brush Painting</h3>
+<ul>
+<li><a href="#catalog-item-1">Chinese Brush Painting Rendering</a>
+<ol>
+<li><a href="#catalog-item-2">Aesthetic Characteristics of Chinese Brush Painting</a></li>
+<li><a href="#catalog-item-3">Chinese Brush Painting Character Rendering Scheme</a></li>
+<li><a href="#catalog-item-4">Chinese Brush Painting Mountain&amp;Rock Rendering Scheme</a></li>
+</ol>
+</li>
+</ul>
+<h2 id="catalog-item-1">Chinese Brush Painting Rendering</h2>
+<h3 id="catalog-item-2">Aesthetic Characteristics of Chinese Brush Painting</h3>
 <p>For <strong>brush painting mountains and stones</strong>, there are two characteristics that need to be reflected:</p>
 <p>1.The stone has many sides (石分三面)</p>
 <p>A stone should have a sense of space and volume, and a sense of impermeability is the top priority. The two steps of &ldquo;rub (皴)&rdquo; and &ldquo;dye (染)&rdquo; are the key steps to enhance the sense of volume of rocks.</p>
@@ -180,7 +189,7 @@ The things which I have seen I now can see no more.</p>
 <figure><img src="/img/portfolio/Unity-ink-%e5%8b%be%e7%9a%b4%e6%9f%93%e8%ae%be%e8%89%b2.png"/>
 </figure>
 
-<h3 id="chinese-brush-painting-character-rendering-scheme">Chinese Brush Painting Character Rendering Scheme</h3>
+<h3 id="catalog-item-3">Chinese Brush Painting Character Rendering Scheme</h3>
 <p>In the Chinese brush painting character rendering scheme, I propose a rendering method based on the viewing direction and bump map for contour rendering, that is, <strong>Surface Angle Silhouetting</strong>. A one-dimensional look-up table is used to map the results, so that the pleats of the clothes get a soft willow leaf drawing (柳叶描) effect, and normal scale is used to control the fineness of the stroke. In the internal coloring part, the grayscale adjustment of the color is realized. At the same time, a triplanar stroke map based on object space is proposed to simulate the effect of randomly splashing ink. Finally, the contour line, internal coloring and splashing ink strokes are mixed by texture blending.</p>
 <p>On a smooth surface, the definition of point P on the Silhouette is <em><strong>v</strong></em> ∙ <em><strong>n</strong></em> =0.</p>
 <figure><img src="/img/portfolio/Unity-ink-VdotN.png" width="300px"/>
@@ -222,7 +231,7 @@ The things which I have seen I now can see no more.</p>
         </figcaption>
 </figure>
 
-<h3 id="chinese-brush-painting-mountainrock-rendering-scheme">Chinese Brush Painting Mountain&amp;Rock Rendering Scheme</h3>
+<h3 id="chinese-brush-painting-mountainrock-rendering-scheme-catalog-item-4">Chinese Brush Painting Mountain&amp;Rock Rendering Scheme (#catalog-item-4)</h3>
 <p>In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.</p>
 
          

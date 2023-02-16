@@ -56,8 +56,12 @@ This picture shows what the models look like originally in Unity Standard shader
 
 [3]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png
 
-## Chinese Brush Painting Rendering
-### Aesthetic Characteristics of Chinese Brush Painting
+- [Chinese Brush Painting Rendering](#catalog-item-1)
+  1. [Aesthetic Characteristics of Chinese Brush Painting](#catalog-item-2)
+  2. [Chinese Brush Painting Character Rendering Scheme](#catalog-item-3)
+  3. [Chinese Brush Painting Mountain&Rock Rendering Scheme](#catalog-item-4)
+## Chinese Brush Painting Rendering {#catalog-item-1}
+### Aesthetic Characteristics of Chinese Brush Painting {#catalog-item-2}
 For **brush painting mountains and stones**, there are two characteristics that need to be reflected:
 
 1.The stone has many sides (石分三面)
@@ -80,7 +84,7 @@ There are four techniques of traditional Chinese brush painting: sketching, rubb
 
 {{< figure src="/img/portfolio/Unity-ink-勾皴染设色.png" >}}
 
-### Chinese Brush Painting Character Rendering Scheme
+### Chinese Brush Painting Character Rendering Scheme {#catalog-item-3}
 
 In the Chinese brush painting character rendering scheme, I propose a rendering method based on the viewing direction and bump map for contour rendering, that is, **Surface Angle Silhouetting**. A one-dimensional look-up table is used to map the results, so that the pleats of the clothes get a soft willow leaf drawing (柳叶描) effect, and normal scale is used to control the fineness of the stroke. In the internal coloring part, the grayscale adjustment of the color is realized. At the same time, a triplanar stroke map based on object space is proposed to simulate the effect of randomly splashing ink. Finally, the contour line, internal coloring and splashing ink strokes are mixed by texture blending.
 
@@ -130,6 +134,6 @@ Step-by-step output result of the scheme:
 
 {{< figure src="/img/portfolio/Unity-ink-人物界面截图.png" alt="A material panel in Unity" caption="A material panel in Unity" width="250px" >}}
 
-### Chinese Brush Painting Mountain&Rock Rendering Scheme
+### Chinese Brush Painting Mountain&Rock Rendering Scheme (#catalog-item-4)
 
 In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.
