@@ -56,14 +56,16 @@ This picture shows what the models look like originally in Unity Standard shader
 
 [3]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png
 
-## Contents {#catalog}
+#### Contents {#catalog}
 
-<font size=5><font color=#ef5285>**Contents**</font></font>
-
-- [Chinese Brush Painting Rendering](#catalog-item-1)
-  1. [Aesthetic Characteristics of Chinese Brush Painting](#catalog-item-2)
-  2. [Chinese Brush Painting Character Rendering Scheme](#catalog-item-3)
-  3. [Chinese Brush Painting Mountain&Rock Rendering Scheme](#catalog-item-4)
+1. [Chinese Brush Painting Rendering](#catalog-item-1)
+    1. [Aesthetic Characteristics of Chinese Brush Painting](#catalog-item-2)
+    2. [Chinese Brush Painting Character Rendering Scheme](#catalog-item-3)
+    3. [Chinese Brush Painting Mountain&Rock Rendering Scheme](#catalog-item-4)
+        1. [Contour rendering based on dual-pass Shell Method](#catalog-item-5)
+        2. [Rubbing simulation based on model curvature](#catalog-item-6)
+        3. [Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function](#catalog-item-7)
+        4. [Stroke texture simulation based on triplanar and Gaussian blur](#catalog-item-8)
 ## Chinese Brush Painting Rendering {#catalog-item-1}
 ### Aesthetic Characteristics of Chinese Brush Painting {#catalog-item-2}
 For **brush painting mountains and stones**, there are two characteristics that need to be reflected:
@@ -100,15 +102,15 @@ But an actual 3D model is composed of many planes. What's more, in order to make
 
 {{< figure src="/img/portfolio/Unity-ink-人物轮廓线公式.png" width="300px" >}}
 
-Among them, *C<sub>edge</sub>* is the color of the contour; *r* can control the edge range, which can make the edge transition smoother; *t* controls the threshold; *p* is used to perform exponential operations on the edge and adjust the shade of edge color.
+Among them, *C {{< sub "edge" >}}* is the color of the contour; *r* can control the edge range, which can make the edge transition smoother; *t* controls the threshold; *p* is used to perform exponential operations on the edge and adjust the shade of edge color.
 
 In order to narrow the gradient range between black and white, make the gradient range more natural, and simulate the effect of ink diffusion, I introduce a one-dimensional lookup table:
 
 {{< figure src="/img/portfolio/Unity-ink-1DLUT.jpg" >}}
 
-This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of *C<sub>edge</sub>* as input, and use this ramp texture for warping. The final effect is as follows:
+This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of *C {{< sub "edge" >}}* as input, and use this ramp texture for warping. The final effect is as follows:
 
-{{< figure src="/img/portfolio/Unity-ink-人物轮廓abcde.png" alt="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C<sub>edge</sub>*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)" caption="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C<sub>edge</sub>*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)" >}}
+{{< figure src="/img/portfolio/Unity-ink-人物轮廓abcde.png" alt="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C {{< sub "edge" >}}*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)" caption="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C {{< sub "edge" >}}*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)" >}}
 
 The relevant shader code is as follows:
 
@@ -142,7 +144,11 @@ Step-by-step output result of the scheme:
 
 In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.
 
-#### Shell Method-based dual-pass contour rendering method
+#### Contour rendering based on dual-pass Shell Method {#catalog-item-5}
+#### Rubbing simulation based on model curvature {#catalog-item-6}
+
+#### Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function {#catalog-item-7}
+#### Stroke texture simulation based on triplanar and Gaussian blur {#catalog-item-8}
 
 The flow map of the brush painting mountain and rock rendering scheme is as follows:
 
