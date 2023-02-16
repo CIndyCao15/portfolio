@@ -56,7 +56,9 @@ This picture shows what the models look like originally in Unity Standard shader
 
 [3]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png
 
-## <font color=#ef5285>Contents</font>
+## Contents {#catalog}
+
+<font size=5><font color=#ef5285>**Contents**</font></font>
 
 - [Chinese Brush Painting Rendering](#catalog-item-1)
   1. [Aesthetic Characteristics of Chinese Brush Painting](#catalog-item-2)
@@ -139,6 +141,8 @@ Step-by-step output result of the scheme:
 ### Chinese Brush Painting Mountain&Rock Rendering Scheme {#catalog-item-4}
 
 In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.
+
+#### Shell Method-based dual-pass contour rendering method
 
 The flow map of the brush painting mountain and rock rendering scheme is as follows:
 

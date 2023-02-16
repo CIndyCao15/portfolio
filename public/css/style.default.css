@@ -2115,3 +2115,6 @@ a.list-group-item.active > .badge,
 figcaption {
   text-align: center;
 }
+#catalog {
+  color: #ef5285;
+}
