@@ -158,17 +158,23 @@ The things which I have seen I now can see no more.</p>
 <p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-2.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-2.png" alt="Snapshot 2 of Unity ink painting effect rendering VR scene"></a></p>
 <p>This picture shows what the models look like originally in Unity Standard shader.</p>
 <p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png" alt="Snapshot 3 of Unity ink painting effect rendering VR scene"></a></p>
-<h2 id="catalog">Contents</h2>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>Contents</strong><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<ul>
+<h4 id="catalog">Contents</h4>
+<ol>
 <li><a href="#catalog-item-1">Chinese Brush Painting Rendering</a>
 <ol>
 <li><a href="#catalog-item-2">Aesthetic Characteristics of Chinese Brush Painting</a></li>
 <li><a href="#catalog-item-3">Chinese Brush Painting Character Rendering Scheme</a></li>
-<li><a href="#catalog-item-4">Chinese Brush Painting Mountain&amp;Rock Rendering Scheme</a></li>
+<li><a href="#catalog-item-4">Chinese Brush Painting Mountain&amp;Rock Rendering Scheme</a>
+<ol>
+<li><a href="#catalog-item-5">Contour rendering based on dual-pass Shell Method</a></li>
+<li><a href="#catalog-item-6">Rubbing simulation based on model curvature</a></li>
+<li><a href="#catalog-item-7">Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function</a></li>
+<li><a href="#catalog-item-8">Stroke texture simulation based on triplanar and Gaussian blur</a></li>
 </ol>
 </li>
-</ul>
+</ol>
+</li>
+</ol>
 <h2 id="catalog-item-1">Chinese Brush Painting Rendering</h2>
 <h3 id="catalog-item-2">Aesthetic Characteristics of Chinese Brush Painting</h3>
 <p>For <strong>brush painting mountains and stones</strong>, there are two characteristics that need to be reflected:</p>
@@ -201,12 +207,12 @@ The things which I have seen I now can see no more.</p>
 <figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%85%ac%e5%bc%8f.png" width="300px"/>
 </figure>
 
-<p>Among them, <em>C<!-- raw HTML omitted -->edge<!-- raw HTML omitted --></em> is the color of the contour; <em>r</em> can control the edge range, which can make the edge transition smoother; <em>t</em> controls the threshold; <em>p</em> is used to perform exponential operations on the edge and adjust the shade of edge color.</p>
+<p>Among them, <em>C <sub>edge</sub></em> is the color of the contour; <em>r</em> can control the edge range, which can make the edge transition smoother; <em>t</em> controls the threshold; <em>p</em> is used to perform exponential operations on the edge and adjust the shade of edge color.</p>
 <p>In order to narrow the gradient range between black and white, make the gradient range more natural, and simulate the effect of ink diffusion, I introduce a one-dimensional lookup table:</p>
 <figure><img src="/img/portfolio/Unity-ink-1DLUT.jpg"/>
 </figure>
 
-<p>This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of <em>C<!-- raw HTML omitted -->edge<!-- raw HTML omitted --></em> as input, and use this ramp texture for warping. The final effect is as follows:</p>
+<p>This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of <em>C <sub>edge</sub></em> as input, and use this ramp texture for warping. The final effect is as follows:</p>
 <figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93abcde.png"
          alt="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C&lt;sub&gt;edge&lt;/sub&gt;*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)"/><figcaption>
             <p>a) The original model shaded according to the Blinn-Phong lighting model; b) The result of <em><strong>v</strong></em> ∙ <em><strong>n</strong></em>; c) The result of calculating <em>C<!-- raw HTML omitted -->edge<!-- raw HTML omitted --></em>; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)</p>
@@ -235,7 +241,10 @@ The things which I have seen I now can see no more.</p>
 
 <h3 id="catalog-item-4">Chinese Brush Painting Mountain&amp;Rock Rendering Scheme</h3>
 <p>In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.</p>
-<h4 id="shell-method-based-dual-pass-contour-rendering-method">Shell Method-based dual-pass contour rendering method</h4>
+<h4 id="catalog-item-5">Contour rendering based on dual-pass Shell Method</h4>
+<h4 id="catalog-item-6">Rubbing simulation based on model curvature</h4>
+<h4 id="catalog-item-7">Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function</h4>
+<h4 id="catalog-item-8">Stroke texture simulation based on triplanar and Gaussian blur</h4>
 <p>The flow map of the brush painting mountain and rock rendering scheme is as follows:</p>
 <p><a href="/img/portfolio/Unity-ink-%E6%B0%B4%E5%A2%A8%E5%B1%B1%E7%9F%B3%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png"><img src="/img/portfolio/Unity-ink-%E6%B0%B4%E5%A2%A8%E5%B1%B1%E7%9F%B3%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png" alt="Snapshot 6 of Unity ink painting effect rendering VR scene"></a></p>
 <p>Step-by-step output result of the scheme:</p>
