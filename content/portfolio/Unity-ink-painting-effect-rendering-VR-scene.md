@@ -174,7 +174,7 @@ Among them, *C{{< sub "i" >}}* is the original diffuse color, which is the input
 
 The result of this step, a shading method based on Half-Lambert lighting model and diffuse warping function, is as follows.
 
-{{< figure src="/img/portfolio/Unity-ink-漫反射结果图片.png" >}}
+{{< figure src="/img/portfolio/Unity-ink-漫反射结果图片.png" width="550px" >}}
 
 #### Stroke texture simulation based on triplanar and Gaussian blur {#catalog-item-8}
 
