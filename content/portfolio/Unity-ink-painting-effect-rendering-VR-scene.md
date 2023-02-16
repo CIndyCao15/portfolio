@@ -166,11 +166,11 @@ Since the mountain rock has the aesthetic characteristic of "space and volume", 
 
 The diffuse warp function should be a step function. It is used to divide the ink color.
 
-{{< figure src="/img/portfolio/Unity-ink-漫反射公式.png" width="400px" >}}
+{{< figure src="/img/portfolio/Unity-ink-漫反射公式.png" width="300px" >}}
 
 Among them, *C{{< sub "i" >}}* is the original diffuse color, which is the input color of the *C{{< sub "0" >}}* function. In actual use, to make the transition between different colors more natural, I roughly add a transition color between adjacent gradients.
 
-{{< figure src="/img/portfolio/Unity-ink-漫反射函数图片.png" caption="Diffuse warp function" width="550px" >}}
+{{< figure src="/img/portfolio/Unity-ink-漫反射函数图片.png" caption="Diffuse warp function" width="250px" >}}
 
 The result of this step, a shading method based on Half-Lambert lighting model and diffuse warping function, is as follows.
 
