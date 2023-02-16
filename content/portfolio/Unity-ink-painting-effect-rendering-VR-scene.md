@@ -56,6 +56,8 @@ This picture shows what the models look like originally in Unity Standard shader
 
 [3]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png
 
+## Contents
+
 - [Chinese Brush Painting Rendering](#catalog-item-1)
   1. [Aesthetic Characteristics of Chinese Brush Painting](#catalog-item-2)
   2. [Chinese Brush Painting Character Rendering Scheme](#catalog-item-3)
