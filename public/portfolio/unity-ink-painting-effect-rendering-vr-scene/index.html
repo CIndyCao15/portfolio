@@ -207,15 +207,15 @@ The things which I have seen I now can see no more.</p>
 <figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%85%ac%e5%bc%8f.png" width="300px"/>
 </figure>
 
-<p>Among them, <em>C <sub>edge</sub></em> is the color of the contour; <em>r</em> can control the edge range, which can make the edge transition smoother; <em>t</em> controls the threshold; <em>p</em> is used to perform exponential operations on the edge and adjust the shade of edge color.</p>
+<p>Among them, <em>C<sub>edge</sub></em> is the color of the contour; <em>r</em> can control the edge range, which can make the edge transition smoother; <em>t</em> controls the threshold; <em>p</em> is used to perform exponential operations on the edge and adjust the shade of edge color.</p>
 <p>In order to narrow the gradient range between black and white, make the gradient range more natural, and simulate the effect of ink diffusion, I introduce a one-dimensional lookup table:</p>
 <figure><img src="/img/portfolio/Unity-ink-1DLUT.jpg"/>
 </figure>
 
-<p>This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of <em>C <sub>edge</sub></em> as input, and use this ramp texture for warping. The final effect is as follows:</p>
+<p>This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of <em>C<sub>edge</sub></em> as input, and use this ramp texture for warping. The final effect is as follows:</p>
 <figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93abcde.png"
-         alt="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of v ∙ n; c) The result of calculating C edge; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)"/><figcaption>
-            <p>a) The original model shaded according to the Blinn-Phong lighting model; b) The result of <em><strong>v</strong></em> ∙ <em><strong>n</strong></em>; c) The result of calculating <em>C <sub>edge</sub></em>; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)</p>
+         alt="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of v ∙ n; c) The result of calculating Cedge; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)"/><figcaption>
+            <p>a) The original model shaded according to the Blinn-Phong lighting model; b) The result of <em><strong>v</strong></em> ∙ <em><strong>n</strong></em>; c) The result of calculating <em>C<sub>edge</sub></em>; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)</p>
         </figcaption>
 </figure>
 

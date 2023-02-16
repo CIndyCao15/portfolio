@@ -102,15 +102,15 @@ But an actual 3D model is composed of many planes. What's more, in order to make
 
 {{< figure src="/img/portfolio/Unity-ink-人物轮廓线公式.png" width="300px" >}}
 
-Among them, *C {{< sub "edge" >}}* is the color of the contour; *r* can control the edge range, which can make the edge transition smoother; *t* controls the threshold; *p* is used to perform exponential operations on the edge and adjust the shade of edge color.
+Among them, *C{{< sub "edge" >}}* is the color of the contour; *r* can control the edge range, which can make the edge transition smoother; *t* controls the threshold; *p* is used to perform exponential operations on the edge and adjust the shade of edge color.
 
 In order to narrow the gradient range between black and white, make the gradient range more natural, and simulate the effect of ink diffusion, I introduce a one-dimensional lookup table:
 
 {{< figure src="/img/portfolio/Unity-ink-1DLUT.jpg" >}}
 
-This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of *C {{< sub "edge" >}}* as input, and use this ramp texture for warping. The final effect is as follows:
+This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of *C{{< sub "edge" >}}* as input, and use this ramp texture for warping. The final effect is as follows:
 
-{{< figure src="/img/portfolio/Unity-ink-人物轮廓abcde.png" caption=`a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C {{< sub "edge" >}}*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)` >}}
+{{< figure src="/img/portfolio/Unity-ink-人物轮廓abcde.png" caption=`a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C{{< sub "edge" >}}*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)` >}}
 
 The relevant shader code is as follows:
 
