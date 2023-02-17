@@ -160,23 +160,23 @@ The things which I have seen I now can see no more.</p>
 <p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png" alt="Snapshot 3 of Unity ink painting effect rendering VR scene"></a></p>
 <h4 id="catalog">Contents</h4>
 <ol>
-<li><a href="#catalog-item-1">Chinese Brush Painting Rendering</a>
+<li><a href="#Chinese-Brush-Painting-Rendering">Chinese Brush Painting Rendering</a>
 <ol>
-<li><a href="#catalog-item-2">Aesthetic Characteristics of Chinese Brush Painting</a></li>
-<li><a href="#catalog-item-3">Chinese Brush Painting Character Rendering Scheme</a></li>
-<li><a href="#catalog-item-4">Chinese Brush Painting Mountain&amp;Rock Rendering Scheme</a>
+<li><a href="#Aesthetic-Characteristics-of-Chinese-Brush-Painting">Aesthetic Characteristics of Chinese Brush Painting</a></li>
+<li><a href="#Chinese-Brush-Painting-Character-Rendering-Scheme">Chinese Brush Painting Character Rendering Scheme</a></li>
+<li><a href="#Chinese-Brush-Painting-Mountain-and-Rock-Rendering-Scheme">Chinese Brush Painting Mountain &amp; Rock Rendering Scheme</a>
 <ol>
-<li><a href="#catalog-item-5">Contour rendering based on dual-pass Shell Method</a></li>
-<li><a href="#catalog-item-6">Rubbing simulation based on model curvature</a></li>
-<li><a href="#catalog-item-7">Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function</a></li>
-<li><a href="#catalog-item-8">Stroke texture simulation based on triplanar and Gaussian blur</a></li>
+<li><a href="#Contour-rendering">Contour rendering based on dual-pass Shell Method</a></li>
+<li><a href="#Internal-coloring">Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function</a></li>
+<li><a href="#Rubbing">Rubbing simulation based on model curvature</a></li>
+<li><a href="#Stroke-texture">Stroke texture simulation based on triplanar and Gaussian blur</a></li>
 </ol>
 </li>
 </ol>
 </li>
 </ol>
-<h2 id="catalog-item-1">Chinese Brush Painting Rendering</h2>
-<h3 id="catalog-item-2">Aesthetic Characteristics of Chinese Brush Painting</h3>
+<h2 id="Chinese-Brush-Painting-Rendering">Chinese Brush Painting Rendering</h2>
+<h3 id="Aesthetic-Characteristics-of-Chinese-Brush-Painting">Aesthetic Characteristics of Chinese Brush Painting</h3>
 <p>For <strong>brush painting mountains and stones</strong>, there are two characteristics that need to be reflected:</p>
 <p>1.The stone has many sides (石分三面)</p>
 <p>A stone should have a sense of space and volume, and a sense of impermeability is the top priority. The two steps of &ldquo;rub (皴)&rdquo; and &ldquo;dye (染)&rdquo; are the key steps to enhance the sense of volume of rocks.</p>
@@ -199,7 +199,7 @@ The things which I have seen I now can see no more.</p>
 </figure>
 
 <!-- raw HTML omitted --></p>
-<h3 id="catalog-item-3">Chinese Brush Painting Character Rendering Scheme</h3>
+<h3 id="Chinese-Brush-Painting-Character-Rendering-Scheme">Chinese Brush Painting Character Rendering Scheme</h3>
 <p>In the Chinese brush painting character rendering scheme, I propose a rendering method based on the viewing direction and bump map for contour rendering, that is, <strong>Surface Angle Silhouetting</strong>. A one-dimensional look-up table is used to map the results, so that the pleats of the clothes get a soft willow leaf drawing (柳叶描) effect, and normal scale is used to control the fineness of the stroke. In the internal coloring part, the grayscale adjustment of the color is realized. At the same time, a triplanar stroke map based on object space is proposed to simulate the effect of randomly splashing ink. Finally, the contour line, internal coloring and splashing ink strokes are mixed by texture blending.</p>
 <p>On a smooth surface, the definition of point P on the Silhouette is <em><strong>v</strong></em> ∙ <em><strong>n</strong></em> =0.</p>
 <figure><img src="/img/portfolio/Unity-ink-VdotN.png" width="300px"/>
@@ -241,9 +241,9 @@ The things which I have seen I now can see no more.</p>
         </figcaption>
 </figure>
 
-<h3 id="catalog-item-4">Chinese Brush Painting Mountain&amp;Rock Rendering Scheme</h3>
+<h3 id="Chinese-Brush-Painting-Mountain-and-Rock-Rendering-Scheme">Chinese Brush Painting Mountain &amp; Rock Rendering Scheme</h3>
 <p>In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.</p>
-<h4 id="catalog-item-5">Contour rendering based on dual-pass Shell Method</h4>
+<h4 id="Contour-rendering">Contour rendering based on dual-pass Shell Method</h4>
 <p>Traditional Shell Method offset the back of the shell geometry along the -z axis, causing the contour and object to have a strong sense of misalignment, especially at the edge of the view frustum. I eliminate this artifact by offsetting the geometry along the view direction.</p>
 <figure><img src="/img/portfolio/Unity-ink-frustum.png"
          alt="Left: the view frustum; Right: the contour misalignment gets worse as the object gets closer to the edge of the viewport. This is unsatisfactory, especially in VR, when the player has a huge FOV." width="600px"/><figcaption>
@@ -259,8 +259,7 @@ The things which I have seen I now can see no more.</p>
         </figcaption>
 </figure>
 
-<h4 id="catalog-item-6">Rubbing simulation based on model curvature</h4>
-<h4 id="catalog-item-7">Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function</h4>
+<h4 id="Internal-coloring">Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function</h4>
 <p>Since the mountain rock has the aesthetic characteristic of &ldquo;space and volume&rdquo;, a lighting model should be used to render the mountain rock to create a sense of volume. In an empirical lighting model, lighting consists of 3 components: diffuse, specular, and ambient lighting. Brush painting mountain and stone mainly reflects diffuse light.</p>
 <p>The diffuse warp function should be a step function. It is used to divide the ink color.</p>
 <figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%85%ac%e5%bc%8f.png" width="300px"/>
@@ -277,7 +276,40 @@ The things which I have seen I now can see no more.</p>
 <figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e7%bb%93%e6%9e%9c%e5%9b%be%e7%89%87.png" width="550px"/>
 </figure>
 
-<h4 id="catalog-item-8">Stroke texture simulation based on triplanar and Gaussian blur</h4>
+<h4 id="Rubbing">Rubbing simulation based on model curvature</h4>
+<p>Rubbing (皴) is a technique of Chinese brush painting, which is used in landscape painting to represent trees and rocks. It is mainly used to express the texture of the rocks, that is, the texture of the inner contour.</p>
+<p>I use model curvature to simulate rubbing. When calculating the curvature, as the arc length approaches zero, the arc length can be approximated by the distance Δ<em>p</em> between vertices, and the rate of change of the normal Δ<em>N</em> can be used to replace the rate of change of the tangent.</p>
+<figure><img src="/img/portfolio/Unity-ink-%e6%9b%b2%e7%8e%87%e8%ae%a1%e7%ae%97%e5%9b%be.jpg"
+         alt="Surface curvature calculate" width="350px"/><figcaption>
+            <p>Surface curvature calculate</p>
+        </figcaption>
+</figure>
+
+<p>The curvature at fragment <em>i</em> can be obtained by the ratio of the vertex normal vector and the rate of change of the position coordinate relative to the <em>x</em>-axis direction and the <em>y</em>-axis direction of the view space.</p>
+<figure><img src="/img/portfolio/Unity-ink-%e6%9b%b2%e7%8e%87%e5%85%ac%e5%bc%8f.png" width="100px"/>
+</figure>
+
+<p>Among them, <em>k<sub>i</sub></em> is the curvature value at fragment <em>i</em>, and <em>k</em> is the curvature adjustment coefficient. Written in Unity ShaderLab, the pseudocode is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>curvature = <span style="color:#ff0086;font-weight:bold">length</span>(<span style="color:#ff0086;font-weight:bold">fwidth</span>(viewNormal)) / (<span style="color:#ff0086;font-weight:bold">length</span>(<span style="color:#ff0086;font-weight:bold">fwidth</span>(viewPos)) * _CurveFactor);</span></span></code></pre></div>
+<p>Curvature reflects the degree of change in the convexity and concavity of the object&rsquo;s surface. The larger the curvature value, the sharper the unevenness of the object&rsquo;s surface. At this point, the rubbing should be more obvious. I limit the curvature value in the range of 0 to 1, and use 1-<em>k<sub>i</sub></em> to calculate the rubbing color.</p>
+<p><figure><img src="/img/portfolio/Unity-ink-%e6%9b%b2%e7%8e%87%e6%95%88%e6%9e%9c%e5%9b%be.png" width="550px"/>
+</figure>
+
+<!-- raw HTML omitted --></p>
+<p>This method based on the model curvature has its limitations in terms of use scenarios. I use the per vertex information (which is constant within a single triangle) of the normal rate of change and position to calculate the derivative. In the case of a relatively high triangle counts of a single model, the results obtained by this calculation method can meet the requirements; but in the case of a relatively low triangle count number, there will be more blocky. The solution to this artifact is:</p>
+<ol>
+<li>Bake the curvature information into vertex color;</li>
+<li>Bake the curvature information into a curvature map;</li>
+<li>Use Post Processing and render texture to blur the blocky curvature, and then blend it with other render outputs.</li>
+</ol>
+<figure><img src="/img/portfolio/Unity-ink-%e6%9b%b2%e7%8e%87%e5%af%b9%e6%af%94%e5%9b%be.png"
+         alt="Left: No curvature; Right: With blurred curvature" width="550px"/><figcaption>
+            <p><strong>Left</strong>: No curvature; <strong>Right</strong>: With blurred curvature</p>
+        </figcaption>
+</figure>
+
+<p>Considering that the actual effect is not ideal, the simulation of the rubbing method was not deployed in the rendering scheme of mountains and rocks. Instead, I use triplanar and Gaussian blur to simulate the stroke texture of the rocks.</p>
+<h4 id="Stroke-texture">Stroke texture simulation based on triplanar and Gaussian blur</h4>
 <p>The flow map of the brush painting mountain and rock rendering scheme is as follows:</p>
 <p><a href="/img/portfolio/Unity-ink-%E6%B0%B4%E5%A2%A8%E5%B1%B1%E7%9F%B3%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png"><img src="/img/portfolio/Unity-ink-%E6%B0%B4%E5%A2%A8%E5%B1%B1%E7%9F%B3%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png" alt="Snapshot 6 of Unity ink painting effect rendering VR scene"></a></p>
 <p>Step-by-step output result of the scheme:</p>

@@ -58,16 +58,16 @@ This picture shows what the models look like originally in Unity Standard shader
 
 #### Contents {#catalog}
 
-1. [Chinese Brush Painting Rendering](#catalog-item-1)
-    1. [Aesthetic Characteristics of Chinese Brush Painting](#catalog-item-2)
-    2. [Chinese Brush Painting Character Rendering Scheme](#catalog-item-3)
-    3. [Chinese Brush Painting Mountain&Rock Rendering Scheme](#catalog-item-4)
-        1. [Contour rendering based on dual-pass Shell Method](#catalog-item-5)
-        2. [Rubbing simulation based on model curvature](#catalog-item-6)
-        3. [Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function](#catalog-item-7)
-        4. [Stroke texture simulation based on triplanar and Gaussian blur](#catalog-item-8)
-## Chinese Brush Painting Rendering {#catalog-item-1}
-### Aesthetic Characteristics of Chinese Brush Painting {#catalog-item-2}
+1. [Chinese Brush Painting Rendering](#Chinese-Brush-Painting-Rendering)
+    1. [Aesthetic Characteristics of Chinese Brush Painting](#Aesthetic-Characteristics-of-Chinese-Brush-Painting)
+    2. [Chinese Brush Painting Character Rendering Scheme](#Chinese-Brush-Painting-Character-Rendering-Scheme)
+    3. [Chinese Brush Painting Mountain & Rock Rendering Scheme](#Chinese-Brush-Painting-Mountain-and-Rock-Rendering-Scheme)
+        1. [Contour rendering based on dual-pass Shell Method](#Contour-rendering)
+        2. [Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function](#Internal-coloring)
+        3. [Rubbing simulation based on model curvature](#Rubbing)
+        4. [Stroke texture simulation based on triplanar and Gaussian blur](#Stroke-texture)
+## Chinese Brush Painting Rendering {#Chinese-Brush-Painting-Rendering}
+### Aesthetic Characteristics of Chinese Brush Painting {#Aesthetic-Characteristics-of-Chinese-Brush-Painting}
 For **brush painting mountains and stones**, there are two characteristics that need to be reflected:
 
 1.The stone has many sides (石分三面)
@@ -92,7 +92,7 @@ There are four techniques of traditional Chinese brush painting: sketching, rubb
 {{< figure src="/img/portfolio/Unity-ink-勾皴染设色.png" >}}
 <br>
 
-### Chinese Brush Painting Character Rendering Scheme {#catalog-item-3}
+### Chinese Brush Painting Character Rendering Scheme {#Chinese-Brush-Painting-Character-Rendering-Scheme}
 
 In the Chinese brush painting character rendering scheme, I propose a rendering method based on the viewing direction and bump map for contour rendering, that is, **Surface Angle Silhouetting**. A one-dimensional look-up table is used to map the results, so that the pleats of the clothes get a soft willow leaf drawing (柳叶描) effect, and normal scale is used to control the fineness of the stroke. In the internal coloring part, the grayscale adjustment of the color is realized. At the same time, a triplanar stroke map based on object space is proposed to simulate the effect of randomly splashing ink. Finally, the contour line, internal coloring and splashing ink strokes are mixed by texture blending.
 
@@ -142,11 +142,11 @@ Step-by-step output result of the scheme:
 
 {{< figure src="/img/portfolio/Unity-ink-人物界面截图.png" alt="A material panel in Unity" caption="A material panel in Unity" width="250px" >}}
 
-### Chinese Brush Painting Mountain&Rock Rendering Scheme {#catalog-item-4}
+### Chinese Brush Painting Mountain & Rock Rendering Scheme {#Chinese-Brush-Painting-Mountain-and-Rock-Rendering-Scheme}
 
 In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.
 
-#### Contour rendering based on dual-pass Shell Method {#catalog-item-5}
+#### Contour rendering based on dual-pass Shell Method {#Contour-rendering}
 
 Traditional Shell Method offset the back of the shell geometry along the -z axis, causing the contour and object to have a strong sense of misalignment, especially at the edge of the view frustum. I eliminate this artifact by offsetting the geometry along the view direction. 
 
@@ -158,9 +158,7 @@ The comparison between my silhouette rendering scheme on the terrain and the exi
 
 {{< figure src="/img/portfolio/Unity-ink-mountainContour.png" caption="a) My silhouette rendering effect; b) The silhouette rendering effect in the reference. The circled area is where the stroke thickness is uneven near the edge of the frustum." width="550px" >}}
 
-#### Rubbing simulation based on model curvature {#catalog-item-6}
-
-#### Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function {#catalog-item-7}
+#### Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function {#Internal-coloring}
 
 Since the mountain rock has the aesthetic characteristic of "space and volume", a lighting model should be used to render the mountain rock to create a sense of volume. In an empirical lighting model, lighting consists of 3 components: diffuse, specular, and ambient lighting. Brush painting mountain and stone mainly reflects diffuse light.
 
@@ -176,7 +174,39 @@ The result of this step, a shading method based on Half-Lambert lighting model a
 
 {{< figure src="/img/portfolio/Unity-ink-漫反射结果图片.png" width="550px" >}}
 
-#### Stroke texture simulation based on triplanar and Gaussian blur {#catalog-item-8}
+#### Rubbing simulation based on model curvature {#Rubbing}
+
+Rubbing (皴) is a technique of Chinese brush painting, which is used in landscape painting to represent trees and rocks. It is mainly used to express the texture of the rocks, that is, the texture of the inner contour.
+
+I use model curvature to simulate rubbing. When calculating the curvature, as the arc length approaches zero, the arc length can be approximated by the distance Δ*p* between vertices, and the rate of change of the normal Δ*N* can be used to replace the rate of change of the tangent.
+
+{{< figure src="/img/portfolio/Unity-ink-曲率计算图.jpg" caption="Surface curvature calculate" width="350px" >}}
+
+The curvature at fragment *i* can be obtained by the ratio of the vertex normal vector and the rate of change of the position coordinate relative to the *x*-axis direction and the *y*-axis direction of the view space.
+
+{{< figure src="/img/portfolio/Unity-ink-曲率公式.png" width="100px" >}}
+
+Among them, *k{{< sub "i" >}}* is the curvature value at fragment *i*, and *k* is the curvature adjustment coefficient. Written in Unity ShaderLab, the pseudocode is as follows:
+
+{{< highlight go >}}
+curvature = length(fwidth(viewNormal)) / (length(fwidth(viewPos)) * _CurveFactor);
+{{< / highlight >}}
+
+Curvature reflects the degree of change in the convexity and concavity of the object's surface. The larger the curvature value, the sharper the unevenness of the object's surface. At this point, the rubbing should be more obvious. I limit the curvature value in the range of 0 to 1, and use 1-*k{{< sub "i" >}}* to calculate the rubbing color.
+
+{{< figure src="/img/portfolio/Unity-ink-曲率效果图.png" width="550px" >}}
+<br>
+
+This method based on the model curvature has its limitations in terms of use scenarios. I use the per vertex information (which is constant within a single triangle) of the normal rate of change and position to calculate the derivative. In the case of a relatively high triangle counts of a single model, the results obtained by this calculation method can meet the requirements; but in the case of a relatively low triangle count number, there will be more blocky. The solution to this artifact is:
+1. Bake the curvature information into vertex color;
+2. Bake the curvature information into a curvature map;
+3. Use Post Processing and render texture to blur the blocky curvature, and then blend it with other render outputs.
+
+{{< figure src="/img/portfolio/Unity-ink-曲率对比图.png" caption="**Left**: No curvature; **Right**: With blurred curvature" width="550px" >}}
+
+Considering that the actual effect is not ideal, the simulation of the rubbing method was not deployed in the rendering scheme of mountains and rocks. Instead, I use triplanar and Gaussian blur to simulate the stroke texture of the rocks.
+
+#### Stroke texture simulation based on triplanar and Gaussian blur {#Stroke-texture}
 
 The flow map of the brush painting mountain and rock rendering scheme is as follows:
 
