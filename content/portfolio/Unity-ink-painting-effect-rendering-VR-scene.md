@@ -5,6 +5,7 @@ draft = false
 image = "img/portfolio/Unity-ink-painting-effect-rendering-VR-scene.png"
 showonlyimage = false
 weight = 2
+math = true
 +++
 
 The VR experience focuses on Climate Emergency. The first scene shows a utopian scene from a long time ago, the second scene shows the current Climate Emergency facing humanity (inspired by the Chongqing wildfire in 2022), and the third scene shows a cyberspace, where the player can make a commitment.
@@ -99,16 +100,19 @@ In the Chinese brush painting character rendering scheme, I propose a rendering 
 On a smooth surface, the definition of point P on the Silhouette is ***v*** ∙ ***n*** =0.
 
 {{< figure src="/img/portfolio/Unity-ink-VdotN.png" width="300px" >}}
+<br>
 
 But an actual 3D model is composed of many planes. What's more, in order to make the silhouette have a certain width, the judgment condition needs to be relaxed as follows:
 
 {{< figure src="/img/portfolio/Unity-ink-人物轮廓线公式.png" width="300px" >}}
+<br>
 
 Among them, *C{{< sub "edge" >}}* is the color of the contour; *r* can control the edge range, which can make the edge transition smoother; *t* controls the threshold; *p* is used to perform exponential operations on the edge and adjust the shade of edge color.
 
 In order to narrow the gradient range between black and white, make the gradient range more natural, and simulate the effect of ink diffusion, I introduce a one-dimensional lookup table:
 
 {{< figure src="/img/portfolio/Unity-ink-1DLUT.jpg" >}}
+<br>
 
 This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of *C{{< sub "edge" >}}* as input, and use this ramp texture for warping. The final effect is as follows:
 
