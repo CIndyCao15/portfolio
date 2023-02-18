@@ -136,7 +136,7 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8">
       <div class="content-column-content">
-         <h1>[ #Project 2 ] Unity VR - The Peach Blossom Spring - Chinese brush painting effect</h1>
+         <h1>[ #Project 2 ] Unit y VR - The Peach Blossom Spring - Chinese brush painting effect</h1>
          <p>The VR experience focuses on Climate Emergency. The first scene shows a utopian scene from a long time ago, the second scene shows the current Climate Emergency facing humanity (inspired by the Chongqing wildfire in 2022), and the third scene shows a cyberspace, where the player can make a commitment.</p>
 <blockquote>
 <p>There was a time when meadow, grove, and stream,
@@ -183,17 +183,18 @@ The things which I have seen I now can see no more.</p>
 <li><a href="#Chinese-Brush-Painting-Rendering">Chinese Brush Painting Rendering</a>
 <ol>
 <li><a href="#Aesthetic-Characteristics-of-Chinese-Brush-Painting">Aesthetic Characteristics of Chinese Brush Painting</a></li>
-<li><a href="#Chinese-Brush-Painting-Character-Rendering-Scheme">Chinese Brush Painting Character Rendering Scheme</a></li>
 <li><a href="#Chinese-Brush-Painting-Mountain-and-Rock-Rendering-Scheme">Chinese Brush Painting Mountain &amp; Rock Rendering Scheme</a>
 <ol>
 <li><a href="#Contour-rendering">Contour rendering based on dual-pass Shell Method</a></li>
 <li><a href="#Internal-coloring">Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function</a></li>
 <li><a href="#Rubbing">Rubbing simulation based on model curvature</a></li>
-<li><a href="#Stroke-texture">Stroke texture simulation based on triplanar and Gaussian blur</a></li>
+<li><a href="#Stroke-texture">Stroke texture (feathering and spreading)</a></li>
 </ol>
 </li>
+<li><a href="#Chinese-Brush-Painting-Character-Rendering-Scheme">Chinese Brush Painting Character Rendering Scheme</a></li>
 </ol>
 </li>
+<li><a href="#Unity-VR">Unity VR Integration</a></li>
 </ol>
 <h2 id="Chinese-Brush-Painting-Rendering">Chinese Brush Painting Rendering</h2>
 <h3 id="Aesthetic-Characteristics-of-Chinese-Brush-Painting">Aesthetic Characteristics of Chinese Brush Painting</h3>
@@ -219,57 +220,6 @@ The things which I have seen I now can see no more.</p>
 </figure>
 
 <!-- raw HTML omitted --></p>
-<h3 id="Chinese-Brush-Painting-Character-Rendering-Scheme">Chinese Brush Painting Character Rendering Scheme</h3>
-<p>In the Chinese brush painting character rendering scheme, I propose a rendering method based on the viewing direction and bump map for contour rendering, that is, <strong>Surface Angle Silhouetting</strong>. A one-dimensional look-up table is used to map the results, so that the pleats of the clothes get a soft willow leaf drawing (柳叶描) effect, and normal scale is used to control the fineness of the stroke. In the internal coloring part, the grayscale adjustment of the color is realized. At the same time, a triplanar stroke map based on object space is proposed to simulate the effect of randomly splashing ink. Finally, the contour line, internal coloring and splashing ink strokes are mixed by texture blending.</p>
-<p>On a smooth surface, the definition of point P on the Silhouette is <em><strong>v</strong></em> ∙ <em><strong>n</strong></em> =0.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-VdotN.png" width="300px"/>
-</figure>
-
-<!-- raw HTML omitted --></p>
-<p>But an actual 3D model is composed of many planes. What&rsquo;s more, in order to make the silhouette have a certain width, the judgment condition needs to be relaxed as follows:</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%85%ac%e5%bc%8f.png" width="300px"/>
-</figure>
-
-<!-- raw HTML omitted --></p>
-<p>\begin{align}
-C_{edge}=\begin{cases}
-1, &amp; \frac{|V \cdot N|}{r} &gt; t \\
-\left(\frac{|V \cdot N|}{r}\right)^{p}, &amp; \frac{|V \cdot N|}{r} \leq t
-\end{cases}
-\end{align}</p>
-<p>Among them, <em>C<sub>edge</sub></em> is the color of the contour; <em>r</em> can control the edge range, which can make the edge transition smoother; <em>t</em> controls the threshold; <em>p</em> is used to perform exponential operations on the edge and adjust the shade of edge color.</p>
-<p>In order to narrow the gradient range between black and white, make the gradient range more natural, and simulate the effect of ink diffusion, I introduce a one-dimensional lookup table:</p>
-<p><figure><img src="/img/portfolio/Unity-ink-1DLUT.jpg"/>
-</figure>
-
-<!-- raw HTML omitted --></p>
-<p>This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of <em>C<sub>edge</sub></em> as input, and use this ramp texture for warping. The final effect is as follows:</p>
-<figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93abcde.png"
-         alt="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of v ∙ n; c) The result of calculating Cedge; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)"/><figcaption>
-            <p>a) The original model shaded according to the Blinn-Phong lighting model; b) The result of <em><strong>v</strong></em> ∙ <em><strong>n</strong></em>; c) The result of calculating <em>Cedge</em>; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)</p>
-        </figcaption>
-</figure>
-
-<p>The relevant shader code is as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>fixed vdotn = <span style="color:#ff0086;font-weight:bold">abs</span>(<span style="color:#ff0086;font-weight:bold">dot</span>(viewDir, bump));
-</span></span><span style="display:flex;"><span>fixed edge = vdotn / _Range;
-</span></span><span style="display:flex;"><span>edge = edge &gt; _Thred ? <span style="color:#0086f7;font-weight:bold">1</span> : edge;
-</span></span><span style="display:flex;"><span>edge = <span style="color:#ff0086;font-weight:bold">pow</span>(edge, _Pow);
-</span></span><span style="display:flex;"><span>fixed4 edgeColor = <span style="color:#ff0086;font-weight:bold">tex2D</span>(_SilhouetteRampTex, <span style="color:#ff0086;font-weight:bold">fixed2</span>(edge, <span style="color:#0086f7;font-weight:bold">0.5</span>));
-</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// col is the internal shading result
-</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>col = edgeColor &gt; col ? col : edgeColor * (<span style="color:#0086f7;font-weight:bold">1</span> - edge) + col * edge;
-</span></span><span style="display:flex;"><span>col = <span style="color:#ff0086;font-weight:bold">pow</span>(col, _ColorPow);
-</span></span><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">return</span> col;</span></span></code></pre></div>
-<p>The flow map of the brush painting character rendering scheme is as follows:</p>
-<p><a href="/img/portfolio/Unity-ink-%E4%BA%BA%E7%89%A9%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png"><img src="/img/portfolio/Unity-ink-%E4%BA%BA%E7%89%A9%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png" alt="Snapshot 4 of Unity ink painting effect rendering VR scene"></a></p>
-<p>Step-by-step output result of the scheme:</p>
-<p><a href="/img/portfolio/Unity-ink-MonkeyKing.png"><img src="/img/portfolio/Unity-ink-MonkeyKing.png" alt="Snapshot 5 of Unity ink painting effect rendering VR scene"></a></p>
-<figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e7%95%8c%e9%9d%a2%e6%88%aa%e5%9b%be.png"
-         alt="A material panel in Unity" width="250px"/><figcaption>
-            <p>A material panel in Unity</p>
-        </figcaption>
-</figure>
-
 <h3 id="Chinese-Brush-Painting-Mountain-and-Rock-Rendering-Scheme">Chinese Brush Painting Mountain &amp; Rock Rendering Scheme</h3>
 <p>In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.</p>
 <h4 id="Contour-rendering">Contour rendering based on dual-pass Shell Method</h4>
@@ -349,17 +299,125 @@ k_{i}=\frac{1}{k} \cdot \frac{\Delta N}{\Delta p}
 </figure>
 
 <p>Considering that the actual effect is not ideal, the simulation of the rubbing method was not deployed in the rendering scheme of mountains and rocks. Instead, I use triplanar and Gaussian blur to simulate the stroke texture of the rocks.</p>
-<h4 id="Stroke-texture">Stroke texture simulation based on triplanar and Gaussian blur</h4>
+<h4 id="Stroke-texture">Stroke texture (feathering and spreading)</h4>
+<p>When using the one-dimensional lookup table for diffuse warp, the input is the diffuse calculated according to the Half-Lambert lighting model. Adding some randomness to this will make the final warp results feel more random.</p>
+<p><figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%8a%a0%e5%99%aa%e5%a3%b0%e5%85%ac%e5%bc%8f.png" width="200px"/>
+</figure>
+
+<!-- raw HTML omitted --></p>
+<p>Among them, <em>C<sub>i new</sub></em> is the new diffuse after processing, and <em>r<sub>i</sub></em> is a random value. I use Perlin noise to introduce randomness, and use a stroke texture to control the overall light and shadow. I use triplanar to sample the two textures.</p>
+<p>The image below is the result of inputting <em>C<sub>i new</sub></em> into the diffuse warp function after adding the stroke texture. As you can see, the noise gives a more random look to the edges of the ink chunks.</p>
+<p><figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%8a%a0%e5%99%aa%e5%a3%b0%e7%bb%93%e6%9e%9c.png" width="550px"/>
+</figure>
+
+<!-- raw HTML omitted --></p>
+<p>After the above processing, I achieve the randomness of the edge of the mountains, but it still lacks the feeling of light ink spreading. To simulate the spreading and feathering, I introduce Gaussian blur for further processing.
+I adjust the appropriate parameters, and the final blurred result is shown in the image. There is an obvious feathering edge at the junction of light and dark in the mountain rock.</p>
+<p><figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%8a%a0%e5%99%aa%e5%a3%b0%e5%8a%a0%e9%ab%98%e6%96%af%e7%bb%93%e6%9e%9c.png" width="550px"/>
+</figure>
+
+<!-- raw HTML omitted --></p>
 <p>The flow map of the brush painting mountain and rock rendering scheme is as follows:</p>
-<p><a href="/img/portfolio/Unity-ink-%E6%B0%B4%E5%A2%A8%E5%B1%B1%E7%9F%B3%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png"><img src="/img/portfolio/Unity-ink-%E6%B0%B4%E5%A2%A8%E5%B1%B1%E7%9F%B3%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png" alt="Snapshot 6 of Unity ink painting effect rendering VR scene"></a></p>
+<p><a href="/img/portfolio/Unity-ink-%E6%B0%B4%E5%A2%A8%E5%B1%B1%E7%9F%B3%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png"><img src="/img/portfolio/Unity-ink-%E6%B0%B4%E5%A2%A8%E5%B1%B1%E7%9F%B3%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png" alt="Snapshot 4 of Unity ink painting effect rendering VR scene"></a></p>
 <p>Step-by-step output result of the scheme:</p>
-<p><a href="/img/portfolio/Unity-ink-MountainStone.png"><img src="/img/portfolio/Unity-ink-MountainStone.png" alt="Snapshot 3 of Unity ink painting effect rendering VR scene"></a></p>
+<p><a href="/img/portfolio/Unity-ink-MountainStone.png"><img src="/img/portfolio/Unity-ink-MountainStone.png" alt="Snapshot 5 of Unity ink painting effect rendering VR scene"></a></p>
 <figure><img src="/img/portfolio/Unity-ink-%e5%b1%b1%e7%9f%b3%e7%95%8c%e9%9d%a2%e6%88%aa%e5%9b%be.png"
          alt="A material panel in Unity" width="250px"/><figcaption>
             <p>A material panel in Unity</p>
         </figcaption>
 </figure>
 
+<h3 id="Chinese-Brush-Painting-Character-Rendering-Scheme">Chinese Brush Painting Character Rendering Scheme</h3>
+<p>In the Chinese brush painting character rendering scheme, I propose a rendering method based on the viewing direction and bump map for contour rendering, that is, <strong>Surface Angle Silhouetting</strong>. A one-dimensional look-up table is used to map the results, so that the pleats of the clothes get a soft willow leaf drawing (柳叶描) effect, and normal scale is used to control the fineness of the stroke. In the internal coloring part, the grayscale adjustment of the color is realized. At the same time, a triplanar stroke map based on object space is proposed to simulate the effect of randomly splashing ink. Finally, the contour line, internal coloring and splashing ink strokes are mixed by texture blending.</p>
+<p>On a smooth surface, the definition of point P on the Silhouette is <em><strong>v</strong></em> ∙ <em><strong>n</strong></em> =0.</p>
+<p><figure><img src="/img/portfolio/Unity-ink-VdotN.png" width="300px"/>
+</figure>
+
+<!-- raw HTML omitted --></p>
+<p>But an actual 3D model is composed of many planes. What&rsquo;s more, in order to make the silhouette have a certain width, the judgment condition needs to be relaxed as follows:</p>
+<p><figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%85%ac%e5%bc%8f.png" width="300px"/>
+</figure>
+
+<!-- raw HTML omitted --></p>
+<p>\begin{align}
+C_{edge}=\begin{cases}
+1, &amp; \frac{|V \cdot N|}{r} &gt; t \\
+\left(\frac{|V \cdot N|}{r}\right)^{p}, &amp; \frac{|V \cdot N|}{r} \leq t
+\end{cases}
+\end{align}</p>
+<p>Among them, <em>C<sub>edge</sub></em> is the color of the contour; <em>r</em> can control the edge range, which can make the edge transition smoother; <em>t</em> controls the threshold; <em>p</em> is used to perform exponential operations on the edge and adjust the shade of edge color.</p>
+<p>In order to narrow the gradient range between black and white, make the gradient range more natural, and simulate the effect of ink diffusion, I introduce a one-dimensional lookup table:</p>
+<p><figure><img src="/img/portfolio/Unity-ink-1DLUT.jpg"/>
+</figure>
+
+<!-- raw HTML omitted --></p>
+<p>This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of <em>C<sub>edge</sub></em> as input, and use this ramp texture for warping. The final effect is as follows:</p>
+<figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93abcde.png"
+         alt="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of v ∙ n; c) The result of calculating Cedge; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)"/><figcaption>
+            <p>a) The original model shaded according to the Blinn-Phong lighting model; b) The result of <em><strong>v</strong></em> ∙ <em><strong>n</strong></em>; c) The result of calculating <em>Cedge</em>; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)</p>
+        </figcaption>
+</figure>
+
+<p>The relevant shader code is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>fixed vdotn = <span style="color:#ff0086;font-weight:bold">abs</span>(<span style="color:#ff0086;font-weight:bold">dot</span>(viewDir, bump));
+</span></span><span style="display:flex;"><span>fixed edge = vdotn / _Range;
+</span></span><span style="display:flex;"><span>edge = edge &gt; _Thred ? <span style="color:#0086f7;font-weight:bold">1</span> : edge;
+</span></span><span style="display:flex;"><span>edge = <span style="color:#ff0086;font-weight:bold">pow</span>(edge, _Pow);
+</span></span><span style="display:flex;"><span>fixed4 edgeColor = <span style="color:#ff0086;font-weight:bold">tex2D</span>(_SilhouetteRampTex, <span style="color:#ff0086;font-weight:bold">fixed2</span>(edge, <span style="color:#0086f7;font-weight:bold">0.5</span>));
+</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// col is the internal shading result
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>col = edgeColor &gt; col ? col : edgeColor * (<span style="color:#0086f7;font-weight:bold">1</span> - edge) + col * edge;
+</span></span><span style="display:flex;"><span>col = <span style="color:#ff0086;font-weight:bold">pow</span>(col, _ColorPow);
+</span></span><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">return</span> col;</span></span></code></pre></div>
+<p>For the internal coloring of the character, I use some empirical tricks to reduce the saturation and increase the brightness. I also make a splashed ink stroke texture. So I have silhouettes, interior textures, and strokes. The next step is to blend them together to get the final result.</p>
+<p>Contour lines and internal textures are blended using an interpolation algorithm.</p>
+<p><figure><img src="/img/portfolio/Unity-ink-%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%92%8c%e5%86%85%e9%83%a8%e7%ba%b9%e7%90%86%e5%b7%ae%e5%80%bc%e5%85%ac%e5%bc%8f.png" width="300px"/>
+</figure>
+
+<!-- raw HTML omitted --></p>
+<p>Among them, <em>edgecolor</em> is the silhouette color and <em>innercolor</em> is the inner texture color. The difference coefficient <em>λ</em> is <em>C<sub>edge</sub></em>, which is the input of the one-dimensional lookup table. As a result, the silhouette blends well with the texture and has soft feathering edges. The shape of the contour line is similar to the &ldquo;willow-leaf-shaped stroke&rdquo;(柳叶描).</p>
+<p><figure><img src="/img/portfolio/Unity-ink-%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%92%8c%e5%86%85%e9%83%a8%e7%ba%b9%e7%90%86%e5%b7%ae%e5%80%bc%e7%bb%93%e6%9e%9c.png"
+         alt="Left: the blending result; Right: zoomed-in pleats" width="400px"/><figcaption>
+            <p><strong>Left</strong>: the blending result; <strong>Right</strong>: zoomed-in pleats</p>
+        </figcaption>
+</figure>
+
+<!-- raw HTML omitted --></p>
+<p>The blend mode with splash stroke is Multiply. It examines the information in each color channel of the images and performs multiplying processing. The algorithm is as follows:</p>
+<p><figure><img src="/img/portfolio/Unity-ink-%e6%ad%a3%e7%89%87%e5%8f%a0%e5%ba%95%e5%85%ac%e5%bc%8f.png" width="350px"/>
+</figure>
+
+<!-- raw HTML omitted --></p>
+<p>This algorithm has low complexity and fast operation speed, and each pixel retains the information of splash stroke and internal texture. Since the multiplication of colors is equivalent to the darkening of both colors, the brighter inner texture can be suppressed to the normal brightness range.</p>
+<p><figure><img src="/img/portfolio/Unity-ink-%e6%ad%a3%e7%89%87%e5%8f%a0%e5%ba%95%e7%bb%93%e6%9e%9c.png"
+         alt="The output result after blending with splash stroke" width="300px"/><figcaption>
+            <p>The output result after blending with splash stroke</p>
+        </figcaption>
+</figure>
+
+<!-- raw HTML omitted --></p>
+<p>After blending the silhouette, internal textures and strokes, Post Processing is overlaid, and the final render is shown in the image.</p>
+<p><figure><img src="/img/portfolio/Unity-ink-%e6%ad%a3%e7%89%87%e5%8f%a0%e5%ba%95%e5%92%8c%e5%90%8e%e5%a4%84%e7%90%86%e7%bb%93%e6%9e%9c.png" width="300px"/>
+</figure>
+
+<!-- raw HTML omitted --></p>
+<p>The solution has the following advantages in terms of rendering performance:</p>
+<ol>
+<li>The contour lines are more detailed and natural, especially the clothing part. The color of the line is darker, the edge transition is smoother, and there is no hard cutting edge, which corresponds to the effect of the outline drawn by the center of the brush.</li>
+<li>The distribution of splash stroke textures is more in line with common sense, and there will be no complete symmetry or the situation where the strokes of two adjacent parts are completely disconnected.
+At the same time, because of the above advantages, the rendering results look smoother and more flexible, and the distribution of ink colors is more natural, and more volumetric, even though I don&rsquo;t use any lighting models.</li>
+</ol>
+<p>The flow map of the brush painting character rendering scheme is as follows:</p>
+<p><a href="/img/portfolio/Unity-ink-%E4%BA%BA%E7%89%A9%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png"><img src="/img/portfolio/Unity-ink-%E4%BA%BA%E7%89%A9%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png" alt="Snapshot 6 of Unity ink painting effect rendering VR scene"></a></p>
+<p>Step-by-step output result of the scheme:</p>
+<p><a href="/img/portfolio/Unity-ink-MonkeyKing.png"><img src="/img/portfolio/Unity-ink-MonkeyKing.png" alt="Snapshot 7 of Unity ink painting effect rendering VR scene"></a></p>
+<figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e7%95%8c%e9%9d%a2%e6%88%aa%e5%9b%be.png"
+         alt="A material panel in Unity" width="250px"/><figcaption>
+            <p>A material panel in Unity</p>
+        </figcaption>
+</figure>
+
+<h2 id="Unity-VR">Unity VR Integration</h2>
+<p>In Unity 2019.3, Unity has developed a new plug-in framework called XR SDK that enables XR providers to integrate with the Unity engine and make full use of its features. For more information, please refer to the <a href="https://docs.unity3d.com/2019.3/Documentation/Manual/XR.html">official user manual</a>.</p>
 
          
       </div>
