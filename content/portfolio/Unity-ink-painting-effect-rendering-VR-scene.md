@@ -107,6 +107,13 @@ But an actual 3D model is composed of many planes. What's more, in order to make
 {{< figure src="/img/portfolio/Unity-ink-人物轮廓线公式.png" width="300px" >}}
 <br>
 
+\begin{align}
+C_{edge}=\begin{cases}
+1, & \frac{|V \cdot N|}{r} > t \\\
+\left(\frac{|V \cdot N|}{r}\right)^{p}, & \frac{|V \cdot N|}{r} \leq t
+\end{cases}
+\end{align}
+
 Among them, *C{{< sub "edge" >}}* is the color of the contour; *r* can control the edge range, which can make the edge transition smoother; *t* controls the threshold; *p* is used to perform exponential operations on the edge and adjust the shade of edge color.
 
 In order to narrow the gradient range between black and white, make the gradient range more natural, and simulate the effect of ink diffusion, I introduce a one-dimensional lookup table:
@@ -170,6 +177,15 @@ The diffuse warp function should be a step function. It is used to divide the in
 
 {{< figure src="/img/portfolio/Unity-ink-漫反射公式.png" width="300px" >}}
 
+\begin{align}
+C_{0}\left(C_{i}\right)=\begin{cases}
+0.1, & C_{i} \leq 0.25 \\\
+0.3, & 0.25 < C_{i} \leq 0.55 \\\
+0.7, & 0.55 < C_{i} \leq 0.8 \\\
+1.0, & C_{i} > 0.8
+\end{cases}
+\end{align}
+
 Among them, *C{{< sub "i" >}}* is the original diffuse color, which is the input color of the *C{{< sub "0" >}}* function. In actual use, to make the transition between different colors more natural, I roughly add a transition color between adjacent gradients.
 
 {{< figure src="/img/portfolio/Unity-ink-漫反射函数图片.png" caption="Diffuse warp function" width="250px" >}}
@@ -189,6 +205,10 @@ I use model curvature to simulate rubbing. When calculating the curvature, as th
 The curvature at fragment *i* can be obtained by the ratio of the vertex normal vector and the rate of change of the position coordinate relative to the *x*-axis direction and the *y*-axis direction of the view space.
 
 {{< figure src="/img/portfolio/Unity-ink-曲率公式.png" width="100px" >}}
+
+\begin{align}
+k_{i}=\frac{1}{k} \cdot \frac{\Delta N}{\Delta p}
+\end{align}
 
 Among them, *k{{< sub "i" >}}* is the curvature value at fragment *i*, and *k* is the curvature adjustment coefficient. Written in Unity ShaderLab, the pseudocode is as follows:
 
