@@ -306,7 +306,7 @@ k_{i}=\frac{1}{k} \cdot \frac{\Delta N}{\Delta p}
 
 <!-- raw HTML omitted --></p>
 <p>\begin{align}
-C_{i new}=C_{i}+r_{i}
+C_{i \space new}=C_{i}+r_{i}
 \end{align}</p>
 <p>Among them, <em>C<sub>i new</sub></em> is the new diffuse after processing, and <em>r<sub>i</sub></em> is a random value. I use Perlin noise to introduce randomness, and use a stroke texture to control the overall light and shadow. I use triplanar to sample the two textures.</p>
 <p>The image below is the result of inputting <em>C<sub>i new</sub></em> into the diffuse warp function after adding the stroke texture. As you can see, the noise gives a more random look to the edges of the ink chunks.</p>

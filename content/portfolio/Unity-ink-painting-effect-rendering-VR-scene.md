@@ -179,7 +179,7 @@ When using the one-dimensional lookup table for diffuse warp, the input is the d
 <br>
 
 \begin{align}
-C_{i new}=C_{i}+r_{i}
+C_{i \space new}=C_{i}+r_{i}
 \end{align}
 
 Among them, *C{{< sub "i new" >}}* is the new diffuse after processing, and *r{{< sub "i" >}}* is a random value. I use Perlin noise to introduce randomness, and use a stroke texture to control the overall light and shadow. I use triplanar to sample the two textures.
