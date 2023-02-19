@@ -136,7 +136,7 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8">
       <div class="content-column-content">
-         <h1>[ #Project 2 ] Unit y VR - The Peach Blossom Spring - Chinese brush painting effect</h1>
+         <h1>[ #Project 2 ] Unity VR - The Peach Blossom Spring - Chinese brush painting effect</h1>
          <p>The VR experience focuses on Climate Emergency. The first scene shows a utopian scene from a long time ago, the second scene shows the current Climate Emergency facing humanity (inspired by the Chongqing wildfire in 2022), and the third scene shows a cyberspace, where the player can make a commitment.</p>
 <blockquote>
 <p>There was a time when meadow, grove, and stream,
@@ -273,9 +273,7 @@ C_{0}\left(C_{i}\right)=\begin{cases}
 </figure>
 
 <p>The curvature at fragment <em>i</em> can be obtained by the ratio of the vertex normal vector and the rate of change of the position coordinate relative to the <em>x</em>-axis direction and the <em>y</em>-axis direction of the view space.</p>
-<figure><img src="/img/portfolio/Unity-ink-%e6%9b%b2%e7%8e%87%e5%85%ac%e5%bc%8f.png" width="100px"/>
-</figure>
-
+<!-- raw HTML omitted -->
 <p>\begin{align}
 k_{i}=\frac{1}{k} \cdot \frac{\Delta N}{\Delta p}
 \end{align}</p>
@@ -301,10 +299,7 @@ k_{i}=\frac{1}{k} \cdot \frac{\Delta N}{\Delta p}
 <p>Considering that the actual effect is not ideal, the simulation of the rubbing method was not deployed in the rendering scheme of mountains and rocks. Instead, I use triplanar and Gaussian blur to simulate the stroke texture of the rocks.</p>
 <h4 id="Stroke-texture">Stroke texture (feathering and spreading)</h4>
 <p>When using the one-dimensional lookup table for diffuse warp, the input is the diffuse calculated according to the Half-Lambert lighting model. Adding some randomness to this will make the final warp results feel more random.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%8a%a0%e5%99%aa%e5%a3%b0%e5%85%ac%e5%bc%8f.png" width="200px"/>
-</figure>
-
-<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
 <p>\begin{align}
 C_{i \space new}=C_{i}+r_{i}
 \end{align}</p>
@@ -366,20 +361,17 @@ C_{edge}=\begin{cases}
 </span></span><span style="display:flex;"><span>fixed edge = vdotn / _Range;
 </span></span><span style="display:flex;"><span>edge = edge &gt; _Thred ? <span style="color:#0086f7;font-weight:bold">1</span> : edge;
 </span></span><span style="display:flex;"><span>edge = <span style="color:#ff0086;font-weight:bold">pow</span>(edge, _Pow);
-</span></span><span style="display:flex;"><span>fixed4 edgeColor = <span style="color:#ff0086;font-weight:bold">tex2D</span>(_SilhouetteRampTex, <span style="color:#ff0086;font-weight:bold">fixed2</span>(edge, <span style="color:#0086f7;font-weight:bold">0.5</span>));
-</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// col is the internal shading result
-</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>col = edgeColor &gt; col ? col : edgeColor * (<span style="color:#0086f7;font-weight:bold">1</span> - edge) + col * edge;
-</span></span><span style="display:flex;"><span>col = <span style="color:#ff0086;font-weight:bold">pow</span>(col, _ColorPow);
-</span></span><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">return</span> col;</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>fixed4 edgeColor = <span style="color:#ff0086;font-weight:bold">tex2D</span>(_SilhouetteRampTex, <span style="color:#ff0086;font-weight:bold">fixed2</span>(edge, <span style="color:#0086f7;font-weight:bold">0.5</span>));</span></span></code></pre></div>
 <p>For the internal coloring of the character, I use some empirical tricks to reduce the saturation and increase the brightness. I also make a splashed ink stroke texture. So I have silhouettes, interior textures, and strokes. The next step is to blend them together to get the final result.</p>
 <p>Contour lines and internal textures are blended using an interpolation algorithm.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%92%8c%e5%86%85%e9%83%a8%e7%ba%b9%e7%90%86%e5%b7%ae%e5%80%bc%e5%85%ac%e5%bc%8f.png" width="300px"/>
-</figure>
-
-<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
 <p>\begin{align}
 Output = \left ( 1-\lambda  \right ) \cdot edgecolor + \lambda \cdot innercolor, 0 &lt; \lambda &lt; 1
 \end{align}</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// col is the internal shading result
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>col = edgeColor &gt; col ? col : edgeColor * (<span style="color:#0086f7;font-weight:bold">1</span> - edge) + col * edge;
+</span></span><span style="display:flex;"><span>col = <span style="color:#ff0086;font-weight:bold">pow</span>(col, _ColorPow);
+</span></span><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">return</span> col;</span></span></code></pre></div>
 <p>Among them, <em>edgecolor</em> is the silhouette color and <em>innercolor</em> is the inner texture color. The difference coefficient <em>λ</em> is <em>C<sub>edge</sub></em>, which is the input of the one-dimensional lookup table. As a result, the silhouette blends well with the texture and has soft feathering edges. The shape of the contour line is similar to the &ldquo;willow-leaf-shaped stroke&rdquo;(柳叶描).</p>
 <p><figure><img src="/img/portfolio/Unity-ink-%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%92%8c%e5%86%85%e9%83%a8%e7%ba%b9%e7%90%86%e5%b7%ae%e5%80%bc%e7%bb%93%e6%9e%9c.png"
          alt="Left: the blending result; Right: zoomed-in pleats" width="400px"/><figcaption>
@@ -389,23 +381,20 @@ Output = \left ( 1-\lambda  \right ) \cdot edgecolor + \lambda \cdot innercolor,
 
 <!-- raw HTML omitted --></p>
 <p>The blend mode with splash stroke is Multiply. It examines the information in each color channel of the images and performs multiplying processing. The algorithm is as follows:</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e6%ad%a3%e7%89%87%e5%8f%a0%e5%ba%95%e5%85%ac%e5%bc%8f.png" width="350px"/>
-</figure>
-
-<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
 <p>\begin{align}
 Output = brushcolor \otimes innercolor
 \end{align}</p>
 <p>This algorithm has low complexity and fast operation speed, and each pixel retains the information of splash stroke and internal texture. Since the multiplication of colors is equivalent to the darkening of both colors, the brighter inner texture can be suppressed to the normal brightness range.</p>
 <p><figure><img src="/img/portfolio/Unity-ink-%e6%ad%a3%e7%89%87%e5%8f%a0%e5%ba%95%e7%bb%93%e6%9e%9c.png"
-         alt="The output result after blending with splash stroke" width="300px"/><figcaption>
+         alt="The output result after blending with splash stroke" width="250px"/><figcaption>
             <p>The output result after blending with splash stroke</p>
         </figcaption>
 </figure>
 
 <!-- raw HTML omitted --></p>
 <p>After blending the silhouette, internal textures and strokes, Post Processing is overlaid, and the final render is shown in the image.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e6%ad%a3%e7%89%87%e5%8f%a0%e5%ba%95%e5%92%8c%e5%90%8e%e5%a4%84%e7%90%86%e7%bb%93%e6%9e%9c.png" width="300px"/>
+<p><figure><img src="/img/portfolio/Unity-ink-%e6%ad%a3%e7%89%87%e5%8f%a0%e5%ba%95%e5%92%8c%e5%90%8e%e5%a4%84%e7%90%86%e7%bb%93%e6%9e%9c.png" width="250px"/>
 </figure>
 
 <!-- raw HTML omitted --></p>

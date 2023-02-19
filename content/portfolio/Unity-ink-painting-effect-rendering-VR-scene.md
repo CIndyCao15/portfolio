@@ -1,6 +1,6 @@
 +++
 date = "2016-11-05T19:41:01+05:30"
-title = "[ #Project 2 ] Unit y VR - The Peach Blossom Spring - Chinese brush painting effect"
+title = "[ #Project 2 ] Unity VR - The Peach Blossom Spring - Chinese brush painting effect"
 draft = false
 image = "img/portfolio/Unity-ink-painting-effect-rendering-VR-scene.png"
 showonlyimage = false
@@ -145,7 +145,9 @@ I use model curvature to simulate rubbing. When calculating the curvature, as th
 
 The curvature at fragment *i* can be obtained by the ratio of the vertex normal vector and the rate of change of the position coordinate relative to the *x*-axis direction and the *y*-axis direction of the view space.
 
+<div style="display:none">
 {{< figure src="/img/portfolio/Unity-ink-曲率公式.png" width="100px" >}}
+</div>
 
 \begin{align}
 k_{i}=\frac{1}{k} \cdot \frac{\Delta N}{\Delta p}
@@ -175,8 +177,10 @@ Considering that the actual effect is not ideal, the simulation of the rubbing m
 
 When using the one-dimensional lookup table for diffuse warp, the input is the diffuse calculated according to the Half-Lambert lighting model. Adding some randomness to this will make the final warp results feel more random.
 
-{{< figure src="/img/portfolio/Unity-ink-漫反射加噪声公式.png" width="200px" >}}
+<div style="display:none">
+{{< figure src="/img/portfolio/Unity-ink-漫反射加噪声公式.png" width="150px" >}}
 <br>
+</div>
 
 \begin{align}
 C_{i \space new}=C_{i}+r_{i}
@@ -249,22 +253,27 @@ fixed edge = vdotn / _Range;
 edge = edge > _Thred ? 1 : edge;
 edge = pow(edge, _Pow);
 fixed4 edgeColor = tex2D(_SilhouetteRampTex, fixed2(edge, 0.5));
-// col is the internal shading result
-col = edgeColor > col ? col : edgeColor * (1 - edge) + col * edge;
-col = pow(col, _ColorPow);
-return col;
 {{< / highlight >}}
 
 For the internal coloring of the character, I use some empirical tricks to reduce the saturation and increase the brightness. I also make a splashed ink stroke texture. So I have silhouettes, interior textures, and strokes. The next step is to blend them together to get the final result.
 
 Contour lines and internal textures are blended using an interpolation algorithm.
 
+<div style="display:none">
 {{< figure src="/img/portfolio/Unity-ink-轮廓线和内部纹理差值公式.png" width="300px" >}}
 <br>
+</div>
 
 \begin{align}
 Output = \left ( 1-\lambda  \right ) \cdot edgecolor + \lambda \cdot innercolor, 0 < \lambda < 1
 \end{align}
+
+{{< highlight go >}}
+// col is the internal shading result
+col = edgeColor > col ? col : edgeColor * (1 - edge) + col * edge;
+col = pow(col, _ColorPow);
+return col;
+{{< / highlight >}}
 
 Among them, *edgecolor* is the silhouette color and *innercolor* is the inner texture color. The difference coefficient *λ* is *C{{< sub "edge" >}}*, which is the input of the one-dimensional lookup table. As a result, the silhouette blends well with the texture and has soft feathering edges. The shape of the contour line is similar to the "willow-leaf-shaped stroke"(柳叶描).
 
@@ -273,8 +282,10 @@ Among them, *edgecolor* is the silhouette color and *innercolor* is the inner te
 
 The blend mode with splash stroke is Multiply. It examines the information in each color channel of the images and performs multiplying processing. The algorithm is as follows:
 
-{{< figure src="/img/portfolio/Unity-ink-正片叠底公式.png" width="350px" >}}
+<div style="display:none">
+{{< figure src="/img/portfolio/Unity-ink-正片叠底公式.png" width="300px" >}}
 <br>
+</div>
 
 \begin{align}
 Output = brushcolor \otimes innercolor
@@ -282,12 +293,12 @@ Output = brushcolor \otimes innercolor
 
 This algorithm has low complexity and fast operation speed, and each pixel retains the information of splash stroke and internal texture. Since the multiplication of colors is equivalent to the darkening of both colors, the brighter inner texture can be suppressed to the normal brightness range.
 
-{{< figure src="/img/portfolio/Unity-ink-正片叠底结果.png" caption="The output result after blending with splash stroke" width="300px" >}}
+{{< figure src="/img/portfolio/Unity-ink-正片叠底结果.png" caption="The output result after blending with splash stroke" width="250px" >}}
 <br>
 
 After blending the silhouette, internal textures and strokes, Post Processing is overlaid, and the final render is shown in the image.
 
-{{< figure src="/img/portfolio/Unity-ink-正片叠底和后处理结果.png" width="300px" >}}
+{{< figure src="/img/portfolio/Unity-ink-正片叠底和后处理结果.png" width="250px" >}}
 <br>
 
 The solution has the following advantages in terms of rendering performance:
