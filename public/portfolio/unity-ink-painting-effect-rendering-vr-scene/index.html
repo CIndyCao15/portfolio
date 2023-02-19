@@ -253,6 +253,19 @@ C_{0}\left(C_{i}\right)=\begin{cases}
 1.0, &amp; C_{i} &gt; 0.8
 \end{cases}
 \end{align}$$</p>
+<p>$$
+\begin{align}
+\displaystyle C_{0}\left(C_{i}\right)=
+\displaystyle \left\{
+\begin{array}{ll}
+\displaystyle 0.1, &amp; C_{i} \leq 0.25 \\
+\displaystyle 0.3, &amp; 0.25 &lt; C_{i} \leq 0.55 \\
+\displaystyle 0.7, &amp; 0.55 &lt; C_{i} \leq 0.8 \\
+\displaystyle 1.0, &amp; C_{i} &gt; 0.8
+\end{array}
+\right.
+\end{align}
+$$</p>
 <p>Among them, <em>C<sub>i</sub></em> is the original diffuse color, which is the input color of the <em>C<sub>0</sub></em> function. In actual use, to make the transition between different colors more natural, I roughly add a transition color between adjacent gradients.</p>
 <figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%87%bd%e6%95%b0%e5%9b%be%e7%89%87.png"
          alt="Diffuse warp function" width="250px"/><figcaption>
@@ -302,7 +315,7 @@ k_{i}=\frac{1}{k} \cdot \frac{\Delta N}{\Delta p}
 <p>When using the one-dimensional lookup table for diffuse warp, the input is the diffuse calculated according to the Half-Lambert lighting model. Adding some randomness to this will make the final warp results feel more random.</p>
 <!-- raw HTML omitted -->
 <p>$$\begin{align}
-C_{i \space new}=C_{i}+r_{i}
+\displaystyle C_{i \space new}=C_{i}+r_{i}
 \end{align}$$</p>
 <p>Among them, <em>C<sub>i new</sub></em> is the new diffuse after processing, and <em>r<sub>i</sub></em> is a random value. I use Perlin noise to introduce randomness, and use a stroke texture to control the overall light and shadow. I use triplanar to sample the two textures.</p>
 <p>The image below is the result of inputting <em>C<sub>i new</sub></em> into the diffuse warp function after adding the stroke texture. As you can see, the noise gives a more random look to the edges of the ink chunks.</p>

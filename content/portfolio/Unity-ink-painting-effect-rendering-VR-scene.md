@@ -128,6 +128,20 @@ C_{0}\left(C_{i}\right)=\begin{cases}
 \end{cases}
 \end{align}$$
 
+$$
+\begin{align}
+\displaystyle C_{0}\left(C_{i}\right)=
+\displaystyle \left\\{
+\begin{array}{ll}
+\displaystyle 0.1, & C_{i} \leq 0.25 \\\
+\displaystyle 0.3, & 0.25 < C_{i} \leq 0.55 \\\
+\displaystyle 0.7, & 0.55 < C_{i} \leq 0.8 \\\
+\displaystyle 1.0, & C_{i} > 0.8
+\end{array}
+\right.
+\end{align}
+$$
+
 Among them, *C{{< sub "i" >}}* is the original diffuse color, which is the input color of the *C{{< sub "0" >}}* function. In actual use, to make the transition between different colors more natural, I roughly add a transition color between adjacent gradients.
 
 {{< figure src="/img/portfolio/Unity-ink-漫反射函数图片.png" caption="Diffuse warp function" width="250px" >}}
@@ -185,7 +199,7 @@ When using the one-dimensional lookup table for diffuse warp, the input is the d
 </div>
 
 $$\begin{align}
-C_{i \space new}=C_{i}+r_{i}
+\displaystyle C_{i \space new}=C_{i}+r_{i}
 \end{align}$$
 
 Among them, *C{{< sub "i new" >}}* is the new diffuse after processing, and *r{{< sub "i" >}}* is a random value. I use Perlin noise to introduce randomness, and use a stroke texture to control the overall light and shadow. I use triplanar to sample the two textures.
