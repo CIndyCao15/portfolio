@@ -178,6 +178,10 @@ When using the one-dimensional lookup table for diffuse warp, the input is the d
 {{< figure src="/img/portfolio/Unity-ink-漫反射加噪声公式.png" width="200px" >}}
 <br>
 
+\begin{align}
+C_{i new}=C_{i}+r_{i}
+\end{align}
+
 Among them, *C{{< sub "i new" >}}* is the new diffuse after processing, and *r{{< sub "i" >}}* is a random value. I use Perlin noise to introduce randomness, and use a stroke texture to control the overall light and shadow. I use triplanar to sample the two textures.
 
 The image below is the result of inputting *C{{< sub "i new" >}}* into the diffuse warp function after adding the stroke texture. As you can see, the noise gives a more random look to the edges of the ink chunks.
@@ -258,6 +262,10 @@ Contour lines and internal textures are blended using an interpolation algorithm
 {{< figure src="/img/portfolio/Unity-ink-轮廓线和内部纹理差值公式.png" width="300px" >}}
 <br>
 
+\begin{align}
+Output = \left ( 1-\lambda  \right ) \cdot edgecolor + \lambda \cdot innercolor, 0 < \lambda < 1
+\end{align}
+
 Among them, *edgecolor* is the silhouette color and *innercolor* is the inner texture color. The difference coefficient *λ* is *C{{< sub "edge" >}}*, which is the input of the one-dimensional lookup table. As a result, the silhouette blends well with the texture and has soft feathering edges. The shape of the contour line is similar to the "willow-leaf-shaped stroke"(柳叶描).
 
 {{< figure src="/img/portfolio/Unity-ink-轮廓线和内部纹理差值结果.png" caption="**Left**: the blending result; **Right**: zoomed-in pleats" width="400px" >}}
@@ -267,6 +275,10 @@ The blend mode with splash stroke is Multiply. It examines the information in ea
 
 {{< figure src="/img/portfolio/Unity-ink-正片叠底公式.png" width="350px" >}}
 <br>
+
+\begin{align}
+Output = brushcolor \otimes innercolor
+\end{align}
 
 This algorithm has low complexity and fast operation speed, and each pixel retains the information of splash stroke and internal texture. Since the multiplication of colors is equivalent to the darkening of both colors, the brighter inner texture can be suppressed to the normal brightness range.
 
