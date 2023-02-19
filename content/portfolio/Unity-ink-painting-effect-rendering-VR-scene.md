@@ -128,6 +128,26 @@ $$\begin{align}
 \end{cases}
 \end{align}$$
 
+# Example code
+
+$$
+F_{X}(x)=\operatorname{Pr}(X \leq x)= \begin{cases} 
+0 &\text{if } x<0 \\\\ 
+\frac{1}{2} &\text{if } 0 \leq x<1 \\\\ 
+1 &\text{if } x \geq 1 \end{cases}
+$$
+
+# replace backslashes with \cr
+
+\begin{align}
+C_{0}\left(C_{i}\right)=\begin{cases}
+0.1, & C_{i} \leq 0.25 \cr
+0.3, & 0.25 < C_{i} \leq 0.55 \cr
+0.7, & 0.55 < C_{i} \leq 0.8 \cr
+1.0, & C_{i} > 0.8
+\end{cases}
+\end{align}
+
 # replace $$ with \\[
 
 \[
@@ -182,13 +202,13 @@ $$\begin{align}
 \end{cases}
 \end{align}$$
 
-# with 4 backslashes
+# with 4 backslashes with a trailing space
 
 \begin{align}
 C_{0}\left(C_{i}\right)=\begin{cases}
-0.1, & C_{i} \leq 0.25 \\\\
-0.3, & 0.25 < C_{i} \leq 0.55 \\\\
-0.7, & 0.55 < C_{i} \leq 0.8 \\\\
+0.1, & C_{i} \leq 0.25 \\\\ 
+0.3, & 0.25 < C_{i} \leq 0.55 \\\\ 
+0.7, & 0.55 < C_{i} \leq 0.8 \\\\ 
 1.0, & C_{i} > 0.8
 \end{cases}
 \end{align}
