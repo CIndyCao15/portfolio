@@ -128,6 +128,30 @@ $$\begin{align}
 \end{cases}
 \end{align}$$
 
+# replace $$ with \\[
+
+\[
+\begin{aligned}
+C_{0}\left(C_{i}\right)=\begin{cases}
+0.1, & C_{i} \leq 0.25 \\
+0.3, & 0.25 < C_{i} \leq 0.55 \\
+0.7, & 0.55 < C_{i} \leq 0.8 \\
+1.0, & C_{i} > 0.8
+\end{cases}
+\end{aligned}
+\]
+
+# 2 backslashes, without $$
+
+\begin{aligned}
+C_{0}\left(C_{i}\right)=\begin{cases}
+0.1, & C_{i} \leq 0.25 \\
+0.3, & 0.25 < C_{i} \leq 0.55 \\
+0.7, & 0.55 < C_{i} \leq 0.8 \\
+1.0, & C_{i} > 0.8
+\end{cases}
+\end{aligned}
+
 # with only one line:
 
 $$\begin{align}
