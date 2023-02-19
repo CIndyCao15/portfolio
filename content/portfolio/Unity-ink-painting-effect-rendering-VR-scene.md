@@ -116,9 +116,8 @@ Since the mountain rock has the aesthetic characteristic of "space and volume", 
 
 The diffuse warp function should be a step function. It is used to divide the ink color.
 
-<div style="display: none">
 {{< figure src="/img/portfolio/Unity-ink-漫反射公式.png" width="300px" >}}
-</div>
+<br>
 
 $$\begin{align}
 C_{0}\left(C_{i}\right)=\begin{cases}
@@ -149,6 +148,7 @@ The curvature at fragment *i* can be obtained by the ratio of the vertex normal 
 
 <div style="display:none">
 {{< figure src="/img/portfolio/Unity-ink-曲率公式.png" width="100px" >}}
+<br>
 </div>
 
 $$\begin{align}
@@ -226,10 +226,8 @@ On a smooth surface, the definition of point P on the Silhouette is ***v*** ∙ 
 
 But an actual 3D model is composed of many planes. What's more, in order to make the silhouette have a certain width, the judgment condition needs to be relaxed as follows:
 
-<div style="display: none">
 {{< figure src="/img/portfolio/Unity-ink-人物轮廓线公式.png" width="300px" >}}
 <br>
-</div>
 
 $$\begin{align}
 C_{edge}=\begin{cases}

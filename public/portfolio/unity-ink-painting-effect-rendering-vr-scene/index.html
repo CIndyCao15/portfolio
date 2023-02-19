@@ -241,7 +241,10 @@ The things which I have seen I now can see no more.</p>
 <h4 id="Internal-coloring">Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function</h4>
 <p>Since the mountain rock has the aesthetic characteristic of &ldquo;space and volume&rdquo;, a lighting model should be used to render the mountain rock to create a sense of volume. In an empirical lighting model, lighting consists of 3 components: diffuse, specular, and ambient lighting. Brush painting mountain and stone mainly reflects diffuse light.</p>
 <p>The diffuse warp function should be a step function. It is used to divide the ink color.</p>
-<!-- raw HTML omitted -->
+<p><figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%85%ac%e5%bc%8f.png" width="300px"/>
+</figure>
+
+<!-- raw HTML omitted --></p>
 <p>$$\begin{align}
 C_{0}\left(C_{i}\right)=\begin{cases}
 0.1, &amp; C_{i} \leq 0.25 \\
@@ -331,7 +334,10 @@ I adjust the appropriate parameters, and the final blurred result is shown in th
 
 <!-- raw HTML omitted --></p>
 <p>But an actual 3D model is composed of many planes. What&rsquo;s more, in order to make the silhouette have a certain width, the judgment condition needs to be relaxed as follows:</p>
-<!-- raw HTML omitted -->
+<p><figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%85%ac%e5%bc%8f.png" width="300px"/>
+</figure>
+
+<!-- raw HTML omitted --></p>
 <p>$$\begin{align}
 C_{edge}=\begin{cases}
 1&amp;, &amp;\frac{|V \cdot N|}{r} &gt; t \\
