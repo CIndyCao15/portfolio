@@ -120,11 +120,41 @@ The diffuse warp function should be a step function. It is used to divide the in
 <br>
 
 $$\begin{align}
-C_{0}\left(C_{i}\right)=\begin{cases}
-0.1, & C_{i} \leq 0.25 \\\
-0.3, & 0.25 < C_{i} \leq 0.55 \\\
-0.7, & 0.55 < C_{i} \leq 0.8 \\\
-1.0, & C_{i} > 0.8
+\displaystyle C_{0}\left(C_{i}\right)=\begin{cases}
+\displaystyle 0.1, & C_{i} \leq 0.25 \\\
+\displaystyle 0.3, & 0.25 < C_{i} \leq 0.55 \\\
+\displaystyle 0.7, & 0.55 < C_{i} \leq 0.8 \\\
+\displaystyle 1.0, & C_{i} > 0.8
+\end{cases}
+\end{align}$$
+
+# with only one line:
+
+$$\begin{align}
+\displaystyle C_{0}\left(C_{i}\right)=\begin{cases}
+\displaystyle 0.1, & C_{i} \leq 0.25
+\end{cases}
+\end{align}$$
+
+# with 2 backslashes
+
+$$\begin{align}
+\displaystyle C_{0}\left(C_{i}\right)=\begin{cases}
+\displaystyle 0.1, & C_{i} \leq 0.25 \\
+\displaystyle 0.3, & 0.25 < C_{i} \leq 0.55 \\
+\displaystyle 0.7, & 0.55 < C_{i} \leq 0.8 \\
+\displaystyle 1.0, & C_{i} > 0.8
+\end{cases}
+\end{align}$$
+
+# with 4 backslashes
+
+$$\begin{align}
+\displaystyle C_{0}\left(C_{i}\right)=\begin{cases}
+\displaystyle 0.1, & C_{i} \leq 0.25 \\\\
+\displaystyle 0.3, & 0.25 < C_{i} \leq 0.55 \\\\
+\displaystyle 0.7, & 0.55 < C_{i} \leq 0.8 \\\\
+\displaystyle 1.0, & C_{i} > 0.8
 \end{cases}
 \end{align}$$
 
