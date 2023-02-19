@@ -116,16 +116,18 @@ Since the mountain rock has the aesthetic characteristic of "space and volume", 
 
 The diffuse warp function should be a step function. It is used to divide the ink color.
 
+<div style="display: none">
 {{< figure src="/img/portfolio/Unity-ink-漫反射公式.png" width="300px" >}}
+</div>
 
-\begin{align}
+$$\begin{align}
 C_{0}\left(C_{i}\right)=\begin{cases}
 0.1, & C_{i} \leq 0.25 \\\
 0.3, & 0.25 < C_{i} \leq 0.55 \\\
 0.7, & 0.55 < C_{i} \leq 0.8 \\\
 1.0, & C_{i} > 0.8
 \end{cases}
-\end{align}
+\end{align}$$
 
 Among them, *C{{< sub "i" >}}* is the original diffuse color, which is the input color of the *C{{< sub "0" >}}* function. In actual use, to make the transition between different colors more natural, I roughly add a transition color between adjacent gradients.
 
@@ -149,9 +151,9 @@ The curvature at fragment *i* can be obtained by the ratio of the vertex normal 
 {{< figure src="/img/portfolio/Unity-ink-曲率公式.png" width="100px" >}}
 </div>
 
-\begin{align}
+$$\begin{align}
 k_{i}=\frac{1}{k} \cdot \frac{\Delta N}{\Delta p}
-\end{align}
+\end{align}$$
 
 Among them, *k{{< sub "i" >}}* is the curvature value at fragment *i*, and *k* is the curvature adjustment coefficient. Written in Unity ShaderLab, the pseudocode is as follows:
 
@@ -182,9 +184,9 @@ When using the one-dimensional lookup table for diffuse warp, the input is the d
 <br>
 </div>
 
-\begin{align}
+$$\begin{align}
 C_{i \space new}=C_{i}+r_{i}
-\end{align}
+\end{align}$$
 
 Among them, *C{{< sub "i new" >}}* is the new diffuse after processing, and *r{{< sub "i" >}}* is a random value. I use Perlin noise to introduce randomness, and use a stroke texture to control the overall light and shadow. I use triplanar to sample the two textures.
 
@@ -224,15 +226,17 @@ On a smooth surface, the definition of point P on the Silhouette is ***v*** ∙ 
 
 But an actual 3D model is composed of many planes. What's more, in order to make the silhouette have a certain width, the judgment condition needs to be relaxed as follows:
 
+<div style="display: none">
 {{< figure src="/img/portfolio/Unity-ink-人物轮廓线公式.png" width="300px" >}}
 <br>
+</div>
 
-\begin{align}
+$$\begin{align}
 C_{edge}=\begin{cases}
-1, & \frac{|V \cdot N|}{r} > t \\\
-\left(\frac{|V \cdot N|}{r}\right)^{p}, & \frac{|V \cdot N|}{r} \leq t
+1&, &\frac{|V \cdot N|}{r} > t \\\
+\left(\frac{|V \cdot N|}{r}\right)^{p}&, &\frac{|V \cdot N|}{r} \leq t
 \end{cases}
-\end{align}
+\end{align}$$
 
 Among them, *C{{< sub "edge" >}}* is the color of the contour; *r* can control the edge range, which can make the edge transition smoother; *t* controls the threshold; *p* is used to perform exponential operations on the edge and adjust the shade of edge color.
 
@@ -264,9 +268,9 @@ Contour lines and internal textures are blended using an interpolation algorithm
 <br>
 </div>
 
-\begin{align}
+$$\begin{align}
 Output = \left ( 1-\lambda  \right ) \cdot edgecolor + \lambda \cdot innercolor, 0 < \lambda < 1
-\end{align}
+\end{align}$$
 
 {{< highlight go >}}
 // col is the internal shading result
@@ -287,9 +291,9 @@ The blend mode with splash stroke is Multiply. It examines the information in ea
 <br>
 </div>
 
-\begin{align}
+$$\begin{align}
 Output = brushcolor \otimes innercolor
-\end{align}
+\end{align}$$
 
 This algorithm has low complexity and fast operation speed, and each pixel retains the information of splash stroke and internal texture. Since the multiplication of colors is equivalent to the darkening of both colors, the brighter inner texture can be suppressed to the normal brightness range.
 

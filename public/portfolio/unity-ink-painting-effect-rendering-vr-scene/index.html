@@ -241,17 +241,15 @@ The things which I have seen I now can see no more.</p>
 <h4 id="Internal-coloring">Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function</h4>
 <p>Since the mountain rock has the aesthetic characteristic of &ldquo;space and volume&rdquo;, a lighting model should be used to render the mountain rock to create a sense of volume. In an empirical lighting model, lighting consists of 3 components: diffuse, specular, and ambient lighting. Brush painting mountain and stone mainly reflects diffuse light.</p>
 <p>The diffuse warp function should be a step function. It is used to divide the ink color.</p>
-<figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%85%ac%e5%bc%8f.png" width="300px"/>
-</figure>
-
-<p>\begin{align}
+<!-- raw HTML omitted -->
+<p>$$\begin{align}
 C_{0}\left(C_{i}\right)=\begin{cases}
 0.1, &amp; C_{i} \leq 0.25 \\
 0.3, &amp; 0.25 &lt; C_{i} \leq 0.55 \\
 0.7, &amp; 0.55 &lt; C_{i} \leq 0.8 \\
 1.0, &amp; C_{i} &gt; 0.8
 \end{cases}
-\end{align}</p>
+\end{align}$$</p>
 <p>Among them, <em>C<sub>i</sub></em> is the original diffuse color, which is the input color of the <em>C<sub>0</sub></em> function. In actual use, to make the transition between different colors more natural, I roughly add a transition color between adjacent gradients.</p>
 <figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%87%bd%e6%95%b0%e5%9b%be%e7%89%87.png"
          alt="Diffuse warp function" width="250px"/><figcaption>
@@ -274,9 +272,9 @@ C_{0}\left(C_{i}\right)=\begin{cases}
 
 <p>The curvature at fragment <em>i</em> can be obtained by the ratio of the vertex normal vector and the rate of change of the position coordinate relative to the <em>x</em>-axis direction and the <em>y</em>-axis direction of the view space.</p>
 <!-- raw HTML omitted -->
-<p>\begin{align}
+<p>$$\begin{align}
 k_{i}=\frac{1}{k} \cdot \frac{\Delta N}{\Delta p}
-\end{align}</p>
+\end{align}$$</p>
 <p>Among them, <em>k<sub>i</sub></em> is the curvature value at fragment <em>i</em>, and <em>k</em> is the curvature adjustment coefficient. Written in Unity ShaderLab, the pseudocode is as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>curvature = <span style="color:#ff0086;font-weight:bold">length</span>(<span style="color:#ff0086;font-weight:bold">fwidth</span>(viewNormal)) / (<span style="color:#ff0086;font-weight:bold">length</span>(<span style="color:#ff0086;font-weight:bold">fwidth</span>(viewPos)) * _CurveFactor);</span></span></code></pre></div>
 <p>Curvature reflects the degree of change in the convexity and concavity of the object&rsquo;s surface. The larger the curvature value, the sharper the unevenness of the object&rsquo;s surface. At this point, the rubbing should be more obvious. I limit the curvature value in the range of 0 to 1, and use 1-<em>k<sub>i</sub></em> to calculate the rubbing color.</p>
@@ -300,9 +298,9 @@ k_{i}=\frac{1}{k} \cdot \frac{\Delta N}{\Delta p}
 <h4 id="Stroke-texture">Stroke texture (feathering and spreading)</h4>
 <p>When using the one-dimensional lookup table for diffuse warp, the input is the diffuse calculated according to the Half-Lambert lighting model. Adding some randomness to this will make the final warp results feel more random.</p>
 <!-- raw HTML omitted -->
-<p>\begin{align}
+<p>$$\begin{align}
 C_{i \space new}=C_{i}+r_{i}
-\end{align}</p>
+\end{align}$$</p>
 <p>Among them, <em>C<sub>i new</sub></em> is the new diffuse after processing, and <em>r<sub>i</sub></em> is a random value. I use Perlin noise to introduce randomness, and use a stroke texture to control the overall light and shadow. I use triplanar to sample the two textures.</p>
 <p>The image below is the result of inputting <em>C<sub>i new</sub></em> into the diffuse warp function after adding the stroke texture. As you can see, the noise gives a more random look to the edges of the ink chunks.</p>
 <p><figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%8a%a0%e5%99%aa%e5%a3%b0%e7%bb%93%e6%9e%9c.png" width="550px"/>
@@ -333,16 +331,13 @@ I adjust the appropriate parameters, and the final blurred result is shown in th
 
 <!-- raw HTML omitted --></p>
 <p>But an actual 3D model is composed of many planes. What&rsquo;s more, in order to make the silhouette have a certain width, the judgment condition needs to be relaxed as follows:</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%85%ac%e5%bc%8f.png" width="300px"/>
-</figure>
-
-<!-- raw HTML omitted --></p>
-<p>\begin{align}
+<!-- raw HTML omitted -->
+<p>$$\begin{align}
 C_{edge}=\begin{cases}
-1, &amp; \frac{|V \cdot N|}{r} &gt; t \\
-\left(\frac{|V \cdot N|}{r}\right)^{p}, &amp; \frac{|V \cdot N|}{r} \leq t
+1&amp;, &amp;\frac{|V \cdot N|}{r} &gt; t \\
+\left(\frac{|V \cdot N|}{r}\right)^{p}&amp;, &amp;\frac{|V \cdot N|}{r} \leq t
 \end{cases}
-\end{align}</p>
+\end{align}$$</p>
 <p>Among them, <em>C<sub>edge</sub></em> is the color of the contour; <em>r</em> can control the edge range, which can make the edge transition smoother; <em>t</em> controls the threshold; <em>p</em> is used to perform exponential operations on the edge and adjust the shade of edge color.</p>
 <p>In order to narrow the gradient range between black and white, make the gradient range more natural, and simulate the effect of ink diffusion, I introduce a one-dimensional lookup table:</p>
 <p><figure><img src="/img/portfolio/Unity-ink-1DLUT.jpg"/>
@@ -365,9 +360,9 @@ C_{edge}=\begin{cases}
 <p>For the internal coloring of the character, I use some empirical tricks to reduce the saturation and increase the brightness. I also make a splashed ink stroke texture. So I have silhouettes, interior textures, and strokes. The next step is to blend them together to get the final result.</p>
 <p>Contour lines and internal textures are blended using an interpolation algorithm.</p>
 <!-- raw HTML omitted -->
-<p>\begin{align}
+<p>$$\begin{align}
 Output = \left ( 1-\lambda  \right ) \cdot edgecolor + \lambda \cdot innercolor, 0 &lt; \lambda &lt; 1
-\end{align}</p>
+\end{align}$$</p>
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// col is the internal shading result
 </span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>col = edgeColor &gt; col ? col : edgeColor * (<span style="color:#0086f7;font-weight:bold">1</span> - edge) + col * edge;
 </span></span><span style="display:flex;"><span>col = <span style="color:#ff0086;font-weight:bold">pow</span>(col, _ColorPow);
@@ -382,9 +377,9 @@ Output = \left ( 1-\lambda  \right ) \cdot edgecolor + \lambda \cdot innercolor,
 <!-- raw HTML omitted --></p>
 <p>The blend mode with splash stroke is Multiply. It examines the information in each color channel of the images and performs multiplying processing. The algorithm is as follows:</p>
 <!-- raw HTML omitted -->
-<p>\begin{align}
+<p>$$\begin{align}
 Output = brushcolor \otimes innercolor
-\end{align}</p>
+\end{align}$$</p>
 <p>This algorithm has low complexity and fast operation speed, and each pixel retains the information of splash stroke and internal texture. Since the multiplication of colors is equivalent to the darkening of both colors, the brighter inner texture can be suppressed to the normal brightness range.</p>
 <p><figure><img src="/img/portfolio/Unity-ink-%e6%ad%a3%e7%89%87%e5%8f%a0%e5%ba%95%e7%bb%93%e6%9e%9c.png"
          alt="The output result after blending with splash stroke" width="250px"/><figcaption>
