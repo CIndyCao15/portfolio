@@ -42,7 +42,7 @@ The girl's diamond armor tile is shown below, including helmet, chestplate, shou
 {{< figure src="/img/portfolio/Hercraft-DiamondArmor.JPEG" alt="Diamond Armor" width="400px" >}}
 <br>
 
-### Behind the Scenes
+### Shooting - Behind the Scenes
 
 {{< figure src="/img/portfolio/Hercraft-BehindTheScenes1.JPG" alt="Diamond Armor" width="400px" >}}
 <br>
@@ -51,3 +51,44 @@ The girl's diamond armor tile is shown below, including helmet, chestplate, shou
 <br>
 
 {{< figure src="/img/portfolio/Hercraft-BehindTheScenes3.jpg" alt="Diamond Armor" width="400px" >}}
+<br>
+
+Color grading isn't just post-production. Throughout the entire shooting process, since we didn't have a technical monitor on site, after a day's shooting, it's necessary to conduct quality assurance on the day's takes, and pick out the number of shots that need to be reshot. I did this step in DaVinci Resolve. Combined with the continuity sheet, I can quickly sort out the OK / KEEP / NG (not good) takes. 
+
+Unfortunately, the raw footage was lost, and there is no way to present this part. These are the behind-the-scenes photos when I was on the crew of *Doppelganger* (《AB面》) in 2019 as a DIT. The DIT software I used was Silverstack, and I did the sound-image synchronization and rough cuts on the set after each day of shooting.
+
+{{< figure src="/img/portfolio/Hercraft-BehindTheScenes4.JPEG" caption="A more formalized and standardized DIT process" width="700px" >}}
+<br>
+
+### Post-Production
+
+The post-production of this film mainly includes editing, 3D animation production, compositing and color grading. I was involved in the process of the last three. The 3D animation was created in Cinema 4D. I also used Cinema 4D for tracking and calculating the camera position. Keying and compositing was done in After Effect and color grading was done in Davinci Resolve.
+
+#### 3D Animation
+
+I created keyframe animations with rigged characters in Cinema 4D. In Cinema 4D, the scene structures were first built according to the size of the actual shooting set, to avoid making the virtual character too big or too small during compositing, and to make tracking easier.
+
+{{< figure src="/img/portfolio/Hercraft-c4d-steve-point.jpg" caption="Steve calls out to the girl, points to the dragon egg, and encourages the girl to go on an adventure with him." width="700px" >}}
+<br>
+
+{{< figure src="/img/portfolio/Hercraft-c4d-enderman-walk.jpg" caption="The angry Enderman follows closely as the girl runs into the pantry." width="700px" >}}
+<br>
+
+{{< figure src="/img/portfolio/Hercraft-c4d-steve-save.jpg" caption="The angry Enderman approaches the girl. Steve uses water to scare him off, then tells the girl to follow him as he runs away. " width="700px" >}}
+<br>
+
+### Tracking
+
+{{< figure src="/img/portfolio/Hercraft-c4d-track.jpg" caption="I use Motion Tracker to calculate the camera's position in the 3D scene. " width="700px" >}}
+<br>
+
+### Color Grading
+
+{{< figure src="/img/portfolio/Hercraft-davinci-too-bright.jpg" caption="Adjust overexposed walls" width="700px" >}}
+<br>
+
+{{< figure src="/img/portfolio/Hercraft-davinci-too-warm.jpg" caption="The picture is too warmer, lower the color temperature" width="700px" >}}
+<br>
+
+{{< figure src="/img/portfolio/Hercraft-davinci-too-warm-not-scary.jpg" caption="The shoot is too warm and not scary" width="700px" >}}
+<br>
