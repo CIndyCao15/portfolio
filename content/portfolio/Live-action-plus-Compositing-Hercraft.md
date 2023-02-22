@@ -6,7 +6,29 @@ title = "[ #Project 3 ] Hercraft - Creative Short Film"
 weight = 3
 +++
 
-This movie is a Minecraft fanfic. To make the movie, we shot all the footage first, then we built each scene at a 1:1 scale in Cinema 4D and put Steve and the other characters in it. We did 3D animation and rendering in Cinema 4D, then composed in After Effects. Finally, the finished film was color graded in DaVinci Resolve.
+**ROLE:**
+Prop & Makeup Artist, 3D Animator, Digital Colorist
+
+**YEAR:**
+2017
+
+**TOOLS USED:**
+Cinema 4D, After Effects, DaVinci Resolve, Photoshop
+
+**GENRE:**
+Fanfic Short Film
+
+**RESPONSIBILITY:**
+1. Create a storyboard with the director and discuss the shooting plan.
+2. As a member of the film crew, I am responsible for making props, setting up scenes and making up the actress. I am also responsible for quality assurance of the takes and footage management.
+3. Make 3D animation in Cinima 4D, track and composite.
+4. Color grade the film.
+
+**DESCRIPTION:**
+
+This movie is a Minecraft fanfic. It tells the story of a girl who accidentally dozes off in the classroom and finds that her world has many Minecraft elements. She meets Steve, and together they have wonderful adventures at school and form a genuine friendship.
+
+To make the movie, we shot all the footage first, then we built each scene at a 1:1 scale in Cinema 4D and put Steve and the other characters in it. We did 3D animation and rendering in Cinema 4D, then composed in After Effects. Finally, the finished film was color graded in DaVinci Resolve.
 
 {{< youtube id="jKGNVNFNEPs" title="[ Cinema 4D + Ae ] Hercraft - Creative Short Film" >}}
 <br>
