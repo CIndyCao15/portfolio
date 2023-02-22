@@ -8,26 +8,11 @@ weight = 2
 math = true
 +++
 
-**ROLE:**
-Team Leader
-
-**YEAR:**
-2022
-
-**TOOLS USED:**
-Unity, Photoshop
-
-**PLATFORM:**
-Oculus Rift S
-
-**RESPONSIBILITY:**
-1. As a technical artist, I am responsible for the Chinese brush painting rendering scheme and optimization. I am also responsible for the final visual presentation of the game. and propose technical solutions for programmers to implement.
-2. As a designer, I design and implement the VR interaction scheme, and complete the UI design.
-3. As a programmer, I write scripts concerning gameplay / UI /  visual effects with team member.
-
-**DESCRIPTION:**
-
-The VR experience focuses on Climate Emergency. The first scene shows a utopian scene from a long time ago, the second scene shows the current Climate Emergency facing humanity (inspired by the Chongqing wildfire in 2022), and the third scene shows a cyberspace, where the player can make a commitment.
+---
+|   |   |   |
+|---|---|---|
+| **ROLE:**<br>Team Leader<br><br>**YEAR:**<br>2022<br><br>**TOOLS USED:**<br>Unity, Photoshop<br><br>**PLATFORM:**&nbsp;<br>Oculus Rift S | **RESPONSIBILITY:**<br>1. As a technical artist, I am responsible for the Chinese brush painting rendering scheme and optimization. I am also responsible for the final visual presentation of the game. and propose technical solutions for programmers to implement.<br>2. As a designer, I design and implement the VR interaction scheme, and complete the UI design.<br>3. As a programmer, I write scripts concerning gameplay / UI /  visual effects with team member. | **DESCRIPTION:**<br>The VR experience focuses on Climate Emergency. The first scene shows a utopian scene from a long time ago, the second scene shows the current Climate Emergency facing humanity (inspired by the Chongqing wildfire in 2022), and the third scene shows a cyberspace, where the player can make a commitment. |
+---
 
 > There was a time when meadow, grove, and stream,
 \

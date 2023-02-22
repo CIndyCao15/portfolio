@@ -85,3 +85,6 @@ googleAnalytics = "G-G0F7Z00VB5"
     noHl = false
     style = 'fruity'
     tabWidth = 4
+    [markup.goldmark]
+      [markup.goldmark.renderer]
+        unsafe = true

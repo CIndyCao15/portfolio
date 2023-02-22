@@ -6,27 +6,11 @@ title = "[ #Project 1 ] UE5 Animation - Harvest Day"
 weight = 1
 +++
 
-**ROLE:**
-Independent
-
-**YEAR:**
-2023
-
-**TOOLS USED:**
-Unreal Engine 5, DaVinci Resolve
-
-**GENRE:**
-Cinematic
-
-**RESPONSIBILITY:**
-1. Conduct preliminary research, and write scripts and storyboards.
-2. Use Quixel Bridge and marketplace kits to build scenes; create materials, animations, visual effects, etc. for the environment.
-3. Perform facial motion capture for MetaHuman characters; adjust camera animation.
-4. Edit the footage, and add music and sound effects.
-
-**DESCRIPTION:**
-
-This project is a 3D animated short film made in Unreal Engine 5. The film is about the digital labor that humans are forced to engage in today and the information cocoon that binds us.
+---
+|   |   |   |
+|---|---|---|
+| **ROLE:**<br>Independent<br><br>**YEAR:**<br>2023<br><br>**TOOLS USED:**<br>Unreal Engine 5, DaVinci Resolve<br><br>**GENRE:**<br>Cinematic | **RESPONSIBILITY:**<br>1. Conduct preliminary research, and write scripts and storyboards.<br>2. Use Quixel Bridge and marketplace kits to build scenes; create materials, animations, visual effects, etc. for the environment.<br>3. Perform facial motion capture for MetaHuman characters; adjust camera animation.<br>4. Edit the footage, and add music and sound effects. | **DESCRIPTION:**<br>This project is a 3D animated short film made in Unreal Engine 5. The film is about the digital labor that humans are forced to engage in today and the information cocoon that binds us. |
+---
 
 {{< youtube id="eE5CZFgZtYY" title="[ UE5 Animation ] Harvest Day" >}}
 <br>
