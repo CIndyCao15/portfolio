@@ -20,7 +20,7 @@ YEAR:
 TOOLS USED:
 Unreal Engine 5, DaVinci Resolve
 GENRE:
-Cinematic RESPONSIBILITY: Conduct preliminary research, and write scripts and storyboards. Use Quixel Bridge and marketplace kits to build scenes; create materials, animations, visual effects, etc. for the environment. Perform facial motion capture for MetaHuman characters; adjust camera animation. Edit the footage, and add music and sound effects. DESCRIPTION:
+CinematicRESPONSIBILITY:Conduct preliminary research, and write scripts and storyboards.Use Quixel Bridge and marketplace kits to build scenes; create materials, animations, visual effects, etc. for the environment.Perform facial motion capture for MetaHuman characters; adjust camera animation.Edit the footage, and add music and sound effects.DESCRIPTION:
 This project is a 3D animated short film made in Unreal Engine 5.</description>
     </item>
     
@@ -37,7 +37,7 @@ YEAR:
 TOOLS USED:
 Unity, Photoshop
 PLATFORM:
-Oculus Rift S RESPONSIBILITY: As a technical artist, I am responsible for the Chinese brush painting rendering scheme and optimization. I am also responsible for the final visual presentation of the game. and propose technical solutions for programmers to implement. As a designer, I design and implement the VR interaction scheme, and complete the UI design. As a programmer, I write scripts concerning gameplay / UI / visual effects with team member.</description>
+Oculus Rift SRESPONSIBILITY:As a technical artist, I am responsible for the Chinese brush painting rendering scheme and optimization. I am also responsible for the final visual presentation of the game. and propose technical solutions for programmers to implement.As a designer, I design and implement the VR interaction scheme, and complete the UI design.As a programmer, I write scripts concerning gameplay / UI / visual effects with team member.</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@ YEAR:
 TOOLS USED:
 Cinema 4D, After Effects, DaVinci Resolve, Photoshop
 GENRE:
-Fanfic Short Film RESPONSIBILITY: Create a storyboard with the director and discuss the shooting plan. As a member of the film crew, I am responsible for making props, setting up scenes and making up the actress. I am also responsible for quality assurance of the takes and footage management.</description>
+Fanfic Short FilmRESPONSIBILITY:Create a storyboard with the director and discuss the shooting plan.As a member of the film crew, I am responsible for making props, setting up scenes and making up the actress. I am also responsible for quality assurance of the takes and footage management.</description>
     </item>
     
     <item>
@@ -62,8 +62,15 @@ Fanfic Short Film RESPONSIBILITY: Create a storyboard with the director and disc
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ae-mg-animation-patchwork-of-broken-sounds/</guid>
-      <description>A motion graphics design. This is a group assignment, done by 4 other students and me.
-[![title of image1][1]][1] Presentation Storyboard Color Palette As the artist for this project, I took some time to determine the visual style, starting with the color palette. I made three versions of the color palette in succession.</description>
+      <description>ROLE:
+Artist
+YEAR:
+2016
+TOOLS USED:
+Illustrator, After Effects
+GENRE:
+Music VideoRESPONSIBILITY:Participate in discussions and create storyboards.Use Illustrator to draw complex visual elements that will appear in the animation.Animate the visual elements in After Effects.Utilize the Sapphire plugin to add post-production special effects.DESCRIPTION:
+This is a course assignment done by a group of 5 people, the purpose of which is to use After Effects to make motion graphics or informative animation.</description>
     </item>
     
     <item>
