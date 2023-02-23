@@ -11,17 +11,17 @@ weight = 3
 <div class="table">
     <div class="row">
         <div class="cell border-right col-1">
-            <strong>ROLE:</strong><br>
+            <strong>ROLE</strong><br>
             Prop & Makeup Artist, 3D Animator, Digital Colorist<br><br>
-            <strong>YEAR:</strong><br>
+            <strong>YEAR</strong><br>
             2017<br><br>
-            <strong>TOOLS USED:</strong><br>
+            <strong>TOOLS USED</strong><br>
             Cinema 4D, After Effects, DaVinci Resolve, Photoshop<br><br>
-            <strong>GENRE:</strong><br>
+            <strong>GENRE</strong><br>
             Fanfic Short Film
         </div>
         <div class="cell border-right col-2">
-            <strong>RESPONSIBILITY:</strong>
+            <strong>RESPONSIBILITY</strong>
             <ol>
                 <li>
                     Create a storyboard with the director and discuss the shooting plan.
@@ -38,7 +38,7 @@ weight = 3
             <ol>
         </div>
         <div class="cell col-3">
-            <strong>DESCRIPTION:</strong><br>
+            <strong>DESCRIPTION</strong><br>
             This movie is a Minecraft fanfic. It tells the story of a girl who accidentally dozes off in the classroom and finds that her world has many Minecraft elements. She meets Steve, and together they have wonderful adventures at school and form a genuine friendship.
         </div>
     </div>

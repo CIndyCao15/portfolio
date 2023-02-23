@@ -13,17 +13,17 @@ math = true
 <div class="table">
     <div class="row">
         <div class="cell border-right col-1">
-            <strong>ROLE:</strong><br>
+            <strong>ROLE</strong><br>
             Team Leader<br><br>
-            <strong>YEAR:</strong><br>
+            <strong>YEAR</strong><br>
             2022<br><br>
-            <strong>TOOLS USED:</strong><br>
+            <strong>TOOLS USED</strong><br>
             Unity, Photoshop<br><br>
-            <strong>PLATFORM:</strong><br>
+            <strong>PLATFORM</strong><br>
             Oculus Rift S
         </div>
         <div class="cell border-right col-2">
-            <strong>RESPONSIBILITY:</strong>
+            <strong>RESPONSIBILITY</strong>
             <ol>
                 <li>
                     As a technical artist, I am responsible for the Chinese brush painting rendering scheme and optimization. I am also responsible for the final visual presentation of the game. and propose technical solutions for programmers to implement.
@@ -37,7 +37,7 @@ math = true
             </ol>
         </div>
         <div class="cell col-3">
-            <strong>DESCRIPTION:</strong><br>
+            <strong>DESCRIPTION</strong><br>
             The VR experience focuses on Climate Emergency. The first scene shows a utopian scene from a long time ago, the second scene shows the current Climate Emergency facing humanity (inspired by the Chongqing wildfire in 2022), and the third scene shows a cyberspace, where the player can make a commitment.
         </div>
     </div>
