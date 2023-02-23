@@ -6,13 +6,38 @@ figcaption {
   text-align: center;
 }
 
-table {
-  border-collapse: collapse;
+.table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
-td,
-th {
-  border-right: 1px solid #eee;
-  padding: 0 1em;
+.table > .row {
+  display: table-row;
+}
+
+.table > .row > .cell {
+  display: table-cell;
+  padding: 1em;
   vertical-align: top;
+}
+
+.table > .row > .border-right {
+  border-right: 1px solid #ddd;
+}
+
+.table > .row > .col-1 {
+  width: 22%;
+}
+
+.table > .row > .col-2 {
+  width: 39%;
+}
+
+.table > .row > .col-3 {
+  width: 39%;
+}
+
+.table > .row > .cell > ol > li {
+  color: #000;
 }

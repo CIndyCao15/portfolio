@@ -9,9 +9,40 @@ math = true
 +++
 
 ---
-|   |   |   |
-|---|---|---|
-| **ROLE:**<br>Team Leader<br><br>**YEAR:**<br>2022<br><br>**TOOLS USED:**<br>Unity, Photoshop<br><br>**PLATFORM:**&nbsp;<br>Oculus Rift S | **RESPONSIBILITY:**<br>1. As a technical artist, I am responsible for the Chinese brush painting rendering scheme and optimization. I am also responsible for the final visual presentation of the game. and propose technical solutions for programmers to implement.<br>2. As a designer, I design and implement the VR interaction scheme, and complete the UI design.<br>3. As a programmer, I write scripts concerning gameplay / UI /  visual effects with team member. | **DESCRIPTION:**<br>The VR experience focuses on Climate Emergency. The first scene shows a utopian scene from a long time ago, the second scene shows the current Climate Emergency facing humanity (inspired by the Chongqing wildfire in 2022), and the third scene shows a cyberspace, where the player can make a commitment. |
+
+<div class="table">
+    <div class="row">
+        <div class="cell border-right col-1">
+            <strong>ROLE:</strong><br>
+            Team Leader<br><br>
+            <strong>YEAR:</strong><br>
+            2022<br><br>
+            <strong>TOOLS USED:</strong><br>
+            Unity, Photoshop<br><br>
+            <strong>PLATFORM:</strong><br>
+            Oculus Rift S
+        </div>
+        <div class="cell border-right col-2">
+            <strong>RESPONSIBILITY:</strong>
+            <ol>
+                <li>
+                    As a technical artist, I am responsible for the Chinese brush painting rendering scheme and optimization. I am also responsible for the final visual presentation of the game. and propose technical solutions for programmers to implement.
+                </li>
+                <li>
+                    As a designer, I design and implement the VR interaction scheme, and complete the UI design.
+                </li>
+                <li>
+                    As a programmer, I write scripts concerning gameplay / UI /  visual effects with team member.
+                </li>
+            </ol>
+        </div>
+        <div class="cell col-3">
+            <strong>DESCRIPTION:</strong><br>
+            The VR experience focuses on Climate Emergency. The first scene shows a utopian scene from a long time ago, the second scene shows the current Climate Emergency facing humanity (inspired by the Chongqing wildfire in 2022), and the third scene shows a cyberspace, where the player can make a commitment.
+        </div>
+    </div>
+</div>
+
 ---
 
 > There was a time when meadow, grove, and stream,
