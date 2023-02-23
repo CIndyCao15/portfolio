@@ -7,9 +7,69 @@ weight = 1
 +++
 
 ---
-|   |   |   |
-|---|---|---|
-| **ROLE:**<br>Independent<br><br>**YEAR:**<br>2023<br><br>**TOOLS USED:**<br>Unreal Engine 5, DaVinci Resolve<br><br>**GENRE:**<br>Cinematic | **RESPONSIBILITY:**<br>1. Conduct preliminary research, and write scripts and storyboards.<br>2. Use Quixel Bridge and marketplace kits to build scenes; create materials, animations, visual effects, etc. for the environment.<br>3. Perform facial motion capture for MetaHuman characters; adjust camera animation.<br>4. Edit the footage, and add music and sound effects. | **DESCRIPTION:**<br>This project is a 3D animated short film made in Unreal Engine 5. The film is about the digital labor that humans are forced to engage in today and the information cocoon that binds us. |
+<div class="table">
+  <div class="row">
+    <div class="cell border-right">
+        <strong>ROLE:</strong><br>
+        Independent<br><br>
+        <strong>YEAR:</strong><br>
+        2023<br><br>
+        <strong>TOOLS USED:</strong><br>
+        Unreal Engine 5, DaVinci Resolve<br><br>
+        <strong>GENRE:</strong><br>
+        Cinematic
+    </div>
+    <div class="cell border-right">
+        <strong>RESPONSIBILITY:</strong><br>
+        <ol>
+            <li style="color: #000">
+                Conduct preliminary research, and write scripts and storyboards.
+            </li>
+            <li style="color: #000">
+                Use Quixel Bridge and marketplace kits to build scenes; create materials, animations, visual effects, etc. for the environment.
+            </li>
+            <li style="color: #000">
+                Perform facial motion capture for MetaHuman characters; adjust camera animation.
+            </li>
+            <li style="color: #000">
+                Edit the footage, and add music and sound effects.
+            </li>
+        </ol>
+    </div>
+    <div class="cell">
+        <strong>DESCRIPTION:</strong><br>
+        This project is a 3D animated short film made in Unreal Engine 5. The film is about the digital labor that humans are forced to engage in today and the information cocoon that binds us.
+    </div>
+  </div>
+</div>
+
+<style>
+  .table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .row {
+    display: table-row;
+  }
+  .cell {
+    display: table-cell;
+    padding: 1em;
+    vertical-align: top;
+  }
+  .border-right {
+    border-right: 1px solid #ddd;
+  }
+  .border-left {
+    border-left: 1px solid #ddd;
+  }
+  .border-top {
+    border-top: 1px solid #ddd;
+  }
+  .border-bottom {
+    border-bottom: 1px solid #ddd;
+  }
+</style>
 ---
 
 {{< youtube id="eE5CZFgZtYY" title="[ UE5 Animation ] Harvest Day" >}}
