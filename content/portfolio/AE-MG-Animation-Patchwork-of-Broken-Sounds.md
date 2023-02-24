@@ -80,3 +80,6 @@ As the artist for this project, I took some time to determine the visual style, 
 
 {{< figure src="/img/portfolio/patchwork-color.png" alt="Color Palette" width="400px" >}}
 <br>
+
+{{< figure src="/img/portfolio/patchwork-ai.png" alt="Color Palette" width="1000px" >}}
+<br>
