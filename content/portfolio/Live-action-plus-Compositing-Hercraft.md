@@ -3,6 +3,7 @@ draft = false
 image = "img/portfolio/Hercraft.jpg"
 showonlyimage = false
 title = "[ #Project 3 ] Hercraft - Creative Short Film"
+description = "This movie is a Minecraft fanfic. It tells the story of a girl who accidentally dozes off in the classroom and finds that her world has many Minecraft elements. She meets Steve, and together they have wonderful adventures at school and form a genuine friendship."
 weight = 3
 +++
 

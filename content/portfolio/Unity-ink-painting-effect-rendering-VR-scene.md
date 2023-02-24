@@ -1,6 +1,7 @@
 +++
 date = "2016-11-05T19:41:01+05:30"
 title = "[ #Project 2 ] Unity VR - The Peach Blossom Spring - Chinese brush painting effect"
+description = "The VR experience focuses on Climate Emergency. The first scene shows a utopian scene from a long time ago, the second scene shows the current Climate Emergency facing humanity (inspired by the Chongqing wildfire in 2022), and the third scene shows a cyberspace, where the player can make a commitment."
 draft = false
 image = "img/portfolio/Unity-ink-painting-effect-rendering-VR-scene.png"
 showonlyimage = false

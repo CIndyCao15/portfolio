@@ -3,6 +3,7 @@ draft = false
 image = "img/portfolio/UE5-Animation-Harvest-Day.png"
 showonlyimage = false
 title = "[ #Project 1 ] UE5 Animation - Harvest Day"
+description = "This project is a 3D animated short film made in Unreal Engine 5. The film is about the digital labor that humans are forced to engage in today and the information cocoon that binds us."
 weight = 1
 +++
 
