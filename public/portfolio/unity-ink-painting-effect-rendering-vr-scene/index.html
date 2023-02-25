@@ -228,6 +228,7 @@ The things which I have seen I now can see no more.</p>
 </ol>
 </li>
 <li><a href="#Unity-VR">Unity VR Integration</a></li>
+<li><a href="#UI">UI Design</a></li>
 </ol>
 <h2 id="Chinese-Brush-Painting-Rendering">Chinese Brush Painting Rendering</h2>
 <h3 id="Aesthetic-Characteristics-of-Chinese-Brush-Painting">Aesthetic Characteristics of Chinese Brush Painting</h3>
@@ -486,6 +487,49 @@ At the same time, because of the above advantages, the rendering results look sm
 
 <h2 id="Unity-VR">Unity VR Integration</h2>
 <p>In Unity 2019.3, Unity has developed a new plug-in framework called XR SDK that enables XR providers to integrate with the Unity engine and make full use of its features. For more information, please refer to the <a href="https://docs.unity3d.com/2019.3/Documentation/Manual/XR.html">official user manual</a>.</p>
+<p>Notably, Unity 2019.3 features a brand-new XR plug-in framework. The multi-platform developer tools include AR Foundation and <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@1.0/manual/index.html">XR Interaction Toolkit (XRI)</a>. Additionally, XR providers&rsquo; plug-ins can be loaded using Unity&rsquo;s package manager, making performance optimization easier with the engine&rsquo;s convenience.</p>
+<p>Traditional development requires developers to adapt to different VR platforms, which means adapting input/output, display, and functionality, including a lot of repetitive labor. With XRI, developers can directly bridge with hardware through the XR plug-in provided by hardware vendors, without worrying about platform adaptation issues. This enables &ldquo;build once, deploy anywhere&rdquo;.</p>
+<p><figure><img src="/img/portfolio/Unity-ink-xr-tech-stack.png"
+         alt="This diagram illustrates the current Unity XR plug-in framework structure, and how it works with platform provider implementations." width="600px"/><figcaption>
+            <p>This diagram illustrates the current Unity XR plug-in framework structure, and how it works with platform provider implementations.</p>
+        </figcaption>
+</figure>
+
+<br></p>
+<p>I choose Oculus Rift S as a verification and display device, with most of the work being done in the engine. Since XRI in Unity 2019.3 is still in preview version (1.0.0-pre.2) and has not been officially released (note: it is officially released NOW), I use Virtual Reality Toolkit (VRTK) to replace its functionality. The disadvantage of VRTK is that bridging needs to be done manually, while XRI does it automatically. This project uses Unity 2019.3&rsquo;s latest plugin architecture and XR Plug-in Management to load, initialize, set up, and manage plugins.</p>
+<h2 id="UI">UI Design</h2>
+<p>In VR scenes, two display modes were used for UI.</p>
+<ol>
+<li>For my part in the dialog, the canvas is fixed directly on the CenterEyeAnchor as a screen space UI (note that the render mode I choose is still world space, but it will look like screen space as it follows the movement of tracking);</li>
+</ol>
+<figure><img src="/img/portfolio/Unity-ink-myUI.png"
+         alt="There are two Texts here, one for the dialog and one for displaying Credits at the end of the process." width="600px"/><figcaption>
+            <p>There are two Texts here, one for the dialog and one for displaying Credits at the end of the process.</p>
+        </figcaption>
+</figure>
+
+<ol start="2">
+<li>For others&rsquo; part in the dialog, the canvas is displayed above their respective heads as a world space UI.</li>
+</ol>
+<p><figure><img src="/img/portfolio/Unity-ink-othersUI.png" width="600px"/>
+</figure>
+
+<br></p>
+<p>I rewrote the UIDefault.shader in Unity&rsquo;s built-in shader and added a billboard function that allows it to rotate and always face the player&rsquo;s line of sight.</p>
+<p>In the billboard code section, a coordinate system needs to be create first. But how to define the &ldquo;front&rdquo; direction of the coordinates?</p>
+<p>The traditional method is to use the &ldquo;<em>viewer minus center</em>&rdquo; vector, but this can cause significant distortion at the edge of the viewing frustum.</p>
+<p><figure><img src="/img/portfolio/Unity-ink-UI1.GIF"
+         alt="*viewer minus center* as front" width="400px"/>
+</figure>
+
+<br></p>
+<p>I try to use the &ldquo;forward direction of the camera&rdquo;, namely the <code>UNITY_MATRIX_IT_MV[2].xyz</code> macro. This way, no matter if it&rsquo;s at the edge of the viewing frustum or in the center of the screen, the text will face the viewer directly.</p>
+<p><figure><img src="/img/portfolio/Unity-ink-UI2.GIF"
+         alt="forward direction of the camera" width="400px"/>
+</figure>
+
+<br></p>
+<p>For traditional displays, I prefer the second method. Without distortion, it feels more &ldquo;UI&rdquo;. In VR, however, it feels weird. After experimenting, I choose the first method in the VR scene.</p>
 
          
       </div>
