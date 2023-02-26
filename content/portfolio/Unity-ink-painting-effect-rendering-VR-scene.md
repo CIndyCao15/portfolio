@@ -508,8 +508,10 @@ void SceneSwap()
     }
 }
 
-// For the transition from Scene 1 to Scene 2
-// it takes 5 seconds (pickGlassSceneSwapDelay) to wait for the fog to thicken and the scene to darken
+// For the transition from Scene 2 to Scene 3
+// in addition to waiting for the fog to thicken at the transition
+// there is also a waiting period for the character to burn and dissolve and glasses to fall off
+// which is an additional 8 seconds (pickGlassSceneSwapDelay)
 public void StartDelayedSceneSwapAfterPickup()
 {
     StartCoroutine("DelayedSceneSwapAfterPickup");
@@ -521,10 +523,8 @@ public IEnumerator DelayedSceneSwapAfterPickup()
     StartSceneSwap();
 }
 
-// For the transition from Scene 2 to Scene 3
-// in addition to waiting for the fog to thicken at the transition
-// there is also a waiting period for the character to burn and dissolve and glasses to fall off
-// which is an additional 8 seconds (minWaitTime)
+// For the transition from Scene 1 to Scene 2
+// it takes 3 seconds (minWaitTime) to wait for the fog to thicken and the scene to darken
 public void StartSceneSwap()
 {
     StartCoroutine("ForcedWait");
@@ -540,3 +540,6 @@ IEnumerator ForcedWait()
     SceneSwap();
 }
 {{< / highlight >}}
+
+{{< figure src="/img/portfolio/Unity-ink-scene-swap.png" alt="Scene Transition" width="400px" >}}
+<br>

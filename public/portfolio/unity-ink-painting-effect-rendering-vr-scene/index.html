@@ -614,8 +614,10 @@ At the same time, because of the above advantages, the rendering results look sm
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// For the transition from Scene 1 to Scene 2
-</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// it takes 5 seconds (pickGlassSceneSwapDelay) to wait for the fog to thicken and the scene to darken
+</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// For the transition from Scene 2 to Scene 3
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// in addition to waiting for the fog to thicken at the transition
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// there is also a waiting period for the character to burn and dissolve and glasses to fall off
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// which is an additional 8 seconds (pickGlassSceneSwapDelay)
 </span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>public <span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">StartDelayedSceneSwapAfterPickup</span>()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#ff0086;font-weight:bold">StartCoroutine</span>(<span style="color:#0086d2">&#34;DelayedSceneSwapAfterPickup&#34;</span>);
@@ -627,10 +629,8 @@ At the same time, because of the above advantages, the rendering results look sm
 </span></span><span style="display:flex;"><span>    <span style="color:#ff0086;font-weight:bold">StartSceneSwap</span>();
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// For the transition from Scene 2 to Scene 3
-</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// in addition to waiting for the fog to thicken at the transition
-</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// there is also a waiting period for the character to burn and dissolve and glasses to fall off
-</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// which is an additional 8 seconds (minWaitTime)
+</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// For the transition from Scene 1 to Scene 2
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// it takes 3 seconds (minWaitTime) to wait for the fog to thicken and the scene to darken
 </span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>public <span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">StartSceneSwap</span>()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#ff0086;font-weight:bold">StartCoroutine</span>(<span style="color:#0086d2">&#34;ForcedWait&#34;</span>);
@@ -645,6 +645,11 @@ At the same time, because of the above advantages, the rendering results look sm
 </span></span><span style="display:flex;"><span>    isForcedWaiting = false;
 </span></span><span style="display:flex;"><span>    <span style="color:#ff0086;font-weight:bold">SceneSwap</span>();
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p><figure><img src="/img/portfolio/Unity-ink-scene-swap.png"
+         alt="Scene Transition" width="400px"/>
+</figure>
+
+<br></p>
 
          
       </div>
