@@ -384,10 +384,13 @@ Notably, Unity 2019.3 features a brand-new XR plug-in framework. The multi-platf
 Traditional development requires developers to adapt to different VR platforms, which means adapting input/output, display, and functionality, including a lot of repetitive labor. With XRI, developers can directly bridge with hardware through the XR plug-in provided by hardware vendors, without worrying about platform adaptation issues. This enables "build once, deploy anywhere".
 
 {{< figure src="/img/portfolio/Unity-ink-xr-tech-stack.png" caption="This diagram illustrates the current Unity XR plug-in framework structure, and how it works with platform provider implementations." width="600px" >}}
+
+I choose Oculus Rift S as a verification and display device, with most of the work being done in the engine. This project uses Unity 2019.3's latest plugin architecture and XR Plug-in Management to load, initialize, set up, and manage plugins.
+
+{{< figure src="/img/portfolio/Unity-ink-vr-oculus-packages.png" >}}
 <br>
 
-I choose Oculus Rift S as a verification and display device, with most of the work being done in the engine. Since XRI in Unity 2019.3 is still in preview version (1.0.0-pre.2) and has not been officially released (note: it is officially released NOW), I use Virtual Reality Toolkit (VRTK) to replace its functionality. The disadvantage of VRTK is that bridging needs to be done manually, while XRI does it automatically. This project uses Unity 2019.3's latest plugin architecture and XR Plug-in Management to load, initialize, set up, and manage plugins.
-
+Since XRI in Unity 2019.3 is still in preview version (1.0.0-pre.2) and has not been officially released (note: it is officially released NOW), I use Virtual Reality Toolkit (VRTK) to replace its functionality. The disadvantage of VRTK is that bridging needs to be done manually, while XRI does it automatically. 
 ## UI Design {#UI}
 
 In VR scenes, two display modes were used for UI.
