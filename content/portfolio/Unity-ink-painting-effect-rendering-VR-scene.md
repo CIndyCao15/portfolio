@@ -105,6 +105,7 @@ This picture shows what the models look like originally in Unity Standard shader
     3. [Chinese Brush Painting Character Rendering Scheme](#Chinese-Brush-Painting-Character-Rendering-Scheme)
 2. [Unity VR Integration](#Unity-VR)
 3. [UI Design](#UI)
+4. [Scene Transition Design](#Transition)
 ## Chinese Brush Painting Rendering {#Chinese-Brush-Painting-Rendering}
 ### Aesthetic Characteristics of Chinese Brush Painting {#Aesthetic-Characteristics-of-Chinese-Brush-Painting}
 For **brush painting mountains and stones**, there are two characteristics that need to be reflected:
@@ -419,3 +420,123 @@ I try to use the "forward direction of the camera", namely the `UNITY_MATRIX_IT_
 <br>
 
 For traditional displays, I prefer the second method. Without distortion, it feels more "UI". In VR, however, it feels weird. After experimenting, I choose the first method in the VR scene.
+
+## Scene Transition Design {#Transition}
+
+The 2022 game *God of War Ragnarök* features an impressive one-shot design that seamlessly blends over 20 hours of gameplay into a cohesive experience. Many games, not just those in the *God of War* series, strive to make loading and scene transitions as seamless as possible. In my VR experience, I have three scenes with very different styles, so reducing the "jumpiness" of the gameplay experience and minimizing the "stuttering" of loading screens to alleviate VR sickness is a design focus.
+
+To achieve a smoother transition, I use two effects in combination: fog and scene darkening. I create the fog particle effect and attach it as a child object to the OVRCameraRig's CenterEyeAnchor. I mainly control the density of the fog by scripting the **Rate over Time** parameter of particle emission. For the darkening effect, I use Unity's Post Processing Stack to control the **Exposure Compensation**.
+
+{{< highlight c >}}
+void HandleParticles()
+{
+    if (particleRatio <= 0)
+    {
+        particleRatio = 0f;
+    }
+    else
+    {
+        particleRatio = Mathf.Clamp(particleRatio - particleFadeRatio * Time.deltaTime, 0f, 1f);
+    }
+
+    foreach(ParticleStruct ps in fadeParticleSys)
+    {
+        ps.SetRate(particleRatio);
+    }
+
+    // The Adaptation Type is Progressive by default
+    // so there is no need to animate autoExposure to make it linear
+    // The adaptation speed can be adjusted directly in the Inspector panel of Post-process Volume
+    if (!canSceneSwap || isForcedWaiting)
+    {
+        autoExposure.keyValue.Override(0f);   
+    }
+    else
+    {
+        autoExposure.keyValue.Override(1f);   
+    }
+}
+
+public class ParticleStruct
+{
+    ParticleSystem system;
+    float initEmission;
+    public ParticleStruct(ParticleSystem _system)
+    {
+        system = _system;
+        initEmission = _system.emission.rateOverTime.constant;
+    }
+
+    public void SetRate(float rate)
+    {
+        var emit = system.emission;
+        emit.rateOverTime = rate * initEmission;
+    }
+}
+{{< / highlight >}}
+
+After the scene transition action is performed, there is a wait for the animation to play. Scene transitions are done asynchronously using coroutines to avoid the screen lagging caused by scene changes and mismatched headset movements, which could lead to VR sickness.
+
+{{< highlight c >}}
+void SceneSwap()
+{
+    canSceneSwap = false;
+    bool found = false;
+    int sceneCount = scenes.Length;
+    if (sceneCount <= 1)
+    {
+        Debug.LogError("No scenes appointed");
+        return;
+    }
+    
+    for (int i = 0; i < sceneCount; i++)
+    {
+        if (scenes[i] == SceneManager.GetActiveScene().name)
+        {
+            if (i == 1)
+            {
+                particleFadeRatio = particleFadeRatioAlternate;
+            }
+            found = true;
+            sceneSwapProgress = SceneManager.LoadSceneAsync(scenes[(i + 1) % sceneCount]);
+        }
+    }
+
+    if (!found)
+    {
+        sceneSwapProgress = SceneManager.LoadSceneAsync(scenes[0]);
+    }
+}
+
+// For the transition from Scene 1 to Scene 2
+// it takes 5 seconds (pickGlassSceneSwapDelay) to wait for the fog to thicken and the scene to darken
+public void StartDelayedSceneSwapAfterPickup()
+{
+    StartCoroutine("DelayedSceneSwapAfterPickup");
+}
+
+public IEnumerator DelayedSceneSwapAfterPickup()
+{
+    yield return new WaitForSeconds(pickGlassSceneSwapDelay);
+    StartSceneSwap();
+}
+
+// For the transition from Scene 2 to Scene 3
+// in addition to waiting for the fog to thicken at the transition
+// there is also a waiting period for the character to burn and dissolve and glasses to fall off
+// which is an additional 8 seconds (minWaitTime)
+public void StartSceneSwap()
+{
+    StartCoroutine("ForcedWait");
+}
+
+IEnumerator ForcedWait()
+{
+    canSceneSwap = false;
+    isForcedWaiting = true;
+    particleRatio = 1f;
+    yield return new WaitForSeconds(minWaitTime);
+    isForcedWaiting = false;
+    SceneSwap();
+}
+{{< / highlight >}}

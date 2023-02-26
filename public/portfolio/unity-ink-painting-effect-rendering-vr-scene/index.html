@@ -229,6 +229,7 @@ The things which I have seen I now can see no more.</p>
 </li>
 <li><a href="#Unity-VR">Unity VR Integration</a></li>
 <li><a href="#UI">UI Design</a></li>
+<li><a href="#Transition">Scene Transition Design</a></li>
 </ol>
 <h2 id="Chinese-Brush-Painting-Rendering">Chinese Brush Painting Rendering</h2>
 <h3 id="Aesthetic-Characteristics-of-Chinese-Brush-Painting">Aesthetic Characteristics of Chinese Brush Painting</h3>
@@ -534,6 +535,116 @@ At the same time, because of the above advantages, the rendering results look sm
 
 <br></p>
 <p>For traditional displays, I prefer the second method. Without distortion, it feels more &ldquo;UI&rdquo;. In VR, however, it feels weird. After experimenting, I choose the first method in the VR scene.</p>
+<h2 id="Transition">Scene Transition Design</h2>
+<p>The 2022 game <em>God of War Ragnarök</em> features an impressive one-shot design that seamlessly blends over 20 hours of gameplay into a cohesive experience. Many games, not just those in the <em>God of War</em> series, strive to make loading and scene transitions as seamless as possible. In my VR experience, I have three scenes with very different styles, so reducing the &ldquo;jumpiness&rdquo; of the gameplay experience and minimizing the &ldquo;stuttering&rdquo; of loading screens to alleviate VR sickness is a design focus.</p>
+<p>To achieve a smoother transition, I use two effects in combination: fog and scene darkening. I create the fog particle effect and attach it as a child object to the OVRCameraRig&rsquo;s CenterEyeAnchor. I mainly control the density of the fog by scripting the <strong>Rate over Time</strong> parameter of particle emission. For the darkening effect, I use Unity&rsquo;s Post Processing Stack to control the <strong>Exposure Compensation</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">HandleParticles</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">if</span> (particleRatio &lt;= <span style="color:#0086f7;font-weight:bold">0</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        particleRatio = <span style="color:#0086f7;font-weight:bold">0f</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        particleRatio = Mathf.<span style="color:#ff0086;font-weight:bold">Clamp</span>(particleRatio - particleFadeRatio * Time.deltaTime, <span style="color:#0086f7;font-weight:bold">0f</span>, <span style="color:#0086f7;font-weight:bold">1f</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff0086;font-weight:bold">foreach</span>(ParticleStruct ps in fadeParticleSys)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        ps.<span style="color:#ff0086;font-weight:bold">SetRate</span>(particleRatio);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;background-color:#0f140f;font-style:italic">// The Adaptation Type is Progressive by default
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">// so there is no need to animate autoExposure to make it linear
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">// The adaptation speed can be adjusted directly in the Inspector panel of Post-process Volume
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#fb660a;font-weight:bold">if</span> (!canSceneSwap || isForcedWaiting)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        autoExposure.keyValue.<span style="color:#ff0086;font-weight:bold">Override</span>(<span style="color:#0086f7;font-weight:bold">0f</span>);   
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        autoExposure.keyValue.<span style="color:#ff0086;font-weight:bold">Override</span>(<span style="color:#0086f7;font-weight:bold">1f</span>);   
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>public class ParticleStruct
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    ParticleSystem system;
+</span></span><span style="display:flex;"><span>    <span style="color:#cdcaa9;font-weight:bold">float</span> initEmission;
+</span></span><span style="display:flex;"><span>    public <span style="color:#ff0086;font-weight:bold">ParticleStruct</span>(ParticleSystem _system)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        system = _system;
+</span></span><span style="display:flex;"><span>        initEmission = _system.emission.rateOverTime.constant;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    public <span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">SetRate</span>(<span style="color:#cdcaa9;font-weight:bold">float</span> rate)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        var emit = system.emission;
+</span></span><span style="display:flex;"><span>        emit.rateOverTime = rate * initEmission;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>After the scene transition action is performed, there is a wait for the animation to play. Scene transitions are done asynchronously using coroutines to avoid the screen lagging caused by scene changes and mismatched headset movements, which could lead to VR sickness.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">SceneSwap</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    canSceneSwap = false;
+</span></span><span style="display:flex;"><span>    <span style="color:#cdcaa9;font-weight:bold">bool</span> found = false;
+</span></span><span style="display:flex;"><span>    <span style="color:#cdcaa9;font-weight:bold">int</span> sceneCount = scenes.Length;
+</span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">if</span> (sceneCount &lt;= <span style="color:#0086f7;font-weight:bold">1</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Debug.<span style="color:#ff0086;font-weight:bold">LogError</span>(<span style="color:#0086d2">&#34;No scenes appointed&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#fb660a;font-weight:bold">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">for</span> (<span style="color:#cdcaa9;font-weight:bold">int</span> i = <span style="color:#0086f7;font-weight:bold">0</span>; i &lt; sceneCount; i++)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#fb660a;font-weight:bold">if</span> (scenes[i] == SceneManager.<span style="color:#ff0086;font-weight:bold">GetActiveScene</span>().name)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#fb660a;font-weight:bold">if</span> (i == <span style="color:#0086f7;font-weight:bold">1</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                particleFadeRatio = particleFadeRatioAlternate;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            found = true;
+</span></span><span style="display:flex;"><span>            sceneSwapProgress = SceneManager.<span style="color:#ff0086;font-weight:bold">LoadSceneAsync</span>(scenes[(i + <span style="color:#0086f7;font-weight:bold">1</span>) % sceneCount]);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">if</span> (!found)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        sceneSwapProgress = SceneManager.<span style="color:#ff0086;font-weight:bold">LoadSceneAsync</span>(scenes[<span style="color:#0086f7;font-weight:bold">0</span>]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// For the transition from Scene 1 to Scene 2
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// it takes 5 seconds (pickGlassSceneSwapDelay) to wait for the fog to thicken and the scene to darken
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>public <span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">StartDelayedSceneSwapAfterPickup</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff0086;font-weight:bold">StartCoroutine</span>(<span style="color:#0086d2">&#34;DelayedSceneSwapAfterPickup&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>public IEnumerator <span style="color:#ff0086;font-weight:bold">DelayedSceneSwapAfterPickup</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    yield <span style="color:#fb660a;font-weight:bold">return</span> new <span style="color:#ff0086;font-weight:bold">WaitForSeconds</span>(pickGlassSceneSwapDelay);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff0086;font-weight:bold">StartSceneSwap</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// For the transition from Scene 2 to Scene 3
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// in addition to waiting for the fog to thicken at the transition
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// there is also a waiting period for the character to burn and dissolve and glasses to fall off
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// which is an additional 8 seconds (minWaitTime)
+</span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>public <span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">StartSceneSwap</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff0086;font-weight:bold">StartCoroutine</span>(<span style="color:#0086d2">&#34;ForcedWait&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>IEnumerator <span style="color:#ff0086;font-weight:bold">ForcedWait</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    canSceneSwap = false;
+</span></span><span style="display:flex;"><span>    isForcedWaiting = true;
+</span></span><span style="display:flex;"><span>    particleRatio = <span style="color:#0086f7;font-weight:bold">1f</span>;
+</span></span><span style="display:flex;"><span>    yield <span style="color:#fb660a;font-weight:bold">return</span> new <span style="color:#ff0086;font-weight:bold">WaitForSeconds</span>(minWaitTime);
+</span></span><span style="display:flex;"><span>    isForcedWaiting = false;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff0086;font-weight:bold">SceneSwap</span>();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 
          
       </div>
