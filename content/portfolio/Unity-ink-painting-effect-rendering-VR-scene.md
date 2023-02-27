@@ -392,6 +392,12 @@ I choose Oculus Rift S as a verification and display device, with most of the wo
 <br>
 
 Since XRI in Unity 2019.3 is still in preview version (1.0.0-pre.2) and has not been officially released (note: it is officially released NOW), I use Virtual Reality Toolkit (VRTK) to replace its functionality. The disadvantage of VRTK is that bridging needs to be done manually, while XRI does it automatically. 
+
+{{< figure src="/img/portfolio/Unity-ink-VRTK.png" alt="Manually bridge using VRTK" width="600px" >}}
+<br>
+
+During the bridging process, to bridge the display and input of Oculus and VRTK, several packages are required, including **Zinnia.Unity**, **Malimbe**, and **VRTK Prefabs**. They can be easily imported and managed using Unity's package manager.
+
 ## UI Design {#UI}
 
 In VR scenes, two display modes were used for UI.
