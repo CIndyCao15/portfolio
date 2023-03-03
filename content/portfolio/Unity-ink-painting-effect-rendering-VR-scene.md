@@ -64,10 +64,10 @@ math = true
 \
 > The things which I have seen I now can see no more.
 
-*["The Creation of Adam"](https://skfb.ly/6RnWL) by Loïc Norgeot is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).*
-
 {{< youtube id="NW-UrDA5nq0" title="Unity ink painting effect rendering VR scene" >}}
 <br>
+
+*["The Creation of Adam"](https://skfb.ly/6RnWL) by Loïc Norgeot is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).*
 
 You can find the playable build shown in the video [here](https://drive.google.com/drive/folders/1O-hnS8qAkfEFtwk0FRUm3RVPHHwUvIW8?usp=sharing). The game runs on Oculus Rift S, so if you don't have the VR headset I'm afraid you won't get the full experience. You can still use the spacebar to switch between scenes, which is a backdoor I left, but other interactions (moving, teleporting, picking up props, dialogue, etc.) are not available.
 
@@ -76,7 +76,7 @@ Chinese brush painting rendering is the part where I spend the most effort. For 
 {{< youtube id="YdPf6S08NT0" title="Unity ink painting effect rendering VR scene" >}}
 <br>
 
-Using Unity's built-in pipeline, I implemented a small project in the style of Chinese brush painting.
+Using Unity's built-in pipeline, I implemented this project in the style of Chinese brush painting.
 
 I first analyze the aesthetic characteristics of landscape and figure paintings, and then proposed two methods for Chinese brush painting effect, one for characters and one for mountains and rocks. I use Oculus Rift S as a development device and developed this project based on the new XR plug-in architecture provided by Unity 2019.3.0, and finally use Oculus Debug Tool and Unity UPR (Unity Performance Report) for performance testing.
 
@@ -104,8 +104,10 @@ This picture shows what the models look like originally in Unity Standard shader
         4. [Stroke texture (feathering and spreading)](#Stroke-texture)
     3. [Chinese Brush Painting Character Rendering Scheme](#Chinese-Brush-Painting-Character-Rendering-Scheme)
 2. [Unity VR Integration](#Unity-VR)
-3. [UI Design](#UI)
-4. [Scene Transition Design](#Transition)
+3. [Gameplay](#Gameplay)
+    1. [Scripts  Architecture Overview](#Scripts)
+4. [UI Design](#UI)
+5. [Scene Transition Design](#Transition)
 ## Chinese Brush Painting Rendering {#Chinese-Brush-Painting-Rendering}
 ### Aesthetic Characteristics of Chinese Brush Painting {#Aesthetic-Characteristics-of-Chinese-Brush-Painting}
 For **brush painting mountains and stones**, there are two characteristics that need to be reflected:
@@ -398,15 +400,53 @@ Since XRI in Unity 2019.3 is still in preview version (1.0.0-pre.2) and has not 
 
 During the bridging process, to bridge the display and input of Oculus and VRTK, several packages are required, including **Zinnia.Unity**, **Malimbe**, and **VRTK Prefabs**. They can be easily imported and managed using Unity's package manager.
 
+All input actions such as grabbing are handled by the VRTK package without having to worry about hardware implementation. The prefab used is "**Interactable.Primary_Grab.Secondary_Swap**" with the primary script being **Interactable Facade.cs**.
+
+{{< figure src="/img/portfolio/Unity-ink-facade.png" caption="The grabbable object can be placed as a child object under the prefab **key.Interactable.Primary_Grab.Secondary_Swap**." width="600px" >}}
+
+{{< figure src="/img/portfolio/Unity-ink-facade1.png" caption="Get the grab action by adding listeners in the **Grab Events**." width="250px" >}}
+
+## Gameplay {#Gameplay}
+
+Now that the hardware inputs and outputs are in place, the next step is the writing of the gameplay section.
+
+### Scripts  Architecture Overview {#Scripts}
+
+The architecture designed for this project is shown in the figure below:
+
+{{< figure src="/img/portfolio/Unity-ink-structure-of-scripts.png" alt="architecture of scripts" width="350px" >}}
+<br>
+
+The functions of each script are as follows:
+
+1. ***InputHandler.cs***: Determines the action of taking off the VR glasses, which triggers the transition from the first scene to the second scene.
+
+2. ***MainLogicController.cs***: Handles all scene transitions.
+
+3. ***OtherCharacter***: Manages the Non-player characters, especially the burning effect (using a shader parameter).
+
+4. ***GrabbableGlasses***: Handles the action of grabbing the NPC's glasses in the second scene, triggers the transition from the second scene to the third scene, and manages the action of dropping the glasses to the ground when the character burns out.
+
+5. ***FadeParticle.cs***: Manages the particle animation during NPC burning.
+
+6. ***SpeechManager***: Manages dialogues between the player and NPC.
+
+7. ***QuitButton***: Handles the transition from the third scene to the credits scene and quitting the game.
+
+Among them, 1 and 3, 4, 5 will be discussed in the [Gameplay](#Gameplay) section; 2 will be discussed in the [Scene Transition Design](#Transition) section; and 6 will be discussed in the [Dialogue and UI Design](#UI) section.
+
+
+
+
 ## UI Design {#UI}
 
 In VR scenes, two display modes were used for UI.
 
-1. For my part in the dialog, the canvas is fixed directly on the CenterEyeAnchor as a screen space UI (note that the render mode I choose is still world space, but it will look like screen space as it follows the movement of tracking);
+1. For my part in the dialogue, the canvas is fixed directly on the CenterEyeAnchor as a screen space UI (note that the render mode I choose is still world space, but it will look like screen space as it follows the movement of tracking);
 
-{{< figure src="/img/portfolio/Unity-ink-myUI.png" caption="There are two Texts here, one for the dialog and one for displaying Credits at the end of the process." width="600px" >}}
+{{< figure src="/img/portfolio/Unity-ink-myUI.png" caption="There are two Texts here, one for the dialogue and one for displaying Credits at the end of the process." width="600px" >}}
 
-2. For others' part in the dialog, the canvas is displayed above their respective heads as a world space UI.
+2. For others' part in the dialogue, the canvas is displayed above their respective heads as a world space UI.
 
 {{< figure src="/img/portfolio/Unity-ink-othersUI.png" width="600px" >}}
 <br>
