@@ -108,6 +108,8 @@ This picture shows what the models look like originally in Unity Standard shader
     1. [Scripts  Architecture Overview](#Scripts)
 4. [UI Design](#UI)
 5. [Scene Transition Design](#Transition)
+
+❤ [Blooper](#Blooper)
 ## Chinese Brush Painting Rendering {#Chinese-Brush-Painting-Rendering}
 ### Aesthetic Characteristics of Chinese Brush Painting {#Aesthetic-Characteristics-of-Chinese-Brush-Painting}
 For **brush painting mountains and stones**, there are two characteristics that need to be reflected:
@@ -589,3 +591,11 @@ IEnumerator ForcedWait()
 
 {{< figure src="/img/portfolio/Unity-ink-scene-swap.png" alt="Scene Transition" width="400px" >}}
 <br>
+
+### Blooper {#Blooper}
+
+These are some screenshots taken during the development process. Just want to find an opportunity to showcase the Kawaii Unity Chan😊.
+
+{{< figure src="/img/portfolio/Unity-ink-UnityChan.gif" caption="Unity Chan, with wind effects applied to her hair and skirt using Magica Cloth." width="300px" >}}
+
+{{< figure src="/img/portfolio/Unity-ink-UnityChan2.jpg" caption="Adding post-process effects to mimic Xuan paper texture." width="600px" >}}
