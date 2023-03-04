@@ -44,10 +44,20 @@ weight = 5
 
 ---
 
-AE character animation, with the scene built in C4D.
-
 {{< youtube id="hlNSC-_D-6U" title="[ AE Animation ] Nice Day" >}}
 <br>
+
+First, one team member edited the song and created a 2 minute and 6 second version. Then we discussed the storyboard design together. Since it was in the form of a music video, I created animatics based on the storyboard, which allowed each team member to better control the rhythm of both the music and the animations, and also provided a reference for the duration of each shot and the speed of animation required. Based on this, we determined the workload and assigned appropriate tasks to each member.
+
+My role is to create character assets for each shot. In addition, me and two other team members are responsible for creating character animations, including movements for both the character and the butterfly. If the scene is not too complex, we will also draw basic terrain, such as the corner the character leans against at the beginning, the horizon of the world he walks through, and the close-up of the stairs.
+
+The other two team members are in charge of 3D background modeling and animation using Cinema 4D. They will also add some character animation to the 360-degree shot, adjust the portal animation effects, and create the background animation for the colorful world.
+
+⚠ Some notes:
+
+The main focus should still be on each shot. Clip points in the animatics may not be strictly defined, so it is recommended to leave some extra time before and after the shot when creating it. Additionally, some shots may require post-production adjustments such as panning (like the side view shot at the beginning) or zooming (some front or back shots). After importing the Ai files into Ae, be sure to adjust the anchor point and make sure the assets are not too blurry, leaving room for overall zooming if needed.
+
+For some shots where the background is the main focus and the character has little movement, the background will be assigned to team members responsible for 3D background modeling and animation.
 
 <div style="display: none">
 [![snapshot 1 of nice day][1]][1]
@@ -67,3 +77,10 @@ AE character animation, with the scene built in C4D.
 
 {{< youtube id="lKmyubUVjT4" title="Nice Day Animatics" >}}
 <br>
+
+The original song, with its positive lyrics, also contains a great deal of sadness and loneliness, which in turn contains a glimmer of hope. Therefore, this music video aims to reflect this emotional complexity. When designing the character, we wanted him to be as gray, hollow, and numb as possible.
+
+
+{{< figure src="/img/portfolio/nice-day-stair-loop.GIF" caption="looping animation of climbing stairs (in place)" width="600px" >}}
+
+{{< figure src="/img/portfolio/nice-day-portal-walk.GIF" caption="looping animation of walking out of the portal" width="600px" >}}
