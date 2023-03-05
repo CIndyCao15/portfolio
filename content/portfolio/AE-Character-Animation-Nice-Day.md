@@ -85,7 +85,6 @@ The original song, with its positive lyrics, also contains a great deal of sadne
 As the head of the design team for the BYR forum, the official forum of my university, I drew inspiration from the butterfly logo of the forum and incorporated it into my work.
 
 {{< figure src="/img/portfolio/nice-day-Butterfly-Design.png" width="350px" >}}
-<br>
 
 a) The original logo of the BYR forum is a butterfly pattern formed by the letters BYR.
 
