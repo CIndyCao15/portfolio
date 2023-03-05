@@ -80,6 +80,18 @@ For some shots where the background is the main focus and the character has litt
 
 The original song, with its positive lyrics, also contains a great deal of sadness and loneliness, which in turn contains a glimmer of hope. Therefore, this music video aims to reflect this emotional complexity. When designing the character, we wanted him to be as gray, hollow, and numb as possible.
 
+{{< figure src="/img/portfolio/nice-day-chara-design.png" caption="Character design and character assets for each shot." width="600px" >}}
+
+As the head of the design team for the BYR forum, the official forum of my university, I drew inspiration from the butterfly logo of the forum and incorporated it into my work.
+
+{{< figure src="/img/portfolio/nice-day-Butterfly-Design.png" width="350px" >}}
+<br>
+
+a) The original logo of the BYR forum is a butterfly pattern formed by the letters BYR.
+
+b) During my tenure as a graphic designer, I revamped the logo with a teal color, making it more abstract and resembling petals in shape. (Shown above is the logo for the mobile app, while below is the badge design for the core team members of the BYR forum.)
+
+c) For this animation project, I created a design asset that maintains the teal color and is even more abstract.
 
 {{< figure src="/img/portfolio/nice-day-stair-loop.GIF" caption="looping animation of climbing stairs (in place)" width="600px" >}}
 
