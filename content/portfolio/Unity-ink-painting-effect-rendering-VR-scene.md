@@ -95,7 +95,8 @@ This picture shows what the models look like originally in Unity Standard shader
 
 #### Contents {#catalog}
 
-1. [Chinese Brush Painting Rendering](#Chinese-Brush-Painting-Rendering)
+1. [Inspiration - about Climate Emergency](#Inspiration)
+2. [Chinese Brush Painting Rendering](#Chinese-Brush-Painting-Rendering)
     1. [Aesthetic Characteristics of Chinese Brush Painting](#Aesthetic-Characteristics-of-Chinese-Brush-Painting)
     2. [Chinese Brush Painting Mountain & Rock Rendering Scheme](#Chinese-Brush-Painting-Mountain-and-Rock-Rendering-Scheme)
         1. [Contour rendering based on dual-pass Shell Method](#Contour-rendering)
@@ -103,13 +104,24 @@ This picture shows what the models look like originally in Unity Standard shader
         3. [Rubbing simulation based on model curvature](#Rubbing)
         4. [Stroke texture (feathering and spreading)](#Stroke-texture)
     3. [Chinese Brush Painting Character Rendering Scheme](#Chinese-Brush-Painting-Character-Rendering-Scheme)
-2. [Unity VR Integration](#Unity-VR)
-3. [Gameplay](#Gameplay)
+3. [Unity VR Integration](#Unity-VR)
+4. [Gameplay](#Gameplay)
     1. [Scripts  Architecture Overview](#Scripts)
-4. [UI Design](#UI)
-5. [Scene Transition Design](#Transition)
+5. [UI Design](#UI)
+6. [Scene Transition Design](#Transition)
 
 ❤ [Blooper](#Blooper)
+## Inspiration - about Climate Emergency {#Inspiration}
+
+In the past two years, China has experienced an extremely severe climate emergency. The unprecedented heavy rains and floods in Henan Province in 2021 affected 14.8 million people and resulted in 398 deaths and disappearances. The capital city of Zhengzhou, with a population of nearly 13 million, received nearly the annual average rainfall in just three days. The hourly rainfall intensity between 4 p.m. and 5 p.m. on July 20 broke the historical record for extreme rainfall in mainland China. In August 2022, Chongqing was hit by an extreme weather event of consecutive high temperatures and sunny days, which led to a forest fire. The flames and thick smoke lit up the night sky, and Chongqing was sleepless throughout the night.
+
+{{< figure src="/img/portfolio/Unity-ink-fire.png" width="500px" >}}
+<br>
+
+Shocked by the news images, I decided to create a VR experience depicting the scene of a forest fire at night.
+
+Living in cities with air conditioning, central heating, skyscrapers, and glass corridors, we often overlook the pain in distant places. What we are familiar with seems to be a stable life, but it is actually a phantom created by the market economy, long-distance logistics, and social systems. Through creating this VR experience, I hope to draw attention to the urgent need to face the climate emergency. Otherwise, the sword of Damocles will eventually fall, and no one will be spared.
+
 ## Chinese Brush Painting Rendering {#Chinese-Brush-Painting-Rendering}
 ### Aesthetic Characteristics of Chinese Brush Painting {#Aesthetic-Characteristics-of-Chinese-Brush-Painting}
 For **brush painting mountains and stones**, there are two characteristics that need to be reflected:
