@@ -96,7 +96,8 @@ This picture shows what the models look like originally in Unity Standard shader
 #### Contents {#catalog}
 
 1. [Inspiration - about Climate Emergency](#Inspiration)
-2. [Chinese Brush Painting Rendering](#Chinese-Brush-Painting-Rendering)
+2. [Design Concept](#Design-Concept)
+3. [Chinese Brush Painting Rendering](#Chinese-Brush-Painting-Rendering)
     1. [Aesthetic Characteristics of Chinese Brush Painting](#Aesthetic-Characteristics-of-Chinese-Brush-Painting)
     2. [Chinese Brush Painting Mountain & Rock Rendering Scheme](#Chinese-Brush-Painting-Mountain-and-Rock-Rendering-Scheme)
         1. [Contour rendering based on dual-pass Shell Method](#Contour-rendering)
@@ -104,16 +105,17 @@ This picture shows what the models look like originally in Unity Standard shader
         3. [Rubbing simulation based on model curvature](#Rubbing)
         4. [Stroke texture (feathering and spreading)](#Stroke-texture)
     3. [Chinese Brush Painting Character Rendering Scheme](#Chinese-Brush-Painting-Character-Rendering-Scheme)
-3. [Unity VR Integration](#Unity-VR)
-4. [Gameplay](#Gameplay)
+4. [Unity VR Integration](#Unity-VR)
+5. [Gameplay](#Gameplay)
     1. [Scripts  Architecture Overview](#Scripts)
-5. [UI Design](#UI)
-6. [Scene Transition Design](#Transition)
+    2. [Analysis of Gameplay Scripts](#Gameplay-Scripts)
+6. [UI Design](#UI)
+7. [Scene Transition Design](#Transition)
 
 ❤ [Blooper](#Blooper)
 ## Inspiration - about Climate Emergency {#Inspiration}
 
-In the past two years, China has experienced an extremely severe climate emergency. The unprecedented heavy rains and floods in Henan Province in 2021 affected 14.8 million people and resulted in 398 deaths and disappearances. The capital city of Zhengzhou, with a population of nearly 13 million, received nearly the annual average rainfall in just three days. The hourly rainfall intensity between 4 p.m. and 5 p.m. on July 20 broke the historical record for extreme rainfall in mainland China. In August 2022, Chongqing was hit by an extreme weather event of consecutive high temperatures and sunny days, which led to a forest fire. The flames and thick smoke lit up the night sky, and Chongqing was sleepless throughout the night.
+In the past two years, China has experienced an extremely severe climate emergency. The unprecedented heavy rains and floods in Henan Province in 2021 affected 14.8 million people and resulted in 398 deaths and disappearances. The capital city of Zhengzhou, with a population of nearly 13 million, received nearly the annual average rainfall in just three days. The hourly rainfall intensity between 4 p.m. and 5 p.m. on July 20 **broke the historical record for extreme rainfall in mainland China**. In August 2022, Chongqing was hit by an extreme weather event of consecutive high temperatures and sunny days, which led to a forest fire. The flames and thick smoke lit up the night sky, and Chongqing was sleepless throughout the night.
 
 {{< figure src="/img/portfolio/Unity-ink-fire.png" width="500px" >}}
 <br>
@@ -121,6 +123,14 @@ In the past two years, China has experienced an extremely severe climate emergen
 Shocked by the news images, I decided to create a VR experience depicting the scene of a forest fire at night.
 
 Living in cities with air conditioning, central heating, skyscrapers, and glass corridors, we often overlook the pain in distant places. What we are familiar with seems to be a stable life, but it is actually a phantom created by the market economy, long-distance logistics, and social systems. Through creating this VR experience, I hope to draw attention to the urgent need to face the climate emergency. Otherwise, the sword of Damocles will eventually fall, and no one will be spared.
+
+## Design Concept {#Design-Concept}
+
+In ancient Chinese landscape philosophy, the concept of *"unity of man and nature"* (天人合一) was emphasized, where man and nature coexist in harmony. In landscape painting, the idea of *"reclining and traveling"* (卧游) was used to fully appreciate the beauty of mountains and rivers. The concept of *"reclining and traveling"* involves a spiritual journey through cultural mediums in a fleeting moment, similar to using VR headsets to tour landscape paintings.
+
+The first scene is set in spring, with a light drizzle, expressing the ancient idea of the *unity of man and nature*. After taking off the VR headset, the second scene shows a modern-day mountain fire. In this scene, six modern people wearing VR headsets seem unwilling to wake up from their own illusion, unlike the timely awakening of the player. After the player talks to them and removes their VR headsets, they immediately burn and disperse, signifying that if we do not address the climate emergency, no one will be spared in the end.
+
+The scene then switches to the third scene, a holographic consciousness space with a giant sculpture of the hand from Michelangelo's *The Creation of Adam*. At the fingertips where God and Adam meet, consciousness flows quietly. When the player gently touches it, they also make a commitment to address the climate emergency.
 
 ## Chinese Brush Painting Rendering {#Chinese-Brush-Painting-Rendering}
 ### Aesthetic Characteristics of Chinese Brush Painting {#Aesthetic-Characteristics-of-Chinese-Brush-Painting}
@@ -449,8 +459,93 @@ The functions of each script are as follows:
 
 Among them, 1 and 3, 4, 5 will be discussed in the [Gameplay](#Gameplay) section; 2 will be discussed in the [Scene Transition Design](#Transition) section; and 6 will be discussed in the [Dialogue and UI Design](#UI) section.
 
+### Analysis of Gameplay Scripts {#Gameplay-Scripts}
 
+***InputHandler.cs*** primarily handles the action recognition for **removing the VR headset from the player**, with the corresponding code shown below.
 
+{{< highlight c >}}
+void Update()
+{
+    isIndexPressed = OVRInput.Get(OVRInput.RawButton.RIndexTrigger);
+    isMiddlePressed = OVRInput.Get(OVRInput.RawButton.RHandTrigger);
+    handVelocityR = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RHand);
+}
+
+bool isLiftingGlass() {
+    bool isCorrectVelocity = handVelocityR.y >= liftGlassThresholdY &&
+        Vector3.Angle(handVelocityR, Vector3.up) <= liftGlassThresholdAngle;
+    bool isCorrectDistance = Vector3.Distance(headTrans.position, rHandTrans.position) <= liftGlassThresholdDistance;
+    return isCorrectDistance && isCorrectVelocity;         
+}
+
+bool isHandAtRight() {
+    Vector3 eyeFront = headTrans.forward;
+    Vector3 eyeToHand = rHandTrans.position - headTrans.position;
+    // Unity uses left-handed coordinates
+    return Vector3.Cross(eyeToHand, eyeFront).y < 0;
+}
+
+public static bool IsHandAtRight() {
+    return instance.isHandAtRight();
+}
+
+public static bool IsLiftingGlass(){
+    return instance.isLiftingGlass();
+}
+
+public static bool IsGrabbingR(){
+    return instance.isIndexPressed && instance.isMiddlePressed;
+}
+{{< / highlight >}}
+
+As you can see, there are three conditions involved: the hand is on the right side of the headset, a fist grab action, and a hand lift action. Based on this, the scene transition is triggered in *MainlogicController.cs*.
+
+{{< highlight c >}}
+            if (canSceneSwap && !isForcedWaiting)
+            {
+                if ((InputHandler.IsGrabbingR() 
+                    && InputHandler.IsLiftingGlass()
+                    && InputHandler.IsHandAtRight()) || Input.GetKeyUp("space"))
+                {
+                    StartSceneSwap();
+                }
+            }
+{{< / highlight >}}
+
+***OtherCharacter.cs***, which is responsible for handling the NPC burn effect, controls the dissolve progress of the NPC material by manipulating the exposed **_Dissolve** parameter in the shader. I created a simple dissolve effect by generating Perlin noise in the shader.
+
+{{< highlight c >}}
+void Update()
+{
+    if (isFading && dissolve < 1f)
+    {
+        dissolve = Mathf.Clamp(dissolve + dissolveSpeed * Time.deltaTime, 0f, 1f);
+        for(int i = 0; i < relatedMaterials.Length; i++) {
+            relatedMaterials[i].SetFloat("_Dissolve", dissolve);
+        }
+
+        foreach(FadeParticle sys in pSystem) {
+            if (sys != null)
+            {
+                sys.SetValue(1 - dissolve);
+            }
+        }
+    }
+}
+
+public void onGrabbed()
+{
+    isFading = true;
+    
+    Debug.Log("Grabbed glasses");
+}
+
+public void onGrabbedSelf()
+{
+    onGrabbed();
+    glasses.transform.SetParent(null);
+}
+{{< / highlight >}}
 
 ## UI Design {#UI}
 
