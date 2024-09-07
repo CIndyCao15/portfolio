@@ -15,7 +15,7 @@ math = true
     <div class="row">
         <div class="cell border-right col-1">
             <strong>ROLE</strong><br>
-            Team Leader<br><br>
+            Team<br><br>
             <strong>YEAR</strong><br>
             2022<br><br>
             <strong>TOOLS USED</strong><br>
