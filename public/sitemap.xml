@@ -2,65 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/ue5-animation-harvest-day/</loc>
+    <loc>http://localhost:1313/portfolio/ue5-animation-harvest-day/</loc>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/unity-ink-painting-effect-rendering-vr-scene/</loc>
+    <loc>http://localhost:1313/portfolio/unity-ink-painting-effect-rendering-vr-scene/</loc>
     <lastmod>2016-11-05T19:41:01+05:30</lastmod>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/live-action-plus-compositing-hercraft/</loc>
+    <loc>http://localhost:1313/portfolio/live-action-plus-compositing-hercraft/</loc>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/ae-mg-animation-patchwork-of-broken-sounds/</loc>
+    <loc>http://localhost:1313/portfolio/ae-mg-animation-patchwork-of-broken-sounds/</loc>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/ae-character-animation-nice-day/</loc>
+    <loc>http://localhost:1313/portfolio/ae-character-animation-nice-day/</loc>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effects/</loc>
+    <loc>http://localhost:1313/portfolio/shadergraph-effects/</loc>
     <lastmod>2016-11-05T18:25:22+05:30</lastmod>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/vfx-graph/</loc>
+    <loc>http://localhost:1313/portfolio/vfx-graph/</loc>
     <lastmod>2016-11-05T19:44:32+05:30</lastmod>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effect-works/</loc>
+    <loc>http://localhost:1313/portfolio/shadergraph-effect-works/</loc>
     <lastmod>2016-11-05T19:50:47+05:30</lastmod>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/ue4-rainy-night-street-scene/</loc>
+    <loc>http://localhost:1313/portfolio/ue4-rainy-night-street-scene/</loc>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/unity-shader-works/</loc>
+    <loc>http://localhost:1313/portfolio/unity-shader-works/</loc>
     <lastmod>2016-11-05T19:56:17+05:30</lastmod>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/substance-designer-material-works/</loc>
+    <loc>http://localhost:1313/portfolio/substance-designer-material-works/</loc>
     <lastmod>2016-11-05T19:57:40+05:30</lastmod>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/ui-vr-weather/</loc>
+    <loc>http://localhost:1313/portfolio/ui-vr-weather/</loc>
     <lastmod>2016-11-05T19:59:22+05:30</lastmod>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/ps-ai-graphic-design/</loc>
+    <loc>http://localhost:1313/portfolio/ps-ai-graphic-design/</loc>
     <lastmod>2016-11-05T20:02:19+05:30</lastmod>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/delicacies-vr-demo-video/</loc>
+    <loc>http://localhost:1313/portfolio/delicacies-vr-demo-video/</loc>
     <lastmod>2016-11-05T20:22:08+05:30</lastmod>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/unity-2d-coloring-game-doodle-party/</loc>
+    <loc>http://localhost:1313/portfolio/unity-2d-coloring-game-doodle-party/</loc>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/the-witcher-3-editing/</loc>
+    <loc>http://localhost:1313/portfolio/the-witcher-3-editing/</loc>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/maya-animation-cats-and-monster/</loc>
+    <loc>http://localhost:1313/portfolio/maya-animation-cats-and-monster/</loc>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/tv-animation-made-with-slate-plugin-in-substance-designer/</loc>
+    <loc>http://localhost:1313/portfolio/tv-animation-made-with-slate-plugin-in-substance-designer/</loc>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2016-11-06T13:00:25+05:30</lastmod>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/contact/</loc>
+    <loc>http://localhost:1313/contact/</loc>
     <lastmod>2016-11-06T13:00:25+05:30</lastmod>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2016-11-05T21:05:33+05:30</lastmod>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/portfolio/</loc>
+    <loc>http://localhost:1313/portfolio/</loc>
     <lastmod>2016-11-05T20:22:08+05:30</lastmod>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://cindy-cao-portfolio.netlify.app/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>
