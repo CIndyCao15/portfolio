@@ -3,7 +3,7 @@ draft = false
 image = "img/portfolio/cats-and-monster.jpg"
 showonlyimage = false
 title = "[ #Misc ] Maya Animation - Cats and Monster"
-weight = 17
+weight = 27
 +++
 
 Modeling, skinning and animation by me, with reference to concept artwork. Mental Ray was used for rendering.

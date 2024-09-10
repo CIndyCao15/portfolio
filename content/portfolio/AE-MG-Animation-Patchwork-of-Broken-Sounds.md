@@ -4,7 +4,7 @@ image = "img/portfolio/patchwork-of-broken-sounds.jpg"
 showonlyimage = false
 title = "[ #Project 4 ] AE MG Animation - Patchwork Staccato (ツギハギスタッカート) Music Video"
 description = "This is a course assignment done by a group of 5 people, the purpose of which is to use After Effects to make motion graphics or informative animation. The song, ツギハギスタッカート (Patchwork Staccato, 拼凑的断音), is narrated from the perspective of a teenage girl, telling the story of her unrequited love that ended in vain. The animation was created based on the lyrics."
-weight = 4
+weight = 14
 +++
 
 ---

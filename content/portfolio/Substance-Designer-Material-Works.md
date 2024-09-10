@@ -4,7 +4,7 @@ showonlyimage = false
 date = "2016-11-05T19:57:40+05:30"
 title = "[ #Misc ] Substance Designer Material Works"
 draft = false
-weight = 11
+weight = 21
 +++
 
 {{< figure src="/img/portfolio/Substance-Designer-PBR-ground.gif" alt="Substance Designer PBR ground" caption="Substance Designer PBR ground" >}}
