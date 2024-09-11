@@ -2,9 +2,9 @@
 draft = false
 image = "img/portfolio/SandScape-cover.jpg"
 showonlyimage = false
-title = "SandScape - A Digital Sandtray Therapy for Kids"
+title = "SandScape - A Digital Sandtray Therapy for Kids by BC Children's Hospital"
 description = "SandScape is a collaboration with BC Children's Hospital to develop a digital therapeutic tool for kids. Our agile team of six used Unity WebGL to create an interactive sandtray, designed to support therapy through engaging digital experiences."
-weight = 1
+weight = 2
 +++
 
 ---
@@ -42,6 +42,8 @@ weight = 1
 ---
 
 The playable WebGL demo is hosted by the CDM [here](https://projects.thecdm.ca/sandscape). It is accessible on both PC and Mac via browser, with mouse controls. While it can also run on mobile browsers, full touchscreen compatibility is not yet supported.
+
+More about this industry project and the CDM, click [here](https://thecdm.ca/projects/shaping-new-digital-frontier-youth-therapy-bc-childrens-hospital-digital-lab).
 
 {{< youtube id="JJVP5A7261s" title="Sandscape Trailer" >}}
 <br>
