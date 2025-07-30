@@ -3,7 +3,7 @@ draft = false
 image = "img/portfolio/perfect-world-volume-animation-purchased.png"
 showonlyimage = true
 title = "[ #Misc ] TV animation made with the Slate plugin in Substance Designer"
-weight = 18
+weight = 28
 +++
 
 {{< figure src="/img/portfolio/perfect-world-volume-animation-purchased-1.png" alt="Perfect World volume animation purchased" caption="Perfect World volume animation purchased" >}}

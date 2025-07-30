@@ -4,7 +4,7 @@ image = "img/portfolio/nice-day.jpg"
 showonlyimage = false
 title = "[ #Project 5 ] AE Animation - Nice Day"
 description = "This is a character animation project, the music video for WORLD ORDER's \"Have A Nice Day\". The video showcases the protagonist chasing a butterfly in a gray world, expressing that even in a monotonous and oppressive life, there can be moments of brightness. It encourages people to look for hope and to find the courage to carry on in a seemingly endlessly mundane life."
-weight = 5
+weight = 15
 +++
 
 ---

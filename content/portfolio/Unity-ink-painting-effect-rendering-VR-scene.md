@@ -5,7 +5,7 @@ description = "The VR experience focuses on Climate Emergency. The first scene s
 draft = false
 image = "img/portfolio/Unity-ink-painting-effect-rendering-VR-scene.png"
 showonlyimage = false
-weight = 2
+weight = 12
 math = true
 +++
 
