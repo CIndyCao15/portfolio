@@ -4,8 +4,7 @@
     <title>Categories on Cindy Cao&#39;s Portfolio</title>
     <link>https://cindy-cao-portfolio.netlify.app/categories/</link>
     <description>Recent content in Categories on Cindy Cao&#39;s Portfolio</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="https://cindy-cao-portfolio.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://cindy-cao-portfolio.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
