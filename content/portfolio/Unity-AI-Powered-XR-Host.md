@@ -125,9 +125,7 @@ Research and Ideation:
 
 After discussed with our 3D artist, I made the project timeline for the second client meeting, proposing shortcuts and addressing tradeoffs, as building a photorealistic model from scratch would have taken at least five months, which exceeded our 16-week timeline. To stay on schedule, we proposed more efficient approaches, including adopting a stylized art style, modifying off-the-shelf models, and using Mixamo for animation.
 
-[![Traditional 3D Pipeline][1]][1]
-
-[1]: /img/portfolio/Robi-3D-Pipiline.png
+{{< swiper images="/img/portfolio/Robi-3D-Pipiline.png,/img/portfolio/Robi-3D-Pipiline1.png,/img/portfolio/Robi-3D-Pipiline2.png,/img/portfolio/Robi-3D-Pipiline3.png,/img/portfolio/Robi-3D-Pipiline4.png" >}}
 
 We aimed to create a web-based experience to make the host more accessible for a wider audience during the Signals event. However, due to the 384 MB memory limit on iOS 15 (and over) browser, we encountered unstable performance and crashes. I analyzed the project with **Unity Profiler** tools, and identified the main bottlenecks: oversized textures and the shader variants unity included in the build. I reduced the memory usage by *11%* to 360 MB, just under the platform limitation.
 

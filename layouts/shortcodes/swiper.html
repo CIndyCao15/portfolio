@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<style>
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #ef5285 !important;
+  }
+  .swiper-pagination-bullet {
+    background: #ef5285 !important;
+    opacity: 0.5;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  .swiper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+</style>
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    {{ $images := split (.Get "images") "," }}
+    {{ range $images }}
+      <div class="swiper-slide">
+        <img src="{{ . | relURL }}" alt="Swiper Image" />
+      </div>
+    {{ end }}
+  </div>
+
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.swiper', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  });
+</script>
