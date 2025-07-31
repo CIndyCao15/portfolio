@@ -231,51 +231,84 @@ if (!doNotTrack) {
 <a href="https://miro.com/app/board/uXjVKLSl4yY=/?share_link_id=53938384272">Miro board</a></p>
 <iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVKLSl4yY=/?moveToViewport=-49111,-38368,136612,66984&embedId=651599236080" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
 <p>After discussed with our 3D artist, I made the project timeline for the second client meeting, proposing shortcuts and addressing tradeoffs, as building a photorealistic model from scratch would have taken at least five months, which exceeded our 16-week timeline. To stay on schedule, we proposed more efficient approaches, including adopting a stylized art style, modifying off-the-shelf models, and using Mixamo for animation.</p>
-<p><img src="/img/portfolio/Robi-3D-Pipiline.png" alt="test image"></p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-/>
+<style>
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #ef5285 !important;
+  }
+  .swiper-pagination-bullet {
+    background: #ef5285 !important;
+    opacity: 0.5;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
 
-<div class="swiper mySwiper">
+  .swiper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+</style>
+
+<div class="swiper">
   <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="%0d" class="w-full h-auto object-contain" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/portfolio/Robi-3D-Pipiline.png%0d" class="w-full h-auto object-contain" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/portfolio/Robi-3D-Pipiline1.png%0d" class="w-full h-auto object-contain" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/portfolio/Robi-3D-Pipiline2.png%0d" class="w-full h-auto object-contain" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/portfolio/Robi-3D-Pipiline3.png%0d" class="w-full h-auto object-contain" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/portfolio/Robi-3D-Pipiline4.png%0d" class="w-full h-auto object-contain" />
-        </div>
+    
+    
+      <div class="swiper-slide">
+        <img src="/img/portfolio/Robi-3D-Pipiline.png" alt="Swiper Image" />
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="/img/portfolio/Robi-3D-Pipiline1.png" alt="Swiper Image" />
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="/img/portfolio/Robi-3D-Pipiline2.png" alt="Swiper Image" />
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="/img/portfolio/Robi-3D-Pipiline3.png" alt="Swiper Image" />
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="/img/portfolio/Robi-3D-Pipiline4.png" alt="Swiper Image" />
+      </div>
+    
   </div>
 
-  <div class="swiper-pagination"></div>
   <div class="swiper-button-next"></div>
   <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
-  const swiper = new Swiper('.mySwiper', {
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.swiper', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
   });
 </script>
 <p>We aimed to create a web-based experience to make the host more accessible for a wider audience during the Signals event. However, due to the 384 MB memory limit on iOS 15 (and over) browser, we encountered unstable performance and crashes. I analyzed the project with <strong>Unity Profiler</strong> tools, and identified the main bottlenecks: oversized textures and the shader variants unity included in the build. I reduced the memory usage by <em>11%</em> to 360 MB, just under the platform limitation.</p>
