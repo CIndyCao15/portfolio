@@ -12,9 +12,10 @@ googleAnalytics = "G-G0F7Z00VB5"
   # Use custom.css for your custom styling
   style = "default"
   description = "Describe your website"
-  copyright = "&copy;2024 Cindy Cao"
+  copyright = "&copy;2025 Cindy Cao"
   sidebarAbout = [
-    "I am a creative illustrator and graphic designer with more than 10 years of experience.",
+    "Technical Artist & Problem Solver.",
+    "Specializing in Shader Development, AR/VR, & High-Performance Visuals.",
     "Originally from Beijing, currently based in Vancouver.",
     "Engine: Unity 3D, Unreal Engine",
     "DCC Tools: Maya, 3ds Max, Cinema 4D, Blender, Substance Designer",
