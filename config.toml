@@ -34,7 +34,7 @@ googleAnalytics = "G-G0F7Z00VB5"
      # - send a dummy email yourself to confirm your account
      # - click the confirm link in the email from www.formspree.io
      # - you're done. Happy mailing!
-  email = "xinyicindycao@163.com"
+  email = "CindyCaoTA@gmail.com"
 
     # Optional Matomo analytics (formerly piwik)
       # [params.analytics.matomo]
@@ -60,10 +60,10 @@ googleAnalytics = "G-G0F7Z00VB5"
   url = "contact/"
 
   [params.social]
-  email         = "xinyicindycao@163.com"
+  email         = "CindyCaoTA@gmail.com"
   github        = "https://github.com/CIndyCao15"
 #   youtube       = "full profile url in youtube"
-  linkedin      = "https://www.linkedin.com/in/cindycao15/"
+  linkedin      = "https://www.linkedin.com/in/cindycaota/"
 #   facebook      = "https://www.facebook.com/profile.php?id=100009649442204"
 #   instagram     = "https://www.instagram.com/cindycao15/"
 #   googleplus    = "full profile url in googleplus"
