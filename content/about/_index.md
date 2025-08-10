@@ -3,6 +3,17 @@ date = "2016-11-05T21:05:33+05:30"
 title = "XINYI (CINDY) CAO"
 +++
 
+<a href="/file/Xinyi_Cindy_Cao_Resume.pdf" target="_blank" style="
+    display: inline-block;
+    background-color: #ef5285;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+">
+📄 Download my Resume (PDF)
+</a>
+
 ---
 
 #### SKILLS
