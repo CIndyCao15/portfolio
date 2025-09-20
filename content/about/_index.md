@@ -34,7 +34,7 @@ title = "XINYI (CINDY) CAO"
 * Acted as the technical point of contact with contractors, coordinating the construction of the virtual studio system framework from initial stages, which was used in Learning Together, reaching 180 million students nationwide
 * Handled the operation, maintenance, and troubleshooting of the UE4 virtual studio system, ensuring 100% uptime for live broadcasts. Developed technical standards to ensure the reliability of flagship programs like E-sport News (CETV-4)
 
-**Tools and Skillset**: Unreal Engine, Kanban
+**Tools and Skillset**: Unreal Engine, Kanban, Virtual Production
 
 <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
   <span><strong>TECHNICAL ARTIST INTERN at PERFECT WORLD</strong></span>
@@ -70,11 +70,11 @@ title = "XINYI (CINDY) CAO"
   <span>Vancouver, 05/2024 to 08/2024</span>
 </div>
 
-* Researched about game, film, TV, and pan-entertainment market trends, independently completed 13 forecasting reports
-* Researched overseas game and user preferences, presenting insights on UI differences to enhance user-centered design
-* Monitored App Store game lists with Python, gathered data on top-performing games, and produced reports with insights
+* Collaborated to develop an engaging virtual host solution for the SIGNALS event, showcasing AI and MR technology
+* Directed 3D pipeline management; facilitated team communication with 3D artist and developers. Used profiler tools to analyze optimization bottlenecks, reducing shader variants and texture size, achieving an 11% reduction in memory usage
+* Implemented the AR solution using Unity WebGL and Web AR; conducted stress tests and created technical documentation
 
-**Tools and Skillset**: User Research, User Test, Market Research, Python
+**Tools and Skillset**: Agile, Unity, WebGL, Web AR, AI, Chat GPT - 4o, TTS, Performance Optimization
 
 <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
   <span><strong>TECHNICAL ARTIST for SANDSCAPE at BC CHILDREN’S HOSPITAL DIGITAL LAB</strong></span>
