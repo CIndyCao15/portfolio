@@ -41,3 +41,42 @@ figcaption {
 .table > .row > .cell > ol > li {
   color: #000;
 }
+
+.portfolio-disclosure {
+  margin: 24px 0 24px;
+}
+
+.portfolio-disclosure > summary {
+  display: inline-block;
+  color: #ef5285;
+  cursor: pointer;
+  list-style: none;
+  /* text-decoration: underline;
+  text-underline-offset: 0.15em; */
+}
+
+.portfolio-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.portfolio-disclosure > summary:hover,
+.portfolio-disclosure > summary:focus {
+  color: #e01557;
+}
+
+.portfolio-disclosure > summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.portfolio-disclosure-arrow::before {
+  content: "▸";
+}
+
+.portfolio-disclosure[open] > summary {
+  margin-bottom: 16px;
+}
+
+.portfolio-disclosure[open] > summary .portfolio-disclosure-arrow::before {
+  content: "▾";
+}
