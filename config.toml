@@ -17,11 +17,7 @@ googleAnalytics = "G-G0F7Z00VB5"
     "Technical Artist | Tools, Pipeline & Real-Time Rendering",
     "I build artist-facing tools, pipeline workflows, and rendering solutions for animation and games.",
     "Currently working in production technology at Netflix Animation Studios in Vancouver.",
-    "<br>",
-    "<strong>Core</strong>",
-    "Python · PyQt · OpenUSD",
-    "HLSL / ShaderLab",
-    "Unreal Engine · Unity"
+    "<br><strong>Core</strong><br>Python · PyQt · OpenUSD<br>HLSL / ShaderLab<br>Unreal Engine · Unity"
   ]
   # Contact page
      # Since this template is static, the contact form uses www.formspree.io as a

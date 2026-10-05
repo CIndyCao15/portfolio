@@ -3,7 +3,7 @@ date = "2016-11-05T21:05:33+05:30"
 title = "XINYI (CINDY) CAO"
 +++
 
-<a href="/file/Xinyi_Cindy_Cao_Resume.pdf" target="_blank" style="
+<a href="/file/Resume_Cindy Cao_TA.pdf" target="_blank" style="
     display: inline-block;
     background-color: #ef5285;
     color: white;
@@ -16,54 +16,46 @@ title = "XINYI (CINDY) CAO"
 
 ---
 
-#### SKILLS
 
-* **Software**: Unity, Unreal, Maya, Blender, Substance Designer, Adobe Photoshop, DaVinci Resolve Studio, Final Cut Pro, Silverstack Lab, Adobe Illustrator, Adobe After Effects, Adobe Premiere Pro, Adobe Lightroom
-* **Technical**: Unity ShaderLab, HLSL, C#, C++, Python, Unreal Blueprint, AR/VR, Version Control (Git), Film DIT, MATLAB
-* **Digital Media**: Agile, Kanban, User and Market Research, Pipeline Development, Video Editing and Colour Grading
+Hi, I’m Cindy, a Technical Artist based in Vancouver. I currently work as a **Lighting Technical Assistant at Netflix Animation Studios**, where I support lighting artists in a proprietary DCC, troubleshoot production issues, and contribute artist-facing workflow and validation tools.
 
----
+My background spans **animation, games, virtual production, and real-time rendering**. Before Netflix, I supported Unreal Engine virtual studio workflows at China Education Television and worked as a Technical Artist Intern at Perfect World, developing shaders and optimizing rendering for mobile games. My graduate research focused on real-time non-photorealistic rendering, where I developed a Chinese ink-painting rendering system in Unity for VR.
 
-#### WORK EXPERIENCE
+What interests me most about technical art is the space between **artists and technology**. I enjoy understanding how artists work, tracing technical problems through complex systems, and turning those findings into practical tools or workflows.
 
-<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
-  <span><strong>VIRTUAL TECHNOLOGY STAFF at CHINA EDUCATION TELEVISION (CETV)</strong></span>
-  <span>Beijing, 07/2021 to 08/2023</span>
-</div>
-
-* Acted as the technical point of contact with contractors, coordinating the construction of the virtual studio system framework from initial stages, which was used in Learning Together, reaching 180 million students nationwide
-* Handled the operation, maintenance, and troubleshooting of the UE4 virtual studio system, ensuring 100% uptime for live broadcasts. Developed technical standards to ensure the reliability of flagship programs like E-sport News (CETV-4)
-
-**Tools and Skillset**: Unreal Engine, Kanban, Virtual Production
-
-<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
-  <span><strong>TECHNICAL ARTIST INTERN at PERFECT WORLD</strong></span>
-  <span>Beijing, 04/2019 to 12/2020</span>
-</div>
-
-* Collaborated with senior technical artists to optimize the graphics performance of the Perfect World mobile game and other in-development titles, implementing 30+ new shader visual effects and functionalities, based on artists’ requests
-* Resolved 10+ technical issues presented by the art team, ensuring bug-free graphical performance and smoother gameplay
-* Optimized performance and reduced build size by refining shaders, implementing LOD, and addressing resource constraints
-* Created 14 in-game cinematic cutscenes for Perfect World expansion packs, supporting App Store marketing strategies
-
-
-**Tools and Skillset**: Unity, ShaderLab, HLSL, Built-in Render Pipeline, Universal Render Pipeline (URP), TortoiseSVN, Substance Designer, PBR, Lighting, Post-Processing, Performance Optimization, Computer Graphics
-
-<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
-  <span><strong>MARKET AND USER RESEARCH INTERN at TENCENT</strong></span>
-  <span>Remote, 10/2019 to 04/2020</span>
-</div>
-
-* Researched about game, film, TV, and pan-entertainment market trends, independently completed 13 forecasting reports
-* Researched overseas game and user preferences, presenting insights on UI differences to enhance user-centered design
-* Monitored App Store game lists with Python, gathered data on top-performing games, and produced reports with insights
-
-
-**Tools and Skillset**: User Research, User Test, Market Research, Python
+I’m currently interested in artist tools, pipeline workflows, real-time rendering, and production problem-solving across animation and games.
 
 ---
 
-#### SCHOOL × INDUSTRY PROJECTS
+#### EXPERIENCE
+
+<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+  <span><strong>Netflix Animation Studios</strong></span>
+  <span>Vancouver, 2025 to Present</span>
+</div>
+<div style="font-size: 0.9em;">Lighting Technical Assistant</div>
+
+* Supporting lighting production through technical troubleshooting, cross-pipeline triage, and artist-facing tooling within a proprietary lighting DCC. My work includes workflow improvements built with Python/PyQt and production validation tools for identifying problematic scene states.
+
+<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+  <span><strong>China Education Television (CETV)</strong></span>
+  <span>Beijing, 2021 to 2023</span>
+</div>
+<div style="font-size: 0.9em;">Virtual Technology Staff</div>
+
+* Supported artists and operators working with Unreal Engine 4 virtual studio workflows, maintained real-time production systems under live-broadcast constraints, and helped standardize content workflows for production.
+
+<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+  <span><strong>Perfect World</strong></span>
+  <span>Beijing, 2019 to 2020</span>
+</div>
+<div style="font-size: 0.9em;">Technical Artist Intern</div>
+
+* Worked on mobile game rendering and technical art in Unity, including ShaderLab/HLSL effects, rendering optimization, LOD workflows, and technical problem-solving for artists and designers.
+
+---
+
+<!-- #### SCHOOL × INDUSTRY PROJECTS
 
 <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
   <span><strong>TECHNICAL ARTIST and DEVELOPER for SIGNALS HOST at DIGIBC and VIFF</strong></span>
@@ -96,15 +88,15 @@ title = "XINYI (CINDY) CAO"
 
 **Tools and Skillset**: Unity, High Definition Render Pipeline (HDRP), ShaderGraph, VFX, Photoshop
 
----
+--- -->
 
 #### Education
 
-* **Simon Fraser University**: Master of Digital Media (M.DM.) at Centre for Digital Media, Dec 2024
-* **Beijing Film Academy**: Master of Art (M.A.) in Film Studies at Department of Film Technology, June 2021
-* **Beijing University of Posts and Telecommunications**: Bachelor of Engineering (B.Eng.) in Digital Media Technology, June 2018
+* **Simon Fraser University**: Master of Digital Media (M.DM.) at Centre for Digital Media, 2025
+* **Beijing Film Academy**: Master of Art (M.A.) in Film Studies at Department of Film Technology, 2021
+* **Beijing University of Posts and Telecommunications**: Bachelor of Engineering (B.Eng.) in Digital Media Technology, 2018
 
----
+<!-- ---
 
 #### Publication
 
@@ -118,4 +110,4 @@ An Application Research of Real-Time Non-Photorealistic Rendering Technology Bas
 
 * Developed a Chinese brush painting character rendering scheme based on the viewing direction and bump map for contour rendering, achieved soft willow-leaf-shaped stroke for characters’ pleats by using one-dimensional look-up table, realized grayscale adjustment for internal coloring, stimulated the effect of random splashing ink with a triplanar stroke map based on object space, and mixed contour line, internal coloring and splashing ink by texture blending
 * Developed a Chinese brush painting mountain and rocks rendering scheme, rendered the outline of mountain stone with Shell Method-based dual-pass rendering methods and stimulated the effect of dry brushes and whitewashing, realized internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function and used triplanar to superimpose stroke texture, and stimulated the effect of ink diffusion with Gaussian blur
-* Developed a demo showcase scene based on XR plug-in architecture from Unity 2019.3.0 with Oculus Rift S
+* Developed a demo showcase scene based on XR plug-in architecture from Unity 2019.3.0 with Oculus Rift S -->
