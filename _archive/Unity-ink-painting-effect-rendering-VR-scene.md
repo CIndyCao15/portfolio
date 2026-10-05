@@ -1,11 +1,11 @@
 +++
 date = "2016-11-05T19:41:01+05:30"
-title = "Unity VR - Real-Time Chinese Ink Rendering"
-description = "This Unity VR project explores how the visual language of Chinese ink painting can be translated into real-time 3D rendering. I developed separate rendering treatments for characters and environments, then brought them together in a three-scene VR experience with interaction, spatial UI, and performance optimization for Oculus Rift S. I led the overall project, with additional programming support on parts of the gameplay implementation."
+title = "[ #Project 2 ] Unity VR - The Peach Blossom Spring - Chinese brush painting effect"
+description = "The VR experience focuses on Climate Emergency. The first scene shows a utopian scene from a long time ago, the second scene shows the current Climate Emergency facing humanity (inspired by the Chongqing wildfire in 2022), and the third scene shows a cyberspace, where the player can make a commitment."
 draft = false
 image = "img/portfolio/Unity-ink-painting-effect-rendering-VR-scene.png"
 showonlyimage = false
-weight = 1
+weight = 2
 math = true
 +++
 
@@ -15,97 +15,70 @@ math = true
     <div class="row">
         <div class="cell border-right col-1">
             <strong>ROLE</strong><br>
-            Technical Artist (Project Lead)<br><br>
+            Team Leader<br><br>
             <strong>YEAR</strong><br>
             2022<br><br>
-            <strong>ENGINE</strong><br>
-            Unity<br><br>
-            <strong>TECH</strong><br>
-            ShaderLab / HLSL, Unity XR<br><br>
+            <strong>TOOLS USED</strong><br>
+            Unity, Photoshop<br><br>
             <strong>PLATFORM</strong><br>
             Oculus Rift S
-            <strong>FOCUS</strong><br>
-            NPR, Stylized Rendering, Shader Development, VR Integration, Technical Art<br><br>
         </div>
         <div class="cell border-right col-2">
             <strong>RESPONSIBILITY</strong>
             <ol>
                 <li>
-                    Led the project’s visual and technical direction, developing the real-time Chinese ink rendering system for characters and environments.
+                    As a technical artist, I am responsible for the Chinese brush painting rendering scheme and optimization. I am also responsible for the final visual presentation of the game. and propose technical solutions for programmers to implement.
                 </li>
                 <li>
-                    Designed and implemented custom shaders, VR interaction, and spatial UI in Unity, integrating them into a complete three-scene VR experience.
+                    As a designer, I design and implement the VR interaction scheme, and complete the UI design.
                 </li>
                 <li>
-                    Profiled and optimized the final experience for Oculus Rift S, averaging 89.9 FPS in headset testing and maintaining UPR performance scores above 90.
+                    As a programmer, I write scripts concerning gameplay / UI /  visual effects with team member.
                 </li>
             </ol>
         </div>
         <div class="cell col-3">
             <strong>DESCRIPTION</strong><br>
-            This Unity VR project explores how the visual language of Chinese ink painting can be translated into real-time 3D rendering. I developed separate rendering treatments for characters and environments, then brought them together in a three-scene VR experience with interaction, spatial UI, and performance optimization for Oculus Rift S. I led the overall project, with additional programming support on parts of the gameplay implementation.
+            The VR experience focuses on Climate Emergency. The first scene shows a utopian scene from a long time ago, the second scene shows the current Climate Emergency facing humanity (inspired by the Chongqing wildfire in 2022), and the third scene shows a cyberspace, where the player can make a commitment.
         </div>
     </div>
 </div>
 
 ---
 
+> There was a time when meadow, grove, and stream,
+\
+> The earth, and every common sight,
+\
+> To me did seem
+\
+> Apparelled in celestial light,
+\
+> The glory and the freshness of a dream.
+\
+> It is not now as it hath been of yore;—
+\
+> Turn wheresoe'er I may,
+\
+> By night or day.
+\
+> The things which I have seen I now can see no more.
+
 {{< youtube id="NW-UrDA5nq0" title="Unity ink painting effect rendering VR scene" >}}
 <br>
 
 *["The Creation of Adam"](https://skfb.ly/6RnWL) by Loïc Norgeot is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).*
+
+You can find the playable build shown in the video [here](https://drive.google.com/drive/folders/1O-hnS8qAkfEFtwk0FRUm3RVPHHwUvIW8?usp=sharing). The game runs on Oculus Rift S, so if you don't have the VR headset I'm afraid you won't get the full experience. You can still use the spacebar to switch between scenes, which is a backdoor I left, but other interactions (moving, teleporting, picking up props, dialogue, etc.) are not available.
+
+Chinese brush painting rendering is the part where I spend the most effort. For the brush painting-only version, please check out my other video:
+
+{{< youtube id="YdPf6S08NT0" title="Unity ink painting effect rendering VR scene" >}}
 <br>
 
-I started by narrowing the visual language of Chinese ink painting into three ideas that could guide the rendering.
+Using Unity's built-in pipeline, I implemented this project in the style of Chinese brush painting.
 
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; gap: 24px; margin: 0 0 24px;">
-  <a href="/img/portfolio/Unity-ink-bone.jpg" style="min-width: 0;">
-    <img src="/img/portfolio/Unity-ink-bone.jpg"
-         alt="Chinese ink painting using expressive brush lines to define form"
-         style="display: block; width: 100%; height: auto;">
-  </a>
-  <div style="min-width: 0;">
-    <h5 style="margin-top: 0;">Form Through Line / Bone Method in Brushwork<br><small>以线造形 / 骨法用笔</small></h5>
-    <p>Line defines form, while changes in weight, dryness, and rhythm give the line its character.</p>
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; gap: 24px; margin: 0 0 24px;">
-  <a href="/img/portfolio/Unity-ink-5-tones.jpeg" style="min-width: 0;">
-    <img src="/img/portfolio/Unity-ink-5-tones.jpeg"
-         alt="Chinese ink painting showing tonal variation from light to dark ink"
-         style="display: block; width: 100%; height: auto;">
-  </a>
-  <div style="min-width: 0;">
-    <h5 style="margin-top: 0;">Five Tones of Ink / Three Faces of Rock<br><small>墨分五色 / 石分三面</small></h5>
-    <p>Five Tones of Ink uses tonal variation to organize light and dark, which later informed the diffuse warp.</p>
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; gap: 24px; margin: 0 0 24px;">
-  <a href="/img/portfolio/Unity-ink-3-faces-stone.jpg" style="min-width: 0;">
-    <img src="/img/portfolio/Unity-ink-3-faces-stone.jpg"
-         alt="Chinese ink landscape painting showing rock planes and volume"
-         style="display: block; width: 100%; height: auto;">
-  </a>
-  <div style="min-width: 0;">
-    <p>Three Faces of Rock emphasizes how the planes of a rock turn in space, which guided how I used lighting to show volume.</p>
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; gap: 24px; margin: 0 0 24px;">
-  <a href="/img/portfolio/Unity-ink-cun-texture.jpg" style="min-width: 0;">
-    <img src="/img/portfolio/Unity-ink-cun-texture.jpg"
-         alt="Chinese ink painting using cun texture strokes to describe rock surfaces"
-         style="display: block; width: 100%; height: auto;">
-  </a>
-  <div style="min-width: 0;">
-    <h5 style="margin-top: 0;">Brush Texture / Cun Texture Strokes<br><small>笔墨肌理 / 皴法</small></h5>
-    <p>Brush marks describe the texture and character of a surface, not just its detail.</p>
-  </div>
-</div>
-
-These became three rendering goals: **contour**, **tone and volume**, and **surface texture**.
+I first analyze the aesthetic characteristics of landscape and figure paintings, and then proposed two methods for Chinese brush painting effect, one for characters and one for mountains and rocks. I use Oculus Rift S as a development device and developed this project based on the new XR plug-in architecture provided by Unity 2019.3.0, and finally use Oculus Debug Tool and Unity UPR (Unity Performance Report) for performance testing.
 
 [![Snapshot 1 of Unity ink painting effect rendering VR scene][1]][1]
 
@@ -113,132 +86,34 @@ These became three rendering goals: **contour**, **tone and volume**, and **surf
 
 [1]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png
 [2]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-2.png
-<br>
-
-### 01 Character Rendering: View-Dependent Contours and Brushwork<br>
-
-#### View-Dependent Contours
-
-For the character shader, I translated the line-based visual language into view-dependent contours.
-
-I used ***v*** ∙ ***n*** to pick out the silhouette, clothing folds, and other surface structure, then remapped the result through a 1D lookup texture to control line width, darkness, and falloff.
-
-{{< figure src="/img/portfolio/Unity-ink-人物轮廓abcde.png" caption="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C<small>edge</small>*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)" >}}
-
-The first result kept too much small-scale detail, so the linework became noisy. I added a normal strength control to dial the detail back until the folds still read without overwhelming the character.
-
-{{< figure src="/img/portfolio/Unity-ink-normal-details.jpg" caption="full normal detail vs reduced normal strength" width="400" >}}
-
-#### Colour and Brush Texture
-
-I kept the original character texture, reduced its saturation, and made the brightness adjustable so the colour could sit behind the linework and brush texture.
-
-I first mapped the ink texture through the character UVs, but the pattern repeated too obviously across larger areas.
-
-{{< figure
-  src="/img/portfolio/Unity-ink-UV-mapped-brush-texture.png"
-  link="/img/portfolio/Unity-ink-UV-mapped-brush-texture.png"
-  caption="UV-mapped brush texture"
-  width="200">}}
-
-So I switched to triplanar mapping.
-
-Because the character moves, I used object space to keep the brush texture locked to the model instead of sliding across it.
-
-<figure style="margin: 0 0 24px; text-align: center;"> 
-  <div style="display: inline-flex; align-items: center; gap: 6px;"> 
-    <img src="/img/portfolio/Unity-ink-triplanar1.png" 
-         alt="triplanar result 1" 
-         style="display: block; width: 200px; max-width: calc(50vw - 12px); height: auto;"> 
-    <img src="/img/portfolio/Unity-ink-triplanar2.png" 
-         alt="triplanar result 2" 
-         style="display: block; width: 200px; max-width: calc(50vw - 12px); height: auto;"> 
-  </div> 
- 
-  <figcaption style="text-align: center; margin-top: 8px; font-size: 14px; color: #777;"> 
-    Triplanar results 
-  </figcaption> 
-</figure>
-
-The final character treatment combines view-dependent contours, adjusted texture colour, and object-space splashing-ink texture.
-
-[![Snapshot 3 of Unity ink painting effect rendering VR scene][3]][3]
-
-[3]: /img/portfolio/Unity-ink-MonkeyKing.png
-
-### 02 Environment Rendering: Silhouette, Volume, and Brush Texture
-
-Mountains and rocks needed a different treatment. The character shader relied on fine internal lines, while the environment needed stronger silhouettes, dry-brush edges, and clearer volume.
-
-#### Dry-Brush Silhouettes
-
-I used a multi-pass **Shell Method** for the outer contour. The base pass renders the surface and writes depth. The outline passes expand the backfaces so the exposed edge becomes the silhouette.
-
-Testing at a wider VR FOV exposed a problem with the standard view-space Z offset. Near the edge of the view, the outline could shift, change width, or disappear behind the front surface.
-
-{{< figure src="/img/portfolio/Unity-ink-frustum.png" caption="**Left**: the view frustum; **Right**: the contour misalignment gets worse as the object gets closer to the edge of the viewport. This is unsatisfactory, especially in VR, when the player has a huge FOV." width="600px" >}}
-
-I changed the offset so each vertex first moves along its own **view direction**, then expands mainly in view-space XY. This kept the outline much more consistent across the frustum.
-
-{{< figure src="/img/portfolio/Unity-ink-mountainContour.png" caption="a) My silhouette rendering effect; b) The silhouette rendering effect in the reference. The circled area is where the stroke thickness is uneven near the edge of the frustum." width="550px" >}}
-
-To make the edge feel less mechanical, I layered two slightly different contour passes. Noise offsets the vertices, while the wider pass drops selected fragments to break the edge into a dry-brush pattern inspired by **flying-white (飞白)** brushwork.
-
-#### Ink Shading and Brush Texture
-
-The rocks still needed light and dark structure to show their volume.
-
-I started with **Half-Lambert**, then remapped the diffuse result through a 1D diffuse warp texture. This compressed the smooth lighting gradient into a smaller range of ink tones while keeping the main planes of the rock readable.
-
-{{< figure src="/img/portfolio/Unity-ink-漫反射结果图片.png" width="550px" >}}
-
-The result still looked too smooth, so I added noise and brush texture through triplanar mapping.
-
-{{< figure src="/img/portfolio/Unity-ink-漫反射加噪声结果.png" width="550px" >}}
-<br>
-【然后加了高斯模糊来模拟墨水扩散】
-{{< figure src="/img/portfolio/Unity-ink-漫反射加噪声加高斯结果.png" width="550px" >}}
-
-Final Environment Rendering Overview
-
-[![Snapshot 5 of Unity ink painting effect rendering VR scene][5]][5]
-
-#### Curvature Experiment
-
-I also tried driving the cun texture from real-time curvature.
-
-It looked promising on dense meshes, but low-poly rocks exposed obvious triangle-shaped faceting.
-
-{{< figure src="/img/portfolio/Unity-ink-曲率效果图.png" width="550px" >}}
-<br>
-
-I tested smoothing as a workaround, but the result still depended too much on mesh density. Since the Shell Method was already adding rendering cost, I left curvature out of the final VR scene.
-
-{{< figure src="/img/portfolio/Unity-ink-曲率对比图.png" caption="**Left**: No curvature; **Right**: With blurred curvature" width="550px" >}}
-
-### 04 VR Integration and Real-Time Validation
-
-The ink rendering system was built for a complete three-scene VR experience, so it had to hold up in headset as well as in screenshots.
-
-The wider FOV exposed the Shell Method issue above, while stereo rendering and frame rate also shaped the final rendering choices.
-
-Oculus Store guidelines specified 80 FPS for Rift S on the target PC specification. In headset testing with Oculus Debug Tool, the final scene averaged 89.9 FPS.
-
-[Image: Oculus Debug Tool]
-
-I also used Unity Performance Reporting (UPR) to compare the original Standard Shader scene with the ink-rendered version.
-Both remained in a strong performance range, and the ink version stayed above 90 across repeated UPR tests.
-[Image: UPR comparison]
-The Shell Method increased the reported mountain face and vertex counts by about 30%. Because the mountain geometry was still a relatively small part of the overall scene, the increase remained acceptable.
-That trade-off also made the curvature experiment less worthwhile to keep in the final version.
-
-
 
 This picture shows what the models look like originally in Unity Standard shader.
 
-[![Snapshot 3 of Unity ink painting effect rendering VR scene][7]][7]
+[![Snapshot 3 of Unity ink painting effect rendering VR scene][3]][3]
 
-[7]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png
+[3]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png
+
+#### Contents {#catalog}
+
+1. [Inspiration - about Climate Emergency](#Inspiration)
+2. [Design Concept](#Design-Concept)
+3. [Chinese Brush Painting Rendering](#Chinese-Brush-Painting-Rendering)
+    1. [Aesthetic Characteristics of Chinese Brush Painting](#Aesthetic-Characteristics-of-Chinese-Brush-Painting)
+    2. [Chinese Brush Painting Mountain & Rock Rendering Scheme](#Chinese-Brush-Painting-Mountain-and-Rock-Rendering-Scheme)
+        1. [Contour rendering based on dual-pass Shell Method](#Contour-rendering)
+        2. [Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function](#Internal-coloring)
+        3. [Rubbing simulation based on model curvature](#Rubbing)
+        4. [Stroke texture (feathering and spreading)](#Stroke-texture)
+    3. [Chinese Brush Painting Character Rendering Scheme](#Chinese-Brush-Painting-Character-Rendering-Scheme)
+4. [Unity VR Integration](#Unity-VR)
+5. [Gameplay](#Gameplay)
+    1. [Scripts  Architecture Overview](#Scripts)
+    2. [Analysis of Gameplay Scripts](#Gameplay-Scripts)
+6. [UI Design](#UI)
+7. [Scene Transition Design](#Transition)
+
+❤ [Blooper](#Blooper)
+## Inspiration - about Climate Emergency {#Inspiration}
 
 In the past two years, China has experienced an extremely severe climate emergency. The unprecedented heavy rains and floods in Henan Province in 2021 affected 14.8 million people and resulted in 398 deaths and disappearances. The capital city of Zhengzhou, with a population of nearly 13 million, received nearly the annual average rainfall in just three days. The hourly rainfall intensity between 4 p.m. and 5 p.m. on July 20 **broke the historical record for extreme rainfall in mainland China**. In August 2022, Chongqing was hit by an extreme weather event of consecutive high temperatures and sunny days, which led to a forest fire. The flames and thick smoke lit up the night sky, and Chongqing was sleepless throughout the night.
 

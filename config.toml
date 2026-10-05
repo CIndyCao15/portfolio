@@ -14,13 +14,14 @@ googleAnalytics = "G-G0F7Z00VB5"
   description = "Describe your website"
   copyright = "&copy;2025 Cindy Cao"
   sidebarAbout = [
-    "Technical Artist & Problem Solver.",
-    "Specializing in Shader Development, AR/VR, & High-Performance Visuals.",
-    "Originally from Beijing, currently based in Vancouver.",
-    "Engine: Unity 3D, Unreal Engine",
-    "DCC Tools: Maya, 3ds Max, Cinema 4D, Blender, Substance Designer",
-    "Motion Pictures: Silverstack, DaVinci Resolve, Final Cut Pro, Premiere",
-    "Miscellaneous: Photoshop, Illustrator, After Effects, Lightroom"
+    "Technical Artist | Tools, Pipeline & Real-Time Rendering",
+    "I build artist-facing tools, pipeline workflows, and rendering solutions for animation and games.",
+    "Currently working in production technology at Netflix Animation Studios in Vancouver.",
+    "<br>",
+    "<strong>Core</strong>",
+    "Python · PyQt · OpenUSD",
+    "HLSL / ShaderLab",
+    "Unreal Engine · Unity"
   ]
   # Contact page
      # Since this template is static, the contact form uses www.formspree.io as a

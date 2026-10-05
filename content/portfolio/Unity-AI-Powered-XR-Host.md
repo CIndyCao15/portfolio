@@ -4,7 +4,7 @@ image = "img/portfolio/Robi-cover.png"
 showonlyimage = false
 title = "Robi - AI-Powered XR Host at Signals by DigiBC and VIFF"
 description = "Robi is a virtual guide for the Signals event. With a team of six, Robi was created in Unity, powered by a custom GPT, and deployed using WebGL and WebAR. This charming and helpful robot can answer custom questions and provide general guidance on artworks."
-weight = 1
+weight = 3
 +++
 
 ---

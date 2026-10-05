@@ -6,7 +6,44 @@
     <description>Recent content in Portfolios on Cindy Cao&#39;s Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Nov 2016 20:22:08 +0530</lastBuildDate><atom:link href="https://cindy-cao-portfolio.netlify.app/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2016 19:57:40 +0530</lastBuildDate><atom:link href="https://cindy-cao-portfolio.netlify.app/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity VR - Real-Time Chinese Ink Rendering</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/unity-ink-painting-effect-rendering-vr-scene/</link>
+      <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
+      
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/unity-ink-painting-effect-rendering-vr-scene/</guid>
+      <description>ROLE
+Technical Artist (Project Lead)
+YEAR
+2022
+ENGINE
+Unity
+TECH
+ShaderLab / HLSL, Unity XR
+PLATFORM
+Oculus Rift SFOCUS
+NPR, Stylized Rendering, Shader Development, VR Integration, Technical Art
+RESPONSIBILITYLed the project’s visual and technical direction, developing the real-time Chinese ink rendering system for characters and environments.Designed and implemented custom shaders, VR interaction, and spatial UI in Unity, integrating them into a complete three-scene VR experience.Profiled and optimized the final experience for Oculus Rift S, averaging 89.</description>
+    </item>
+    
+    <item>
+      <title>UE5 Animation - Harvest Day</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/ue5-animation-harvest-day/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ue5-animation-harvest-day/</guid>
+      <description>ROLE
+Independent
+YEAR
+2023
+TOOLS USED
+Unreal Engine 5, DaVinci Resolve
+GENRE
+CinematicRESPONSIBILITYConduct preliminary research, and write scripts and storyboards.Use Quixel Bridge and marketplace kits to build scenes; create materials, animations, visual effects, etc. for the environment.Perform facial motion capture for MetaHuman characters; adjust camera animation.Edit the footage, and add music and sound effects.DESCRIPTION
+This project is a 3D animated short film made in Unreal Engine 5.</description>
+    </item>
+    
     <item>
       <title>Robi - AI-Powered XR Host at Signals by DigiBC and VIFF</title>
       <link>https://cindy-cao-portfolio.netlify.app/portfolio/unity-ai-powered-xr-host/</link>
@@ -41,86 +78,13 @@ SandScape is an industrial collaboration with BC Children&#39;s Hospital Digital
     </item>
     
     <item>
-      <title>[ #Project 1 ] UE5 Animation - Harvest Day</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/ue5-animation-harvest-day/</link>
+      <title>[ #Misc ] TV animation made with the Slate plugin in Substance Designer</title>
+      <link>https://cindy-cao-portfolio.netlify.app/portfolio/tv-animation-made-with-slate-plugin-in-substance-designer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ue5-animation-harvest-day/</guid>
-      <description>ROLE
-Independent
-YEAR
-2023
-TOOLS USED
-Unreal Engine 5, DaVinci Resolve
-GENRE
-CinematicRESPONSIBILITYConduct preliminary research, and write scripts and storyboards.Use Quixel Bridge and marketplace kits to build scenes; create materials, animations, visual effects, etc. for the environment.Perform facial motion capture for MetaHuman characters; adjust camera animation.Edit the footage, and add music and sound effects.DESCRIPTION
-This project is a 3D animated short film made in Unreal Engine 5.</description>
-    </item>
-    
-    <item>
-      <title>[ #Project 2 ] Unity VR - The Peach Blossom Spring - Chinese brush painting effect</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/unity-ink-painting-effect-rendering-vr-scene/</link>
-      <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/unity-ink-painting-effect-rendering-vr-scene/</guid>
-      <description>ROLE
-Team Leader
-YEAR
-2022
-TOOLS USED
-Unity, Photoshop
-PLATFORM
-Oculus Rift SRESPONSIBILITYAs a technical artist, I am responsible for the Chinese brush painting rendering scheme and optimization. I am also responsible for the final visual presentation of the game. and propose technical solutions for programmers to implement.As a designer, I design and implement the VR interaction scheme, and complete the UI design.As a programmer, I write scripts concerning gameplay / UI / visual effects with team member.</description>
-    </item>
-    
-    <item>
-      <title>[ #Project 3 ] Hercraft - Creative Short Film</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/live-action-plus-compositing-hercraft/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/live-action-plus-compositing-hercraft/</guid>
-      <description>ROLE
-Prop &amp; Makeup Artist, 3D Animator, Digital Colorist
-YEAR
-2017
-TOOLS USED
-Cinema 4D, After Effects, DaVinci Resolve, Photoshop
-GENRE
-Fanfic Short FilmRESPONSIBILITYCreate a storyboard with the director and discuss the shooting plan.As a member of the film crew, I am responsible for making props, setting up scenes and making up the actress. I am also responsible for quality assurance of the takes and footage management.</description>
-    </item>
-    
-    <item>
-      <title>[ #Project 4 ] AE MG Animation - Patchwork Staccato (ツギハギスタッカート) Music Video</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/ae-mg-animation-patchwork-of-broken-sounds/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ae-mg-animation-patchwork-of-broken-sounds/</guid>
-      <description>ROLE
-Artist
-YEAR
-2016
-TOOLS USED
-Illustrator, After Effects
-GENRE
-Music VideoRESPONSIBILITYParticipate in discussions and create storyboards.Use Illustrator to draw complex visual elements that will appear in the animation.Animate the visual elements in After Effects.Utilize the Sapphire plugin to add post-production special effects.DESCRIPTION
-This is a course assignment done by a group of 5 people, the purpose of which is to use After Effects to make motion graphics or informative animation.</description>
-    </item>
-    
-    <item>
-      <title>[ #Project 5 ] AE Animation - Nice Day</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/ae-character-animation-nice-day/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ae-character-animation-nice-day/</guid>
-      <description>ROLE
-Team Leader, Director, Animator
-YEAR
-2017
-TOOLS USED
-After Effects, Illustrator, Cinema 4D, Premiere
-GENRE
-Music VideoRESPONSIBILITYDiscuss storyboards with four team members and create animatics. Manage the overall length of the video and workload, and assign tasks accordingly.Create character assets for each shot.Create character animations.DESCRIPTION
-This is a character animation project, the music video for WORLD ORDER&#39;s &#34;Have A Nice Day&#34;. The video showcases the protagonist chasing a butterfly in a gray world, expressing that even in a monotonous and oppressive life, there can be moments of brightness.</description>
+      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/tv-animation-made-with-slate-plugin-in-substance-designer/</guid>
+      <description>Perfect World volume animation purchased
+TV animation (screenshot of Perfect World&amp;rsquo;s App Store release)</description>
     </item>
     
     <item>
@@ -154,15 +118,6 @@ A meteor/fireball summoning spell. Using Sub Emitters, this feature can also be 
     </item>
     
     <item>
-      <title>[ #Misc ] UE4 - Rainy Night Street Scene</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/ue4-rainy-night-street-scene/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ue4-rainy-night-street-scene/</guid>
-      <description> </description>
-    </item>
-    
-    <item>
       <title>[ #Misc ] Unity Shader Works</title>
       <link>https://cindy-cao-portfolio.netlify.app/portfolio/unity-shader-works/</link>
       <pubDate>Sat, 05 Nov 2016 19:56:17 +0530</pubDate>
@@ -186,73 +141,6 @@ UV flow</description>
 Substance Designer brick ground Tiling
 Substance Designer brick ground details
 Brick ground graph in Substance Designer</description>
-    </item>
-    
-    <item>
-      <title>[ #Misc ] UI for VR weather</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/ui-vr-weather/</link>
-      <pubDate>Sat, 05 Nov 2016 19:59:22 +0530</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ui-vr-weather/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[ #Misc ] PS &amp; AI - Graphic Design</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/ps-ai-graphic-design/</link>
-      <pubDate>Sat, 05 Nov 2016 20:02:19 +0530</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/ps-ai-graphic-design/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[ #Misc ] Delicacies VR: Demo Showcase Video</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/delicacies-vr-demo-video/</link>
-      <pubDate>Sat, 05 Nov 2016 20:22:08 +0530</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/delicacies-vr-demo-video/</guid>
-      <description>The demo video of the Delicacies VR project. Modeling done in C4D, 3D scene built in Unity, and finally implemented on a DPVR all-in-one VR device.</description>
-    </item>
-    
-    <item>
-      <title>[ #Misc ] Unity - 2D coloring game - Doodle Party</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/unity-2d-coloring-game-doodle-party/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/unity-2d-coloring-game-doodle-party/</guid>
-      <description>A two-player Unity game assignment.
-Curatorial idea is inspired by the fantastic coloring mode in BattleBlock Theater.
-Art &amp;amp; Animation: Me and 烤鱼菌
-Program: 风舞夜蓝</description>
-    </item>
-    
-    <item>
-      <title>[ #Misc ] the Witcher 3 editing - I See Fire</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/the-witcher-3-editing/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/the-witcher-3-editing/</guid>
-      <description>Self-made Editing class assignment_(:3&amp;quot;∠)_ Materials are from the official CG and 黑桐谷歌&amp;rsquo;s recorded video (♥) Music is Ed Sheeran&amp;rsquo;s I See Fire, with cut</description>
-    </item>
-    
-    <item>
-      <title>[ #Misc ] Maya Animation - Cats and Monster</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/maya-animation-cats-and-monster/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/maya-animation-cats-and-monster/</guid>
-      <description>Modeling, skinning and animation by me, with reference to concept artwork. Mental Ray was used for rendering. Music: Venice Rooftops from Assassin&amp;rsquo;s Creed 2</description>
-    </item>
-    
-    <item>
-      <title>[ #Misc ] TV animation made with the Slate plugin in Substance Designer</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/tv-animation-made-with-slate-plugin-in-substance-designer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/tv-animation-made-with-slate-plugin-in-substance-designer/</guid>
-      <description>Perfect World volume animation purchased
-TV animation (screenshot of Perfect World&amp;rsquo;s App Store release)</description>
     </item>
     
   </channel>

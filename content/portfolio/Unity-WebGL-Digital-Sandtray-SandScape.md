@@ -4,7 +4,7 @@ image = "img/portfolio/SandScape-cover.jpg"
 showonlyimage = false
 title = "SandScape - A Digital Sandtray Therapy for Kids by BC Children's Hospital"
 description = "SandScape is a collaboration with BC Children's Hospital to develop a digital therapeutic tool for kids. Our agile team of six used Unity WebGL to create an interactive sandtray, designed to support therapy through engaging digital experiences."
-weight = 2
+weight = 4
 +++
 
 ---
