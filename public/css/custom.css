@@ -102,3 +102,57 @@ figcaption {
     min-height: 0;
   }
 }
+
+/* Optional metadata on portfolio cards. */
+.box-masonry p.portfolio-original-title {
+  margin: -12px 0 5px;
+  color: #888;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.box-masonry .portfolio-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  margin: 10px 0;
+}
+
+.box-masonry .portfolio-title-row h4 {
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.box-masonry .portfolio-title-row.has-status + p.portfolio-original-title {
+  margin-top: 0;
+}
+
+.box-masonry span.portfolio-status {
+  display: inline-block;
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  margin: 0;
+  padding: 2px 7px;
+
+  color: #ef5285;
+  border: 1px solid #ef5285;
+  border-radius: 3px;
+
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.box-masonry p.portfolio-meta {
+  margin: 0 0 12px;
+  color: #555;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}

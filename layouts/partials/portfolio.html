@@ -19,7 +19,18 @@
                       {{ else }}
                       <div class="box-masonry-text">
                       {{ end }}
-                          <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                          <div class="portfolio-title-row{{ if .Params.status }} has-status{{ end }}">
+                            <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                            {{- with .Params.status }}
+                            <span class="portfolio-status">{{ . }}</span>
+                            {{- end }}
+                          </div>
+                          {{- with .Params.originaltitle }}
+                          <p class="portfolio-original-title">{{ . }}</p>
+                          {{- end }}
+                          {{- if or .Params.role .Params.studio }}
+                          <p class="portfolio-meta">{{ with .Params.role }}{{ . }}{{ end }}{{ if and .Params.role .Params.studio }} · {{ end }}{{ with .Params.studio }}{{ . }}{{ end }}</p>
+                          {{- end }}
                           <div class="box-masonry-description">
                             <p>
                                 {{ if .Description }}
