@@ -224,17 +224,98 @@ The wider FOV exposed the Shell Method issue above, while stereo rendering and f
 
 Oculus Store guidelines specified 80 FPS for Rift S on the target PC specification. In headset testing with Oculus Debug Tool, the final scene averaged 89.9 FPS.
 
-[Image: Oculus Debug Tool]
+{{< figure src="/img/portfolio/Unity-ink-Oculus-Debug-Tool.jpg" width="550px" >}}
+<br>
 
 I also used Unity Performance Reporting (UPR) to compare the original Standard Shader scene with the ink-rendered version.
 Both remained in a strong performance range, and the ink version stayed above 90 across repeated UPR tests.
-[Image: UPR comparison]
+
+<figure style="margin: 0 0 24px;">
+  <div style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 16px;">
+    <img src="/img/portfolio/Unity-ink-UPR1.png"
+         alt="Unity UPR performance results for the scene using the Standard Shader"
+         style="max-width: calc(50% - 8px); height: auto;">
+    <img src="/img/portfolio/Unity-ink-UPR2.png"
+         alt="Unity UPR performance results for the scene using the custom ink shader"
+         style="max-width: calc(50% - 8px); height: auto;">
+  </div>
+
+  <figcaption style="text-align: center; margin-top: 8px; font-size: 14px; color: #777;">
+    UPR performance comparison. <strong>Left:</strong> Standard Shader baseline; <strong>Right:</strong> custom ink shader.
+  </figcaption>
+</figure>
+
 The Shell Method increased the reported mountain face and vertex counts by about 30%. Because the mountain geometry was still a relatively small part of the overall scene, the increase remained acceptable.
+
 That trade-off also made the curvature experiment less worthwhile to keep in the final version.
 
+### 05 Beyond Rendering: VR Interaction, UI, and Architecture
 
+Rendering was the main technical focus, but the final project was still a complete VR experience with three connected scenes.
 
-This picture shows what the models look like originally in Unity Standard shader.
+The experience also included gameplay logic, UI, VFX, and scene transitions.
+
+#### Interaction Architecture
+
+{{< figure
+  src="/img/portfolio/Unity-ink-structure-of-scripts.png"
+  link="/img/portfolio/Unity-ink-structure-of-scripts.png"
+  alt="Simplified gameplay / interaction architecture"
+  caption="Simplified gameplay / interaction architecture"
+  width="350">}}
+
+#### Spatial UI in VR
+
+For dialogue and prompts, I tested two ways of orienting billboard text in 3D space.
+
+For NPC dialogue, I wanted the text to stay readable while still feeling attached to the character as the player moved their head.
+
+<figure style="margin: 0 0 24px;">
+  <div style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 16px;">
+    <img src="/img/portfolio/Unity-ink-UI1.GIF"
+         alt="VR dialogue text using a Viewer-Facing Billboard that rotates toward the viewer position"
+         style="max-width: calc(50% - 8px); height: auto;">
+    <img src="/img/portfolio/Unity-ink-UI2.GIF"
+         alt="VR dialogue text using a Camera-Forward Billboard that remains parallel to the camera"
+         style="max-width: calc(50% - 8px); height: auto;">
+  </div>
+
+  <figcaption style="text-align: center; margin-top: 8px; font-size: 14px; color: #777;">
+    Billboard orientation comparison. <strong>Left:</strong> Viewer-Facing Billboard; <strong>Right:</strong> Camera-Forward Billboard.
+  </figcaption>
+</figure>
+
+Viewer-Facing Billboard rotates the UI toward the viewer position. It creates more perspective change near the edge of the FOV, but in headset the text felt more naturally anchored to the character.
+
+I used this version in the final experience.
+
+Camera-Forward Billboard keeps the text plane parallel to the camera reduced edge distortion and looked cleaner on a flat screen. In VR, though, it felt more like a screen-space layer following the viewer.
+
+The comparison made the choice less about geometric neatness and more about how the UI actually felt in space.
+
+### 06 Final Experience and Reflection
+
+The final ink scene uses different treatments depending on the asset and its depth in the composition.
+
+Foreground rocks use stronger splashed ink and surface brushwork.
+Midground rocks keep clearer texture and stronger light-dark separation to show volume.
+
+Distant mountains use lighter ink, lower contrast, and a different brush scale to create more atmosphere.
+
+[![Snapshot 1 of Unity ink painting effect rendering VR scene][1]][1]
+[![Snapshot 3 of Unity ink painting effect rendering VR scene][7]][7]
+
+[7]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png
+
+Characters and environments also use different contour methods, so the final look comes from a set of related rendering treatments rather than one shader applied everywhere.
+
+One last shader tester…
+
+{{< figure src="/img/portfolio/Unity-ink-UnityChan.gif" caption="Unity Chan, with wind effects applied to her hair and skirt using Magica Cloth." width="300px" >}}
+
+{{< figure src="/img/portfolio/Unity-ink-UnityChan2.jpg" caption="Adding post-process effects to mimic Xuan paper texture." width="600px" >}}
+
+<!-- This picture shows what the models look like originally in Unity Standard shader.
 
 [![Snapshot 3 of Unity ink painting effect rendering VR scene][7]][7]
 
@@ -830,4 +911,4 @@ These are some screenshots taken during the development process. Just want to fi
 
 {{< figure src="/img/portfolio/Unity-ink-UnityChan.gif" caption="Unity Chan, with wind effects applied to her hair and skirt using Magica Cloth." width="300px" >}}
 
-{{< figure src="/img/portfolio/Unity-ink-UnityChan2.jpg" caption="Adding post-process effects to mimic Xuan paper texture." width="600px" >}}
+{{< figure src="/img/portfolio/Unity-ink-UnityChan2.jpg" caption="Adding post-process effects to mimic Xuan paper texture." width="600px" >}} -->

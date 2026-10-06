@@ -309,7 +309,7 @@ if (!doNotTrack) {
 </figure>
 </p>
 <p>Final Environment Rendering Overview</p>
-<p><a href="/img/portfolio/Unity-ink-MountainStone.png"><img src="/img/portfolio/Unity-ink-MountainStone.png" alt="Snapshot 5 of Unity ink painting effect rendering VR scene"></a></p>
+<p>[![Snapshot 5 of Unity ink painting effect rendering VR scene][5]][5]</p>
 <h4 id="curvature-experiment">Curvature Experiment</h4>
 <p>I also tried driving the cun texture from real-time curvature.</p>
 <p>It looked promising on dense meshes, but low-poly rocks exposed obvious triangle-shaped faceting.</p>
@@ -328,308 +328,492 @@ if (!doNotTrack) {
 <p>The ink rendering system was built for a complete three-scene VR experience, so it had to hold up in headset as well as in screenshots.</p>
 <p>The wider FOV exposed the Shell Method issue above, while stereo rendering and frame rate also shaped the final rendering choices.</p>
 <p>Oculus Store guidelines specified 80 FPS for Rift S on the target PC specification. In headset testing with Oculus Debug Tool, the final scene averaged 89.9 FPS.</p>
-<p>[Image: Oculus Debug Tool]</p>
+<p><figure><img src="/img/portfolio/Unity-ink-Oculus-Debug-Tool.jpg" width="550px"/>
+</figure>
+
+<br></p>
 <p>I also used Unity Performance Reporting (UPR) to compare the original Standard Shader scene with the ink-rendered version.
-Both remained in a strong performance range, and the ink version stayed above 90 across repeated UPR tests.
-[Image: UPR comparison]
-The Shell Method increased the reported mountain face and vertex counts by about 30%. Because the mountain geometry was still a relatively small part of the overall scene, the increase remained acceptable.
-That trade-off also made the curvature experiment less worthwhile to keep in the final version.</p>
-<p>This picture shows what the models look like originally in Unity Standard shader.</p>
-<p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png" alt="Snapshot 3 of Unity ink painting effect rendering VR scene"></a></p>
-<p>In the past two years, China has experienced an extremely severe climate emergency. The unprecedented heavy rains and floods in Henan Province in 2021 affected 14.8 million people and resulted in 398 deaths and disappearances. The capital city of Zhengzhou, with a population of nearly 13 million, received nearly the annual average rainfall in just three days. The hourly rainfall intensity between 4 p.m. and 5 p.m. on July 20 <strong>broke the historical record for extreme rainfall in mainland China</strong>. In August 2022, Chongqing was hit by an extreme weather event of consecutive high temperatures and sunny days, which led to a forest fire. The flames and thick smoke lit up the night sky, and Chongqing was sleepless throughout the night.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-fire.png" width="500px"/>
+Both remained in a strong performance range, and the ink version stayed above 90 across repeated UPR tests.</p>
+<figure style="margin: 0 0 24px;">
+  <div style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 16px;">
+    <img src="/img/portfolio/Unity-ink-UPR1.png"
+         alt="Unity UPR performance results for the scene using the Standard Shader"
+         style="max-width: calc(50% - 8px); height: auto;">
+    <img src="/img/portfolio/Unity-ink-UPR2.png"
+         alt="Unity UPR performance results for the scene using the custom ink shader"
+         style="max-width: calc(50% - 8px); height: auto;">
+  </div>
+  <figcaption style="text-align: center; margin-top: 8px; font-size: 14px; color: #777;">
+    UPR performance comparison. <strong>Left:</strong> Standard Shader baseline; <strong>Right:</strong> custom ink shader.
+  </figcaption>
+</figure>
+<p>The Shell Method increased the reported mountain face and vertex counts by about 30%. Because the mountain geometry was still a relatively small part of the overall scene, the increase remained acceptable.</p>
+<p>That trade-off also made the curvature experiment less worthwhile to keep in the final version.</p>
+<h3 id="05-beyond-rendering-vr-interaction-ui-and-architecture">05 Beyond Rendering: VR Interaction, UI, and Architecture</h3>
+<p>Rendering was the main technical focus, but the final project was still a complete VR experience with three connected scenes.</p>
+<p>The experience also included gameplay logic, UI, VFX, and scene transitions.</p>
+<h4 id="interaction-architecture">Interaction Architecture</h4>
+<figure><a href="/img/portfolio/Unity-ink-structure-of-scripts.png"><img src="/img/portfolio/Unity-ink-structure-of-scripts.png"
+         alt="Simplified gameplay / interaction architecture" width="350"/></a><figcaption>
+            <p>Simplified gameplay / interaction architecture</p>
+        </figcaption>
 </figure>
 
-<br></p>
-<p>Shocked by the news images, I decided to create a VR experience depicting the scene of a forest fire at night.</p>
-<p>Living in cities with air conditioning, central heating, skyscrapers, and glass corridors, we often overlook the pain in distant places. What we are familiar with seems to be a stable life, but it is actually a phantom created by the market economy, long-distance logistics, and social systems. Through creating this VR experience, I hope to draw attention to the urgent need to face the climate emergency. Otherwise, the sword of Damocles will eventually fall, and no one will be spared.</p>
-<h2 id="Design-Concept">Design Concept</h2>
-<p>In ancient Chinese landscape philosophy, the concept of <em>&ldquo;unity of man and nature&rdquo;</em> (天人合一) was emphasized, where man and nature coexist in harmony. In landscape painting, the idea of <em>&ldquo;reclining and traveling&rdquo;</em> (卧游) was used to fully appreciate the beauty of mountains and rivers. The concept of <em>&ldquo;reclining and traveling&rdquo;</em> involves a spiritual journey through cultural mediums in a fleeting moment, similar to using VR headsets to tour landscape paintings.</p>
-<p>The first scene is set in spring, with a light drizzle, expressing the ancient idea of the <em>unity of man and nature</em>. After taking off the VR headset, the second scene shows a modern-day mountain fire. In this scene, six modern people wearing VR headsets seem unwilling to wake up from their own illusion, unlike the timely awakening of the player. After the player talks to them and removes their VR headsets, they immediately burn and disperse, signifying that if we do not address the climate emergency, no one will be spared in the end.</p>
-<p>The scene then switches to the third scene, a holographic consciousness space with a giant sculpture of the hand from Michelangelo&rsquo;s <em>The Creation of Adam</em>. At the fingertips where God and Adam meet, consciousness flows quietly. When the player gently touches it, they also make a commitment to address the climate emergency.</p>
-<h2 id="Chinese-Brush-Painting-Rendering">Chinese Brush Painting Rendering</h2>
-<h3 id="Aesthetic-Characteristics-of-Chinese-Brush-Painting">Aesthetic Characteristics of Chinese Brush Painting</h3>
-<p>For <strong>brush painting mountains and stones</strong>, there are two characteristics that need to be reflected:</p>
-<p>1.The stone has many sides (石分三面)</p>
-<p>A stone should have a sense of space and volume, and a sense of impermeability is the top priority. The two steps of &ldquo;rub (皴)&rdquo; and &ldquo;dye (染)&rdquo; are the key steps to enhance the sense of volume of rocks.</p>
-<p>2.Structural use of the brush (骨法用笔)</p>
-<p>When drawing the contours of an object (sketch, 勾), the technique of using a brush must be strong, thus forming the structure of the object like bones.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e6%b0%b4%e5%a2%a8%e7%94%bb%e7%89%b9%e7%82%b9%e5%88%86%e6%9e%90.jpg"/>
+<h4 id="spatial-ui-in-vr">Spatial UI in VR</h4>
+<p>For dialogue and prompts, I tested two ways of orienting billboard text in 3D space.</p>
+<p>For NPC dialogue, I wanted the text to stay readable while still feeling attached to the character as the player moved their head.</p>
+<figure style="margin: 0 0 24px;">
+  <div style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 16px;">
+    <img src="/img/portfolio/Unity-ink-UI1.GIF"
+         alt="VR dialogue text using a Viewer-Facing Billboard that rotates toward the viewer position"
+         style="max-width: calc(50% - 8px); height: auto;">
+    <img src="/img/portfolio/Unity-ink-UI2.GIF"
+         alt="VR dialogue text using a Camera-Forward Billboard that remains parallel to the camera"
+         style="max-width: calc(50% - 8px); height: auto;">
+  </div>
+  <figcaption style="text-align: center; margin-top: 8px; font-size: 14px; color: #777;">
+    Billboard orientation comparison. <strong>Left:</strong> Viewer-Facing Billboard; <strong>Right:</strong> Camera-Forward Billboard.
+  </figcaption>
+</figure>
+<p>Viewer-Facing Billboard rotates the UI toward the viewer position. It creates more perspective change near the edge of the FOV, but in headset the text felt more naturally anchored to the character.</p>
+<p>I used this version in the final experience.</p>
+<p>Camera-Forward Billboard keeps the text plane parallel to the camera reduced edge distortion and looked cleaner on a flat screen. In VR, though, it felt more like a screen-space layer following the viewer.</p>
+<p>The comparison made the choice less about geometric neatness and more about how the UI actually felt in space.</p>
+<h3 id="06-final-experience-and-reflection">06 Final Experience and Reflection</h3>
+<p>The final ink scene uses different treatments depending on the asset and its depth in the composition.</p>
+<p>Foreground rocks use stronger splashed ink and surface brushwork.
+Midground rocks keep clearer texture and stronger light-dark separation to show volume.</p>
+<p>Distant mountains use lighter ink, lower contrast, and a different brush scale to create more atmosphere.</p>
+<p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png" alt="Snapshot 1 of Unity ink painting effect rendering VR scene"></a>
+<a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png" alt="Snapshot 3 of Unity ink painting effect rendering VR scene"></a></p>
+<p>Characters and environments also use different contour methods, so the final look comes from a set of related rendering treatments rather than one shader applied everywhere.</p>
+<p>One last shader tester…</p>
+<figure><img src="/img/portfolio/Unity-ink-UnityChan.gif"
+         alt="Unity Chan, with wind effects applied to her hair and skirt using Magica Cloth." width="300px"/><figcaption>
+            <p>Unity Chan, with wind effects applied to her hair and skirt using Magica Cloth.</p>
+        </figcaption>
 </figure>
 
-<br></p>
-<p>There are two very different styles of <strong>figures in Chinese brush paintings</strong>. The traditional style, such as the <em>Drunken Immortal in Splashed Ink Style</em> (泼墨仙人图) by Liang Kai of Song Dynasty, has vivid spiritual consonance and a high degree of refinement and exaggeration of the characters; the modern style, such as <em>Whisper</em> (悄悄话), is combined with pencil sketch techniques. The characters are perfectly shaped in rich details, while the background is blurred.</p>
+<figure><img src="/img/portfolio/Unity-ink-UnityChan2.jpg"
+         alt="Adding post-process effects to mimic Xuan paper texture." width="600px"/><figcaption>
+            <p>Adding post-process effects to mimic Xuan paper texture.</p>
+        </figcaption>
+</figure>
+
+<!-- This picture shows what the models look like originally in Unity Standard shader.
+
+[![Snapshot 3 of Unity ink painting effect rendering VR scene][7]][7]
+
+[7]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png
+
+In the past two years, China has experienced an extremely severe climate emergency. The unprecedented heavy rains and floods in Henan Province in 2021 affected 14.8 million people and resulted in 398 deaths and disappearances. The capital city of Zhengzhou, with a population of nearly 13 million, received nearly the annual average rainfall in just three days. The hourly rainfall intensity between 4 p.m. and 5 p.m. on July 20 **broke the historical record for extreme rainfall in mainland China**. In August 2022, Chongqing was hit by an extreme weather event of consecutive high temperatures and sunny days, which led to a forest fire. The flames and thick smoke lit up the night sky, and Chongqing was sleepless throughout the night.
+
+<figure><img src="/img/portfolio/Unity-ink-fire.png" width="500px"/>
+</figure>
+
+<br>
+
+Shocked by the news images, I decided to create a VR experience depicting the scene of a forest fire at night.
+
+Living in cities with air conditioning, central heating, skyscrapers, and glass corridors, we often overlook the pain in distant places. What we are familiar with seems to be a stable life, but it is actually a phantom created by the market economy, long-distance logistics, and social systems. Through creating this VR experience, I hope to draw attention to the urgent need to face the climate emergency. Otherwise, the sword of Damocles will eventually fall, and no one will be spared.
+
+## Design Concept {#Design-Concept}
+
+In ancient Chinese landscape philosophy, the concept of *"unity of man and nature"* (天人合一) was emphasized, where man and nature coexist in harmony. In landscape painting, the idea of *"reclining and traveling"* (卧游) was used to fully appreciate the beauty of mountains and rivers. The concept of *"reclining and traveling"* involves a spiritual journey through cultural mediums in a fleeting moment, similar to using VR headsets to tour landscape paintings.
+
+The first scene is set in spring, with a light drizzle, expressing the ancient idea of the *unity of man and nature*. After taking off the VR headset, the second scene shows a modern-day mountain fire. In this scene, six modern people wearing VR headsets seem unwilling to wake up from their own illusion, unlike the timely awakening of the player. After the player talks to them and removes their VR headsets, they immediately burn and disperse, signifying that if we do not address the climate emergency, no one will be spared in the end.
+
+The scene then switches to the third scene, a holographic consciousness space with a giant sculpture of the hand from Michelangelo's *The Creation of Adam*. At the fingertips where God and Adam meet, consciousness flows quietly. When the player gently touches it, they also make a commitment to address the climate emergency.
+
+## Chinese Brush Painting Rendering {#Chinese-Brush-Painting-Rendering}
+### Aesthetic Characteristics of Chinese Brush Painting {#Aesthetic-Characteristics-of-Chinese-Brush-Painting}
+For **brush painting mountains and stones**, there are two characteristics that need to be reflected:
+
+1.The stone has many sides (石分三面)
+
+A stone should have a sense of space and volume, and a sense of impermeability is the top priority. The two steps of "rub (皴)" and "dye (染)" are the key steps to enhance the sense of volume of rocks.
+
+2.Structural use of the brush (骨法用笔)
+
+When drawing the contours of an object (sketch, 勾), the technique of using a brush must be strong, thus forming the structure of the object like bones.
+
+<figure><img src="/img/portfolio/Unity-ink-%e6%b0%b4%e5%a2%a8%e7%94%bb%e7%89%b9%e7%82%b9%e5%88%86%e6%9e%90.jpg"/>
+</figure>
+
+<br>
+
+There are two very different styles of **figures in Chinese brush paintings**. The traditional style, such as the *Drunken Immortal in Splashed Ink Style* (泼墨仙人图) by Liang Kai of Song Dynasty, has vivid spiritual consonance and a high degree of refinement and exaggeration of the characters; the modern style, such as *Whisper* (悄悄话), is combined with pencil sketch techniques. The characters are perfectly shaped in rich details, while the background is blurred. 
+
 <figure><img src="/img/portfolio/Unity-ink-%e6%b3%bc%e5%a2%a8%e4%bb%99%e4%ba%ba%e5%9b%be%e6%82%84%e6%82%84%e8%af%9d.png"
          alt="**Left**: *Drunken Immortal in Splashed Ink Style*(1200s);   **Right**: *Whisper*(1979)" width="600px"/><figcaption>
             <p><strong>Left</strong>: <em>Drunken Immortal in Splashed Ink Style</em>(1200s);   <strong>Right</strong>: <em>Whisper</em>(1979)</p>
         </figcaption>
 </figure>
 
-<p>In character rendering part, I choose to simulate modern-style brush painting characters.</p>
-<p>There are four techniques of traditional Chinese brush painting: sketching, rubbing, dotting, and shading (勾、皴、点、染). Among them, &ldquo;dotting&rdquo; refers to drawing moss, which is not a necessary step for painting. Therefore, I slightly changed these four steps to &ldquo;sketching, rubbing, shading, and coloring (勾、皴、染、设色)&rdquo;, which correspond to the four parts that need to be implemented in realtime rendering: contour rendering, texture mapping/curvature, lighting model, and main texture.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e5%8b%be%e7%9a%b4%e6%9f%93%e8%ae%be%e8%89%b2.png"/>
+
+In character rendering part, I choose to simulate modern-style brush painting characters.
+
+There are four techniques of traditional Chinese brush painting: sketching, rubbing, dotting, and shading (勾、皴、点、染). Among them, "dotting" refers to drawing moss, which is not a necessary step for painting. Therefore, I slightly changed these four steps to "sketching, rubbing, shading, and coloring (勾、皴、染、设色)", which correspond to the four parts that need to be implemented in realtime rendering: contour rendering, texture mapping/curvature, lighting model, and main texture.
+
+<figure><img src="/img/portfolio/Unity-ink-%e5%8b%be%e7%9a%b4%e6%9f%93%e8%ae%be%e8%89%b2.png"/>
 </figure>
 
-<br></p>
-<h3 id="Chinese-Brush-Painting-Mountain-and-Rock-Rendering-Scheme">Chinese Brush Painting Mountain &amp; Rock Rendering Scheme</h3>
-<p>In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.</p>
-<h4 id="Contour-rendering">Contour rendering based on dual-pass Shell Method</h4>
-<p>Traditional Shell Method offset the back of the shell geometry along the -z axis, causing the contour and object to have a strong sense of misalignment, especially at the edge of the view frustum. I eliminate this artifact by offsetting the geometry along the view direction.</p>
+<br>
+
+### Chinese Brush Painting Mountain & Rock Rendering Scheme {#Chinese-Brush-Painting-Mountain-and-Rock-Rendering-Scheme}
+
+In the Chinese brush painting mountain and rock rendering scheme, the Shell Method-based dual-pass rendering method is used to render the outline of the mountain stone, simulating the effect of dry brushes and whitewashing. The internal coloring uses a shading method based on Half-Lambert lighting model and diffuse warping function, and again uses triplanar to superimpose the stroke texture, and uses Gaussian blur to simulate the effect of ink diffusion.
+
+#### Contour rendering based on dual-pass Shell Method {#Contour-rendering}
+
+Traditional Shell Method offset the back of the shell geometry along the -z axis, causing the contour and object to have a strong sense of misalignment, especially at the edge of the view frustum. I eliminate this artifact by offsetting the geometry along the view direction. 
+
 <figure><img src="/img/portfolio/Unity-ink-frustum.png"
          alt="Left: the view frustum; Right: the contour misalignment gets worse as the object gets closer to the edge of the viewport. This is unsatisfactory, especially in VR, when the player has a huge FOV." width="600px"/><figcaption>
             <p><strong>Left</strong>: the view frustum; <strong>Right</strong>: the contour misalignment gets worse as the object gets closer to the edge of the viewport. This is unsatisfactory, especially in VR, when the player has a huge FOV.</p>
         </figcaption>
 </figure>
 
-<p>To simulate whitewash and dry brush, the contour rendering requires two passes. Each pass samples a Perlin noise, and the vertices are offset according to the noise map. To sample a texture in the vertex shader, I use the <em>tex2Dlod</em> method in cg.</p>
-<p>The comparison between my silhouette rendering scheme on the terrain and the existing scheme is as follows:</p>
+
+To simulate whitewash and dry brush, the contour rendering requires two passes. Each pass samples a Perlin noise, and the vertices are offset according to the noise map. To sample a texture in the vertex shader, I use the *tex2Dlod* method in cg.
+
+The comparison between my silhouette rendering scheme on the terrain and the existing scheme is as follows:
+
 <figure><img src="/img/portfolio/Unity-ink-mountainContour.png"
          alt="a) My silhouette rendering effect; b) The silhouette rendering effect in the reference. The circled area is where the stroke thickness is uneven near the edge of the frustum." width="550px"/><figcaption>
             <p>a) My silhouette rendering effect; b) The silhouette rendering effect in the reference. The circled area is where the stroke thickness is uneven near the edge of the frustum.</p>
         </figcaption>
 </figure>
 
-<h4 id="Internal-coloring">Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function</h4>
-<p>Since the mountain rock has the aesthetic characteristic of &ldquo;space and volume&rdquo;, a lighting model should be used to render the mountain rock to create a sense of volume. In an empirical lighting model, lighting consists of 3 components: diffuse, specular, and ambient lighting. Brush painting mountain and stone mainly reflects diffuse light.</p>
-<p>The diffuse warp function should be a step function. It is used to divide the ink color.</p>
+
+#### Internal coloring with a shading method based on Half-Lambert lighting model and diffuse warping function {#Internal-coloring}
+
+Since the mountain rock has the aesthetic characteristic of "space and volume", a lighting model should be used to render the mountain rock to create a sense of volume. In an empirical lighting model, lighting consists of 3 components: diffuse, specular, and ambient lighting. Brush painting mountain and stone mainly reflects diffuse light.
+
+The diffuse warp function should be a step function. It is used to divide the ink color.
+
 <div style="display: none">
 <figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%85%ac%e5%bc%8f.png" width="300px"/>
 </figure>
 
 <br>
 </div>
-<p>$$
+
+$$
 \begin{align}
 C_{0}\left(C_{i}\right)=\begin{cases}
-0.1, &amp; C_{i} \leq 0.25 \cr
-0.3, &amp; 0.25 &lt; C_{i} \leq 0.55 \cr
-0.7, &amp; 0.55 &lt; C_{i} \leq 0.8 \cr
-1.0, &amp; C_{i} &gt; 0.8
+0.1, & C_{i} \leq 0.25 \cr
+0.3, & 0.25 < C_{i} \leq 0.55 \cr
+0.7, & 0.55 < C_{i} \leq 0.8 \cr
+1.0, & C_{i} > 0.8
 \end{cases}
 \end{align}
-$$</p>
-<p>Among them, <em>C<sub>i</sub></em> is the original diffuse color, which is the input color of the <em>C<sub>0</sub></em> function. In actual use, to make the transition between different colors more natural, I roughly add a transition color between adjacent gradients.</p>
+$$
+
+Among them, *C<sub>i</sub>* is the original diffuse color, which is the input color of the *C<sub>0</sub>* function. In actual use, to make the transition between different colors more natural, I roughly add a transition color between adjacent gradients.
+
 <figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%87%bd%e6%95%b0%e5%9b%be%e7%89%87.png"
          alt="Diffuse warp function" width="250px"/><figcaption>
             <p>Diffuse warp function</p>
         </figcaption>
 </figure>
 
-<p>The result of this step, a shading method based on Half-Lambert lighting model and diffuse warping function, is as follows.</p>
+
+The result of this step, a shading method based on Half-Lambert lighting model and diffuse warping function, is as follows.
+
 <figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e7%bb%93%e6%9e%9c%e5%9b%be%e7%89%87.png" width="550px"/>
 </figure>
 
-<h4 id="Rubbing">Rubbing simulation based on model curvature</h4>
-<p>Rubbing (皴) is a technique of Chinese brush painting, which is used in landscape painting to represent trees and rocks. It is mainly used to express the texture of the rocks, that is, the texture of the inner contour.</p>
-<p>I use model curvature to simulate rubbing. When calculating the curvature, as the arc length approaches zero, the arc length can be approximated by the distance Δ<em>p</em> between vertices, and the rate of change of the normal Δ<em>N</em> can be used to replace the rate of change of the tangent.</p>
+
+#### Rubbing simulation based on model curvature {#Rubbing}
+
+Rubbing (皴) is a technique of Chinese brush painting, which is used in landscape painting to represent trees and rocks. It is mainly used to express the texture of the rocks, that is, the texture of the inner contour.
+
+I use model curvature to simulate rubbing. When calculating the curvature, as the arc length approaches zero, the arc length can be approximated by the distance Δ*p* between vertices, and the rate of change of the normal Δ*N* can be used to replace the rate of change of the tangent.
+
 <figure><img src="/img/portfolio/Unity-ink-%e6%9b%b2%e7%8e%87%e8%ae%a1%e7%ae%97%e5%9b%be.jpg"
          alt="Surface curvature calculate" width="350px"/><figcaption>
             <p>Surface curvature calculate</p>
         </figcaption>
 </figure>
 
-<p>The curvature at fragment <em>i</em> can be obtained by the ratio of the vertex normal vector and the rate of change of the position coordinate relative to the <em>x</em>-axis direction and the <em>y</em>-axis direction of the view space.</p>
+
+The curvature at fragment *i* can be obtained by the ratio of the vertex normal vector and the rate of change of the position coordinate relative to the *x*-axis direction and the *y*-axis direction of the view space.
+
 <div style="display:none">
 <figure><img src="/img/portfolio/Unity-ink-%e6%9b%b2%e7%8e%87%e5%85%ac%e5%bc%8f.png" width="100px"/>
 </figure>
 
 <br>
 </div>
-<p>$$
+
+$$
 \begin{align}
 k_{i}=\frac{1}{k} \cdot \frac{\Delta N}{\Delta p}
 \end{align}
-$$</p>
-<p>Among them, <em>k<sub>i</sub></em> is the curvature value at fragment <em>i</em>, and <em>k</em> is the curvature adjustment coefficient. Written in Unity ShaderLab, the pseudocode is as follows:</p>
+$$
+
+Among them, *k<sub>i</sub>* is the curvature value at fragment *i*, and *k* is the curvature adjustment coefficient. Written in Unity ShaderLab, the pseudocode is as follows:
+
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>curvature = <span style="color:#ff0086;font-weight:bold">length</span>(<span style="color:#ff0086;font-weight:bold">fwidth</span>(viewNormal)) / (<span style="color:#ff0086;font-weight:bold">length</span>(<span style="color:#ff0086;font-weight:bold">fwidth</span>(viewPos)) * _CurveFactor);</span></span></code></pre></div>
-<p>Curvature reflects the degree of change in the convexity and concavity of the object&rsquo;s surface. The larger the curvature value, the sharper the unevenness of the object&rsquo;s surface. At this point, the rubbing should be more obvious. I limit the curvature value in the range of 0 to 1, and use 1-<em>k<sub>i</sub></em> to calculate the rubbing color.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e6%9b%b2%e7%8e%87%e6%95%88%e6%9e%9c%e5%9b%be.png" width="550px"/>
+
+Curvature reflects the degree of change in the convexity and concavity of the object's surface. The larger the curvature value, the sharper the unevenness of the object's surface. At this point, the rubbing should be more obvious. I limit the curvature value in the range of 0 to 1, and use 1-*k<sub>i</sub>* to calculate the rubbing color.
+
+<figure><img src="/img/portfolio/Unity-ink-%e6%9b%b2%e7%8e%87%e6%95%88%e6%9e%9c%e5%9b%be.png" width="550px"/>
 </figure>
 
-<br></p>
-<p>This method based on the model curvature has its limitations in terms of use scenarios. I use the per vertex information (which is constant within a single triangle) of the normal rate of change and position to calculate the derivative. In the case of a relatively high triangle counts of a single model, the results obtained by this calculation method can meet the requirements; but in the case of a relatively low triangle count number, there will be more blocky. The solution to this artifact is:</p>
-<ol>
-<li>Bake the curvature information into vertex color;</li>
-<li>Bake the curvature information into a curvature map;</li>
-<li>Use Post Processing and render texture to blur the blocky curvature, and then blend it with other render outputs.</li>
-</ol>
+<br>
+
+This method based on the model curvature has its limitations in terms of use scenarios. I use the per vertex information (which is constant within a single triangle) of the normal rate of change and position to calculate the derivative. In the case of a relatively high triangle counts of a single model, the results obtained by this calculation method can meet the requirements; but in the case of a relatively low triangle count number, there will be more blocky. The solution to this artifact is:
+1. Bake the curvature information into vertex color;
+2. Bake the curvature information into a curvature map;
+3. Use Post Processing and render texture to blur the blocky curvature, and then blend it with other render outputs.
+
 <figure><img src="/img/portfolio/Unity-ink-%e6%9b%b2%e7%8e%87%e5%af%b9%e6%af%94%e5%9b%be.png"
          alt="Left: No curvature; Right: With blurred curvature" width="550px"/><figcaption>
             <p><strong>Left</strong>: No curvature; <strong>Right</strong>: With blurred curvature</p>
         </figcaption>
 </figure>
 
-<p>Considering that the actual effect is not ideal, the simulation of the rubbing method was not deployed in the rendering scheme of mountains and rocks. Instead, I use triplanar and Gaussian blur to simulate the stroke texture of the rocks.</p>
-<h4 id="Stroke-texture">Stroke texture (feathering and spreading)</h4>
-<p>When using the one-dimensional lookup table for diffuse warp, the input is the diffuse calculated according to the Half-Lambert lighting model. Adding some randomness to this will make the final warp results feel more random.</p>
+
+Considering that the actual effect is not ideal, the simulation of the rubbing method was not deployed in the rendering scheme of mountains and rocks. Instead, I use triplanar and Gaussian blur to simulate the stroke texture of the rocks.
+
+#### Stroke texture (feathering and spreading) {#Stroke-texture}
+
+When using the one-dimensional lookup table for diffuse warp, the input is the diffuse calculated according to the Half-Lambert lighting model. Adding some randomness to this will make the final warp results feel more random.
+
 <div style="display:none">
 <figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%8a%a0%e5%99%aa%e5%a3%b0%e5%85%ac%e5%bc%8f.png" width="150px"/>
 </figure>
 
 <br>
 </div>
-<p>$$
+
+$$
 \begin{align}
 C_{i \space new}=C_{i}+r_{i}
 \end{align}
-$$</p>
-<p>Among them, <em>C<sub>i new</sub></em> is the new diffuse after processing, and <em>r<sub>i</sub></em> is a random value. I use Perlin noise to introduce randomness, and use a stroke texture to control the overall light and shadow. I use triplanar to sample the two textures.</p>
-<p>The image below is the result of inputting <em>C<sub>i new</sub></em> into the diffuse warp function after adding the stroke texture. As you can see, the noise gives a more random look to the edges of the ink chunks.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%8a%a0%e5%99%aa%e5%a3%b0%e7%bb%93%e6%9e%9c.png" width="550px"/>
+$$
+
+Among them, *C<sub>i new</sub>* is the new diffuse after processing, and *r<sub>i</sub>* is a random value. I use Perlin noise to introduce randomness, and use a stroke texture to control the overall light and shadow. I use triplanar to sample the two textures.
+
+The image below is the result of inputting *C<sub>i new</sub>* into the diffuse warp function after adding the stroke texture. As you can see, the noise gives a more random look to the edges of the ink chunks.
+
+<figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%8a%a0%e5%99%aa%e5%a3%b0%e7%bb%93%e6%9e%9c.png" width="550px"/>
 </figure>
 
-<br></p>
-<p>After the above processing, I achieve the randomness of the edge of the mountains, but it still lacks the feeling of light ink spreading. To simulate the spreading and feathering, I introduce Gaussian blur for further processing.
-I adjust the appropriate parameters, and the final blurred result is shown in the image. There is an obvious feathering edge at the junction of light and dark in the mountain rock.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%8a%a0%e5%99%aa%e5%a3%b0%e5%8a%a0%e9%ab%98%e6%96%af%e7%bb%93%e6%9e%9c.png" width="550px"/>
+<br>
+
+After the above processing, I achieve the randomness of the edge of the mountains, but it still lacks the feeling of light ink spreading. To simulate the spreading and feathering, I introduce Gaussian blur for further processing.
+I adjust the appropriate parameters, and the final blurred result is shown in the image. There is an obvious feathering edge at the junction of light and dark in the mountain rock.
+
+<figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%8a%a0%e5%99%aa%e5%a3%b0%e5%8a%a0%e9%ab%98%e6%96%af%e7%bb%93%e6%9e%9c.png" width="550px"/>
 </figure>
 
-<br></p>
-<p>The flow map of the brush painting mountain and rock rendering scheme is as follows:</p>
-<p><a href="/img/portfolio/Unity-ink-%E6%B0%B4%E5%A2%A8%E5%B1%B1%E7%9F%B3%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png"><img src="/img/portfolio/Unity-ink-%E6%B0%B4%E5%A2%A8%E5%B1%B1%E7%9F%B3%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png" alt="Snapshot 4 of Unity ink painting effect rendering VR scene"></a></p>
-<p>Step-by-step output result of the scheme:</p>
-<p><a href="/img/portfolio/Unity-ink-MountainStone.png"><img src="/img/portfolio/Unity-ink-MountainStone.png" alt="Snapshot 5 of Unity ink painting effect rendering VR scene"></a></p>
+<br>
+
+The flow map of the brush painting mountain and rock rendering scheme is as follows:
+
+[![Snapshot 4 of Unity ink painting effect rendering VR scene][4]][4]
+
+[4]: /img/portfolio/Unity-ink-水墨山石渲染方案.png
+
+Step-by-step output result of the scheme:
+
+[![Snapshot 5 of Unity ink painting effect rendering VR scene][5]][5]
+
+[5]: /img/portfolio/Unity-ink-MountainStone.png
+
 <figure><img src="/img/portfolio/Unity-ink-%e5%b1%b1%e7%9f%b3%e7%95%8c%e9%9d%a2%e6%88%aa%e5%9b%be.png"
          alt="A material panel in Unity" width="250px"/><figcaption>
             <p>A material panel in Unity</p>
         </figcaption>
 </figure>
 
-<h3 id="Chinese-Brush-Painting-Character-Rendering-Scheme">Chinese Brush Painting Character Rendering Scheme</h3>
-<p>In the Chinese brush painting character rendering scheme, I propose a rendering method based on the viewing direction and bump map for contour rendering, that is, <strong>Surface Angle Silhouetting</strong>. A one-dimensional look-up table is used to map the results, so that the pleats of the clothes get a soft willow leaf drawing (柳叶描) effect, and normal scale is used to control the fineness of the stroke. In the internal coloring part, the grayscale adjustment of the color is realized. At the same time, a triplanar stroke map based on object space is proposed to simulate the effect of randomly splashing ink. Finally, the contour line, internal coloring and splashing ink strokes are mixed by texture blending.</p>
-<p>On a smooth surface, the definition of point P on the Silhouette is <em><strong>v</strong></em> ∙ <em><strong>n</strong></em> =0.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-VdotN.png" width="300px"/>
+
+### Chinese Brush Painting Character Rendering Scheme {#Chinese-Brush-Painting-Character-Rendering-Scheme}
+
+In the Chinese brush painting character rendering scheme, I propose a rendering method based on the viewing direction and bump map for contour rendering, that is, **Surface Angle Silhouetting**. A one-dimensional look-up table is used to map the results, so that the pleats of the clothes get a soft willow leaf drawing (柳叶描) effect, and normal scale is used to control the fineness of the stroke. In the internal coloring part, the grayscale adjustment of the color is realized. At the same time, a triplanar stroke map based on object space is proposed to simulate the effect of randomly splashing ink. Finally, the contour line, internal coloring and splashing ink strokes are mixed by texture blending.
+
+On a smooth surface, the definition of point P on the Silhouette is ***v*** ∙ ***n*** =0.
+
+<figure><img src="/img/portfolio/Unity-ink-VdotN.png" width="300px"/>
 </figure>
 
-<br></p>
-<p>But an actual 3D model is composed of many planes. What&rsquo;s more, in order to make the silhouette have a certain width, the judgment condition needs to be relaxed as follows:</p>
+<br>
+
+But an actual 3D model is composed of many planes. What's more, in order to make the silhouette have a certain width, the judgment condition needs to be relaxed as follows:
+
 <div style="display: none">
 <figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%85%ac%e5%bc%8f.png" width="300px"/>
 </figure>
 
 <br>
 </div>
-<p>$$
+
+$$
 \begin{align}
 C_{edge}=\begin{cases}
-1&amp;, &amp;\frac{|V \cdot N|}{r} &gt; t \cr
-\left(\frac{|V \cdot N|}{r}\right)^{p}&amp;, &amp;\frac{|V \cdot N|}{r} \leq t
+1&, &\frac{|V \cdot N|}{r} > t \cr
+\left(\frac{|V \cdot N|}{r}\right)^{p}&, &\frac{|V \cdot N|}{r} \leq t
 \end{cases}
 \end{align}
-$$</p>
-<p>Among them, <em>C<sub>edge</sub></em> is the color of the contour; <em>r</em> can control the edge range, which can make the edge transition smoother; <em>t</em> controls the threshold; <em>p</em> is used to perform exponential operations on the edge and adjust the shade of edge color.</p>
-<p>In order to narrow the gradient range between black and white, make the gradient range more natural, and simulate the effect of ink diffusion, I introduce a one-dimensional lookup table:</p>
-<p><figure><img src="/img/portfolio/Unity-ink-1DLUT.jpg"/>
+$$
+
+Among them, *C<sub>edge</sub>* is the color of the contour; *r* can control the edge range, which can make the edge transition smoother; *t* controls the threshold; *p* is used to perform exponential operations on the edge and adjust the shade of edge color.
+
+In order to narrow the gradient range between black and white, make the gradient range more natural, and simulate the effect of ink diffusion, I introduce a one-dimensional lookup table:
+
+<figure><img src="/img/portfolio/Unity-ink-1DLUT.jpg"/>
 </figure>
 
-<br></p>
-<p>This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of <em>C<sub>edge</sub></em> as input, and use this ramp texture for warping. The final effect is as follows:</p>
+<br>
+
+This one-dimensional lookup table has black on the left and white on the right, with very narrow gradients. This texture can also be seen as the result of Gaussian low-pass filtering preprocessing of an ordinary stepped lookup table. When in use, take the value of *C<sub>edge</sub>* as input, and use this ramp texture for warping. The final effect is as follows:
+
 <figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e8%bd%ae%e5%bb%93abcde.png"
          alt="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of v ∙ n; c) The result of calculating Cedge; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)"/><figcaption>
             <p>a) The original model shaded according to the Blinn-Phong lighting model; b) The result of <em><strong>v</strong></em> ∙ <em><strong>n</strong></em>; c) The result of calculating <em>Cedge</em>; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)</p>
         </figcaption>
 </figure>
 
-<p>The relevant shader code is as follows:</p>
+
+The relevant shader code is as follows:
+
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>fixed vdotn = <span style="color:#ff0086;font-weight:bold">abs</span>(<span style="color:#ff0086;font-weight:bold">dot</span>(viewDir, bump));
 </span></span><span style="display:flex;"><span>fixed edge = vdotn / _Range;
 </span></span><span style="display:flex;"><span>edge = edge &gt; _Thred ? <span style="color:#0086f7;font-weight:bold">1</span> : edge;
 </span></span><span style="display:flex;"><span>edge = <span style="color:#ff0086;font-weight:bold">pow</span>(edge, _Pow);
 </span></span><span style="display:flex;"><span>fixed4 edgeColor = <span style="color:#ff0086;font-weight:bold">tex2D</span>(_SilhouetteRampTex, <span style="color:#ff0086;font-weight:bold">fixed2</span>(edge, <span style="color:#0086f7;font-weight:bold">0.5</span>));</span></span></code></pre></div>
-<p>For the internal coloring of the character, I use some empirical tricks to reduce the saturation and increase the brightness. I also make a splashed ink stroke texture. So I have silhouettes, interior textures, and strokes. The next step is to blend them together to get the final result.</p>
-<p>Contour lines and internal textures are blended using an interpolation algorithm.</p>
+
+For the internal coloring of the character, I use some empirical tricks to reduce the saturation and increase the brightness. I also make a splashed ink stroke texture. So I have silhouettes, interior textures, and strokes. The next step is to blend them together to get the final result.
+
+Contour lines and internal textures are blended using an interpolation algorithm.
+
 <div style="display:none">
 <figure><img src="/img/portfolio/Unity-ink-%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%92%8c%e5%86%85%e9%83%a8%e7%ba%b9%e7%90%86%e5%b7%ae%e5%80%bc%e5%85%ac%e5%bc%8f.png" width="300px"/>
 </figure>
 
 <br>
 </div>
-<p>$$
+
+$$
 \begin{align}
-Output = \left ( 1-\lambda  \right ) \cdot edgecolor + \lambda \cdot innercolor, 0 &lt; \lambda &lt; 1
+Output = \left ( 1-\lambda  \right ) \cdot edgecolor + \lambda \cdot innercolor, 0 < \lambda < 1
 \end{align}
-$$</p>
+$$
+
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic">// col is the internal shading result
 </span></span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>col = edgeColor &gt; col ? col : edgeColor * (<span style="color:#0086f7;font-weight:bold">1</span> - edge) + col * edge;
 </span></span><span style="display:flex;"><span>col = <span style="color:#ff0086;font-weight:bold">pow</span>(col, _ColorPow);
 </span></span><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">return</span> col;</span></span></code></pre></div>
-<p>Among them, <em>edgecolor</em> is the silhouette color and <em>innercolor</em> is the inner texture color. The difference coefficient <em>λ</em> is <em>C<sub>edge</sub></em>, which is the input of the one-dimensional lookup table. As a result, the silhouette blends well with the texture and has soft feathering edges. The shape of the contour line is similar to the &ldquo;willow-leaf-shaped stroke&rdquo;(柳叶描).</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%92%8c%e5%86%85%e9%83%a8%e7%ba%b9%e7%90%86%e5%b7%ae%e5%80%bc%e7%bb%93%e6%9e%9c.png"
+
+Among them, *edgecolor* is the silhouette color and *innercolor* is the inner texture color. The difference coefficient *λ* is *C<sub>edge</sub>*, which is the input of the one-dimensional lookup table. As a result, the silhouette blends well with the texture and has soft feathering edges. The shape of the contour line is similar to the "willow-leaf-shaped stroke"(柳叶描).
+
+<figure><img src="/img/portfolio/Unity-ink-%e8%bd%ae%e5%bb%93%e7%ba%bf%e5%92%8c%e5%86%85%e9%83%a8%e7%ba%b9%e7%90%86%e5%b7%ae%e5%80%bc%e7%bb%93%e6%9e%9c.png"
          alt="Left: the blending result; Right: zoomed-in pleats" width="400px"/><figcaption>
             <p><strong>Left</strong>: the blending result; <strong>Right</strong>: zoomed-in pleats</p>
         </figcaption>
 </figure>
 
-<br></p>
-<p>The blend mode with splash stroke is Multiply. It examines the information in each color channel of the images and performs multiplying processing. The algorithm is as follows:</p>
+<br>
+
+The blend mode with splash stroke is Multiply. It examines the information in each color channel of the images and performs multiplying processing. The algorithm is as follows:
+
 <div style="display:none">
 <figure><img src="/img/portfolio/Unity-ink-%e6%ad%a3%e7%89%87%e5%8f%a0%e5%ba%95%e5%85%ac%e5%bc%8f.png" width="300px"/>
 </figure>
 
 <br>
 </div>
-<p>$$
+
+$$
 \begin{align}
 Output = brushcolor \otimes innercolor
 \end{align}
-$$</p>
-<p>This algorithm has low complexity and fast operation speed, and each pixel retains the information of splash stroke and internal texture. Since the multiplication of colors is equivalent to the darkening of both colors, the brighter inner texture can be suppressed to the normal brightness range.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e6%ad%a3%e7%89%87%e5%8f%a0%e5%ba%95%e7%bb%93%e6%9e%9c.png"
+$$
+
+This algorithm has low complexity and fast operation speed, and each pixel retains the information of splash stroke and internal texture. Since the multiplication of colors is equivalent to the darkening of both colors, the brighter inner texture can be suppressed to the normal brightness range.
+
+<figure><img src="/img/portfolio/Unity-ink-%e6%ad%a3%e7%89%87%e5%8f%a0%e5%ba%95%e7%bb%93%e6%9e%9c.png"
          alt="The output result after blending with splash stroke" width="250px"/><figcaption>
             <p>The output result after blending with splash stroke</p>
         </figcaption>
 </figure>
 
-<br></p>
-<p>After blending the silhouette, internal textures and strokes, Post Processing is overlaid, and the final render is shown in the image.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-%e6%ad%a3%e7%89%87%e5%8f%a0%e5%ba%95%e5%92%8c%e5%90%8e%e5%a4%84%e7%90%86%e7%bb%93%e6%9e%9c.png" width="250px"/>
+<br>
+
+After blending the silhouette, internal textures and strokes, Post Processing is overlaid, and the final render is shown in the image.
+
+<figure><img src="/img/portfolio/Unity-ink-%e6%ad%a3%e7%89%87%e5%8f%a0%e5%ba%95%e5%92%8c%e5%90%8e%e5%a4%84%e7%90%86%e7%bb%93%e6%9e%9c.png" width="250px"/>
 </figure>
 
-<br></p>
-<p>The solution has the following advantages in terms of rendering performance:</p>
-<ol>
-<li>The contour lines are more detailed and natural, especially the clothing part. The color of the line is darker, the edge transition is smoother, and there is no hard cutting edge, which corresponds to the effect of the outline drawn by the center of the brush.</li>
-<li>The distribution of splash stroke textures is more in line with common sense, and there will be no complete symmetry or the situation where the strokes of two adjacent parts are completely disconnected.
-At the same time, because of the above advantages, the rendering results look smoother and more flexible, and the distribution of ink colors is more natural, and more volumetric, even though I don&rsquo;t use any lighting models.</li>
-</ol>
-<p>The flow map of the brush painting character rendering scheme is as follows:</p>
-<p><a href="/img/portfolio/Unity-ink-%E4%BA%BA%E7%89%A9%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png"><img src="/img/portfolio/Unity-ink-%E4%BA%BA%E7%89%A9%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88.png" alt="Snapshot 6 of Unity ink painting effect rendering VR scene"></a></p>
-<p>Step-by-step output result of the scheme:</p>
-<p><a href="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png"><img src="/img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png" alt="Snapshot 7 of Unity ink painting effect rendering VR scene"></a></p>
+<br>
+
+The solution has the following advantages in terms of rendering performance:
+1. The contour lines are more detailed and natural, especially the clothing part. The color of the line is darker, the edge transition is smoother, and there is no hard cutting edge, which corresponds to the effect of the outline drawn by the center of the brush.
+2. The distribution of splash stroke textures is more in line with common sense, and there will be no complete symmetry or the situation where the strokes of two adjacent parts are completely disconnected.
+At the same time, because of the above advantages, the rendering results look smoother and more flexible, and the distribution of ink colors is more natural, and more volumetric, even though I don't use any lighting models.
+
+The flow map of the brush painting character rendering scheme is as follows:
+
+[![Snapshot 6 of Unity ink painting effect rendering VR scene][6]][6]
+
+[6]: /img/portfolio/Unity-ink-人物渲染方案.png
+
+Step-by-step output result of the scheme:
+
+[![Snapshot 7 of Unity ink painting effect rendering VR scene][7]][7]
+
+[7]: /img/portfolio/Unity-ink-MonkeyKing.png
+
 <figure><img src="/img/portfolio/Unity-ink-%e4%ba%ba%e7%89%a9%e7%95%8c%e9%9d%a2%e6%88%aa%e5%9b%be.png"
          alt="A material panel in Unity" width="250px"/><figcaption>
             <p>A material panel in Unity</p>
         </figcaption>
 </figure>
 
-<h2 id="Unity-VR">Unity VR Integration</h2>
-<p>In Unity 2019.3, Unity has developed a new plug-in framework called XR SDK that enables XR providers to integrate with the Unity engine and make full use of its features. For more information, please refer to the <a href="https://docs.unity3d.com/2019.3/Documentation/Manual/XR.html">official user manual</a>.</p>
-<p>Notably, Unity 2019.3 features a brand-new XR plug-in framework. The multi-platform developer tools include AR Foundation and <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@1.0/manual/index.html">XR Interaction Toolkit (XRI)</a>. Additionally, XR providers&rsquo; plug-ins can be loaded using Unity&rsquo;s package manager, making performance optimization easier with the engine&rsquo;s convenience.</p>
-<p>Traditional development requires developers to adapt to different VR platforms, which means adapting input/output, display, and functionality, including a lot of repetitive labor. With XRI, developers can directly bridge with hardware through the XR plug-in provided by hardware vendors, without worrying about platform adaptation issues. This enables &ldquo;build once, deploy anywhere&rdquo;.</p>
+
+## Unity VR Integration {#Unity-VR}
+
+In Unity 2019.3, Unity has developed a new plug-in framework called XR SDK that enables XR providers to integrate with the Unity engine and make full use of its features. For more information, please refer to the [official user manual](https://docs.unity3d.com/2019.3/Documentation/Manual/XR.html).
+
+Notably, Unity 2019.3 features a brand-new XR plug-in framework. The multi-platform developer tools include AR Foundation and [XR Interaction Toolkit (XRI)](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@1.0/manual/index.html). Additionally, XR providers' plug-ins can be loaded using Unity's package manager, making performance optimization easier with the engine's convenience.
+
+Traditional development requires developers to adapt to different VR platforms, which means adapting input/output, display, and functionality, including a lot of repetitive labor. With XRI, developers can directly bridge with hardware through the XR plug-in provided by hardware vendors, without worrying about platform adaptation issues. This enables "build once, deploy anywhere".
+
 <figure><img src="/img/portfolio/Unity-ink-xr-tech-stack.png"
          alt="This diagram illustrates the current Unity XR plug-in framework structure, and how it works with platform provider implementations." width="600px"/><figcaption>
             <p>This diagram illustrates the current Unity XR plug-in framework structure, and how it works with platform provider implementations.</p>
         </figcaption>
 </figure>
 
-<p>I choose Oculus Rift S as a verification and display device, with most of the work being done in the engine. This project uses Unity 2019.3&rsquo;s latest plugin architecture and XR Plug-in Management to load, initialize, set up, and manage plugins.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-vr-oculus-packages.png"/>
+
+I choose Oculus Rift S as a verification and display device, with most of the work being done in the engine. This project uses Unity 2019.3's latest plugin architecture and XR Plug-in Management to load, initialize, set up, and manage plugins.
+
+<figure><img src="/img/portfolio/Unity-ink-vr-oculus-packages.png"/>
 </figure>
 
-<br></p>
-<p>Since XRI in Unity 2019.3 is still in preview version (1.0.0-pre.2) and has not been officially released (note: it is officially released NOW), I use Virtual Reality Toolkit (VRTK) to replace its functionality. The disadvantage of VRTK is that bridging needs to be done manually, while XRI does it automatically.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-VRTK.png"
+<br>
+
+Since XRI in Unity 2019.3 is still in preview version (1.0.0-pre.2) and has not been officially released (note: it is officially released NOW), I use Virtual Reality Toolkit (VRTK) to replace its functionality. The disadvantage of VRTK is that bridging needs to be done manually, while XRI does it automatically. 
+
+<figure><img src="/img/portfolio/Unity-ink-VRTK.png"
          alt="Manually bridge using VRTK" width="600px"/>
 </figure>
 
-<br></p>
-<p>During the bridging process, to bridge the display and input of Oculus and VRTK, several packages are required, including <strong>Zinnia.Unity</strong>, <strong>Malimbe</strong>, and <strong>VRTK Prefabs</strong>. They can be easily imported and managed using Unity&rsquo;s package manager.</p>
-<p>All input actions such as grabbing are handled by the VRTK package without having to worry about hardware implementation. The prefab used is &ldquo;<strong>Interactable.Primary_Grab.Secondary_Swap</strong>&rdquo; with the primary script being <strong>Interactable Facade.cs</strong>.</p>
+<br>
+
+During the bridging process, to bridge the display and input of Oculus and VRTK, several packages are required, including **Zinnia.Unity**, **Malimbe**, and **VRTK Prefabs**. They can be easily imported and managed using Unity's package manager.
+
+All input actions such as grabbing are handled by the VRTK package without having to worry about hardware implementation. The prefab used is "**Interactable.Primary_Grab.Secondary_Swap**" with the primary script being **Interactable Facade.cs**.
+
 <figure><img src="/img/portfolio/Unity-ink-facade.png"
          alt="The grabbable object can be placed as a child object under the prefab key.Interactable.Primary_Grab.Secondary_Swap." width="600px"/><figcaption>
             <p>The grabbable object can be placed as a child object under the prefab <strong>key.Interactable.Primary_Grab.Secondary_Swap</strong>.</p>
         </figcaption>
 </figure>
+
 
 <figure><img src="/img/portfolio/Unity-ink-facade1.png"
          alt="Get the grab action by adding listeners in the Grab Events." width="250px"/><figcaption>
@@ -637,42 +821,43 @@ At the same time, because of the above advantages, the rendering results look sm
         </figcaption>
 </figure>
 
-<h2 id="Gameplay">Gameplay</h2>
-<p>Now that the hardware inputs and outputs are in place, the next step is the writing of the gameplay section.</p>
-<h3 id="Scripts">Scripts  Architecture Overview</h3>
-<p>The architecture designed for this project is shown in the figure below:</p>
-<p><figure><img src="/img/portfolio/Unity-ink-structure-of-scripts.png"
+
+## Gameplay {#Gameplay}
+
+Now that the hardware inputs and outputs are in place, the next step is the writing of the gameplay section.
+
+### Scripts  Architecture Overview {#Scripts}
+
+The architecture designed for this project is shown in the figure below:
+
+<figure><img src="/img/portfolio/Unity-ink-structure-of-scripts.png"
          alt="architecture of scripts" width="350px"/>
 </figure>
 
-<br></p>
-<p>The functions of each script are as follows:</p>
-<ol>
-<li>
-<p><em><strong>InputHandler.cs</strong></em>: Determines the action of taking off the VR glasses, which triggers the transition from the first scene to the second scene.</p>
-</li>
-<li>
-<p><em><strong>MainLogicController.cs</strong></em>: Handles all scene transitions.</p>
-</li>
-<li>
-<p><em><strong>OtherCharacter</strong></em>: Manages the Non-player characters, especially the burning effect (using a shader parameter).</p>
-</li>
-<li>
-<p><em><strong>GrabbableGlasses</strong></em>: Handles the action of grabbing the NPC&rsquo;s glasses in the second scene, triggers the transition from the second scene to the third scene, and manages the action of dropping the glasses to the ground when the character burns out.</p>
-</li>
-<li>
-<p><em><strong>FadeParticle.cs</strong></em>: Manages the particle animation during NPC burning.</p>
-</li>
-<li>
-<p><em><strong>SpeechManager</strong></em>: Manages dialogues between the player and NPC.</p>
-</li>
-<li>
-<p><em><strong>QuitButton</strong></em>: Handles the transition from the third scene to the credits scene and quitting the game.</p>
-</li>
-</ol>
-<p>Among them, 1 and 3, 4, 5 will be discussed in the <a href="#Gameplay">Gameplay</a> section; 2 will be discussed in the <a href="#Transition">Scene Transition Design</a> section; and 6 will be discussed in the <a href="#UI">Dialogue and UI Design</a> section.</p>
-<h3 id="Gameplay-Scripts">Analysis of Gameplay Scripts</h3>
-<p><em><strong>InputHandler.cs</strong></em> primarily handles the action recognition for <strong>removing the VR headset from the player</strong>, with the corresponding code shown below.</p>
+<br>
+
+The functions of each script are as follows:
+
+1. ***InputHandler.cs***: Determines the action of taking off the VR glasses, which triggers the transition from the first scene to the second scene.
+
+2. ***MainLogicController.cs***: Handles all scene transitions.
+
+3. ***OtherCharacter***: Manages the Non-player characters, especially the burning effect (using a shader parameter).
+
+4. ***GrabbableGlasses***: Handles the action of grabbing the NPC's glasses in the second scene, triggers the transition from the second scene to the third scene, and manages the action of dropping the glasses to the ground when the character burns out.
+
+5. ***FadeParticle.cs***: Manages the particle animation during NPC burning.
+
+6. ***SpeechManager***: Manages dialogues between the player and NPC.
+
+7. ***QuitButton***: Handles the transition from the third scene to the credits scene and quitting the game.
+
+Among them, 1 and 3, 4, 5 will be discussed in the [Gameplay](#Gameplay) section; 2 will be discussed in the [Scene Transition Design](#Transition) section; and 6 will be discussed in the [Dialogue and UI Design](#UI) section.
+
+### Analysis of Gameplay Scripts {#Gameplay-Scripts}
+
+***InputHandler.cs*** primarily handles the action recognition for **removing the VR headset from the player**, with the corresponding code shown below.
+
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">Update</span>()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    isIndexPressed = OVRInput.<span style="color:#ff0086;font-weight:bold">Get</span>(OVRInput.RawButton.RIndexTrigger);
@@ -705,7 +890,9 @@ At the same time, because of the above advantages, the rendering results look sm
 </span></span><span style="display:flex;"><span>public <span style="color:#fb660a;font-weight:bold">static</span> <span style="color:#cdcaa9;font-weight:bold">bool</span> <span style="color:#ff0086;font-weight:bold">IsGrabbingR</span>(){
 </span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">return</span> instance.isIndexPressed &amp;&amp; instance.isMiddlePressed;
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-<p>As you can see, there are three conditions involved: the hand is on the right side of the headset, a fist grab action, and a hand lift action. Based on this, the scene transition is triggered in <em>MainlogicController.cs</em>.</p>
+
+As you can see, there are three conditions involved: the hand is on the right side of the headset, a fist grab action, and a hand lift action. Based on this, the scene transition is triggered in *MainlogicController.cs*.
+
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>            <span style="color:#fb660a;font-weight:bold">if</span> (canSceneSwap &amp;&amp; !isForcedWaiting)
 </span></span><span style="display:flex;"><span>            {
 </span></span><span style="display:flex;"><span>                <span style="color:#fb660a;font-weight:bold">if</span> ((InputHandler.<span style="color:#ff0086;font-weight:bold">IsGrabbingR</span>() 
@@ -715,7 +902,9 @@ At the same time, because of the above advantages, the rendering results look sm
 </span></span><span style="display:flex;"><span>                    <span style="color:#ff0086;font-weight:bold">StartSceneSwap</span>();
 </span></span><span style="display:flex;"><span>                }
 </span></span><span style="display:flex;"><span>            }</span></span></code></pre></div>
-<p><em><strong>OtherCharacter.cs</strong></em>, which is responsible for handling the NPC burn effect, controls the dissolve progress of the NPC material by manipulating the exposed <strong>_Dissolve</strong> parameter in the shader. I created a simple dissolve effect by generating Perlin noise in the shader.</p>
+
+***OtherCharacter.cs***, which is responsible for handling the NPC burn effect, controls the dissolve progress of the NPC material by manipulating the exposed **_Dissolve** parameter in the shader. I created a simple dissolve effect by generating Perlin noise in the shader.
+
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">Update</span>()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">if</span> (isFading &amp;&amp; dissolve &lt; <span style="color:#0086f7;font-weight:bold">1f</span>)
@@ -746,42 +935,55 @@ At the same time, because of the above advantages, the rendering results look sm
 </span></span><span style="display:flex;"><span>    <span style="color:#ff0086;font-weight:bold">onGrabbed</span>();
 </span></span><span style="display:flex;"><span>    glasses.transform.<span style="color:#ff0086;font-weight:bold">SetParent</span>(null);
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-<h2 id="UI">UI Design</h2>
-<p>In VR scenes, two display modes were used for UI.</p>
-<ol>
-<li>For my part in the dialogue, the canvas is fixed directly on the CenterEyeAnchor as a screen space UI (note that the render mode I choose is still world space, but it will look like screen space as it follows the movement of tracking);</li>
-</ol>
+
+## UI Design {#UI}
+
+In VR scenes, two display modes were used for UI.
+
+1. For my part in the dialogue, the canvas is fixed directly on the CenterEyeAnchor as a screen space UI (note that the render mode I choose is still world space, but it will look like screen space as it follows the movement of tracking);
+
 <figure><img src="/img/portfolio/Unity-ink-myUI.png"
          alt="There are two Texts here, one for the dialogue and one for displaying Credits at the end of the process." width="600px"/><figcaption>
             <p>There are two Texts here, one for the dialogue and one for displaying Credits at the end of the process.</p>
         </figcaption>
 </figure>
 
-<ol start="2">
-<li>For others&rsquo; part in the dialogue, the canvas is displayed above their respective heads as a world space UI.</li>
-</ol>
-<p><figure><img src="/img/portfolio/Unity-ink-othersUI.png" width="600px"/>
+
+2. For others' part in the dialogue, the canvas is displayed above their respective heads as a world space UI.
+
+<figure><img src="/img/portfolio/Unity-ink-othersUI.png" width="600px"/>
 </figure>
 
-<br></p>
-<p>I rewrote the UIDefault.shader in Unity&rsquo;s built-in shader and added a billboard function that allows it to rotate and always face the player&rsquo;s line of sight.</p>
-<p>In the billboard code section, a coordinate system needs to be create first. But how to define the &ldquo;front&rdquo; direction of the coordinates?</p>
-<p>The traditional method is to use the &ldquo;<em>viewer minus center</em>&rdquo; vector, but this can cause significant distortion at the edge of the viewing frustum.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-UI1.GIF"
+<br>
+
+I rewrote the UIDefault.shader in Unity's built-in shader and added a billboard function that allows it to rotate and always face the player's line of sight.
+
+In the billboard code section, a coordinate system needs to be create first. But how to define the "front" direction of the coordinates?
+
+The traditional method is to use the "*viewer minus center*" vector, but this can cause significant distortion at the edge of the viewing frustum.
+
+<figure><img src="/img/portfolio/Unity-ink-UI1.GIF"
          alt="*viewer minus center* as front" width="400px"/>
 </figure>
 
-<br></p>
-<p>I try to use the &ldquo;forward direction of the camera&rdquo;, namely the <code>UNITY_MATRIX_IT_MV[2].xyz</code> macro. This way, no matter if it&rsquo;s at the edge of the viewing frustum or in the center of the screen, the text will face the viewer directly.</p>
-<p><figure><img src="/img/portfolio/Unity-ink-UI2.GIF"
+<br>
+
+I try to use the "forward direction of the camera", namely the `UNITY_MATRIX_IT_MV[2].xyz` macro. This way, no matter if it's at the edge of the viewing frustum or in the center of the screen, the text will face the viewer directly.
+
+<figure><img src="/img/portfolio/Unity-ink-UI2.GIF"
          alt="forward direction of the camera" width="400px"/>
 </figure>
 
-<br></p>
-<p>For traditional displays, I prefer the second method. Without distortion, it feels more &ldquo;UI&rdquo;. In VR, however, it feels weird. After experimenting, I choose the first method in the VR scene.</p>
-<h2 id="Transition">Scene Transition Design</h2>
-<p>The 2022 game <em>God of War Ragnarök</em> features an impressive one-shot design that seamlessly blends over 20 hours of gameplay into a cohesive experience. Many games, not just those in the <em>God of War</em> series, strive to make loading and scene transitions as seamless as possible. In my VR experience, I have three scenes with very different styles, so reducing the &ldquo;jumpiness&rdquo; of the gameplay experience and minimizing the &ldquo;stuttering&rdquo; of loading screens to alleviate VR sickness is a design focus.</p>
-<p>To achieve a smoother transition, I use two effects in combination: fog and scene darkening. I create the fog particle effect and attach it as a child object to the OVRCameraRig&rsquo;s CenterEyeAnchor. I mainly control the density of the fog by scripting the <strong>Rate over Time</strong> parameter of particle emission. For the darkening effect, I use Unity&rsquo;s Post Processing Stack to control the <strong>Exposure Compensation</strong>.</p>
+<br>
+
+For traditional displays, I prefer the second method. Without distortion, it feels more "UI". In VR, however, it feels weird. After experimenting, I choose the first method in the VR scene.
+
+## Scene Transition Design {#Transition}
+
+The 2022 game *God of War Ragnarök* features an impressive one-shot design that seamlessly blends over 20 hours of gameplay into a cohesive experience. Many games, not just those in the *God of War* series, strive to make loading and scene transitions as seamless as possible. In my VR experience, I have three scenes with very different styles, so reducing the "jumpiness" of the gameplay experience and minimizing the "stuttering" of loading screens to alleviate VR sickness is a design focus.
+
+To achieve a smoother transition, I use two effects in combination: fog and scene darkening. I create the fog particle effect and attach it as a child object to the OVRCameraRig's CenterEyeAnchor. I mainly control the density of the fog by scripting the **Rate over Time** parameter of particle emission. For the darkening effect, I use Unity's Post Processing Stack to control the **Exposure Compensation**.
+
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">HandleParticles</span>()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#fb660a;font-weight:bold">if</span> (particleRatio &lt;= <span style="color:#0086f7;font-weight:bold">0</span>)
@@ -827,7 +1029,9 @@ At the same time, because of the above advantages, the rendering results look sm
 </span></span><span style="display:flex;"><span>        emit.rateOverTime = rate * initEmission;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-<p>After the scene transition action is performed, there is a wait for the animation to play. Scene transitions are done asynchronously using coroutines to avoid the screen lagging caused by scene changes and mismatched headset movements, which could lead to VR sickness.</p>
+
+After the scene transition action is performed, there is a wait for the animation to play. Scene transitions are done asynchronously using coroutines to avoid the screen lagging caused by scene changes and mismatched headset movements, which could lead to VR sickness.
+
 <div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#cdcaa9;font-weight:bold">void</span> <span style="color:#ff0086;font-weight:bold">SceneSwap</span>()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    canSceneSwap = false;
@@ -889,26 +1093,30 @@ At the same time, because of the above advantages, the rendering results look sm
 </span></span><span style="display:flex;"><span>    isForcedWaiting = false;
 </span></span><span style="display:flex;"><span>    <span style="color:#ff0086;font-weight:bold">SceneSwap</span>();
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
-<p><figure><img src="/img/portfolio/Unity-ink-scene-swap.png"
+
+<figure><img src="/img/portfolio/Unity-ink-scene-swap.png"
          alt="Scene Transition" width="400px"/>
 </figure>
 
-<br></p>
-<h3 id="Blooper">Blooper</h3>
-<p>These are some screenshots taken during the development process. Just want to find an opportunity to showcase the Kawaii Unity Chan😊.</p>
+<br>
+
+### Blooper {#Blooper}
+
+These are some screenshots taken during the development process. Just want to find an opportunity to showcase the Kawaii Unity Chan😊.
+
 <figure><img src="/img/portfolio/Unity-ink-UnityChan.gif"
          alt="Unity Chan, with wind effects applied to her hair and skirt using Magica Cloth." width="300px"/><figcaption>
             <p>Unity Chan, with wind effects applied to her hair and skirt using Magica Cloth.</p>
         </figcaption>
 </figure>
 
+
 <figure><img src="/img/portfolio/Unity-ink-UnityChan2.jpg"
          alt="Adding post-process effects to mimic Xuan paper texture." width="600px"/><figcaption>
             <p>Adding post-process effects to mimic Xuan paper texture.</p>
         </figcaption>
 </figure>
-
-
+ -->
          
       </div>
     </div>
