@@ -6,7 +6,7 @@
     <description>Recent content in Portfolios on Cindy Cao&#39;s Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Nov 2016 19:57:40 +0530</lastBuildDate><atom:link href="https://cindy-cao-portfolio.netlify.app/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2016 19:41:01 +0530</lastBuildDate><atom:link href="https://cindy-cao-portfolio.netlify.app/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Real-Time Chinese Ink Rendering for VR</title>
       <link>https://cindy-cao-portfolio.netlify.app/portfolio/unity-ink-painting-effect-rendering-vr-scene/</link>
@@ -76,72 +76,6 @@ Unity
 GENRE
 WebRESPONSIBILITYLed the integration and optimization of 8 environments and 132 separate 3D assets (miniatures), working closely with the 3D artist and developers to ensure seamless Unity deployment.Developed and implemented custom shaders, post-processing, and VFX to enhance visual engagement and immersionDESCRIPTION
 SandScape is an industrial collaboration with BC Children&#39;s Hospital Digital Lab, aimed at developing a digital therapeutic tool for kids.</description>
-    </item>
-    
-    <item>
-      <title>[ #Misc ] TV animation made with the Slate plugin in Substance Designer</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/tv-animation-made-with-slate-plugin-in-substance-designer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/tv-animation-made-with-slate-plugin-in-substance-designer/</guid>
-      <description>Perfect World volume animation purchased
-TV animation (screenshot of Perfect World&amp;rsquo;s App Store release)</description>
-    </item>
-    
-    <item>
-      <title>[ #Misc ] Shader Graph Effects - Shield Effect Collection</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effects/</link>
-      <pubDate>Sat, 05 Nov 2016 18:25:22 +0530</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effects/</guid>
-      <description>&lt;p&gt;Figure 1 is a traced work, and Figure 2 is a secondary creation using the hexagonal shield pop-out effect.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>[ #Misc ] VFX Graph</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/vfx-graph/</link>
-      <pubDate>Sat, 05 Nov 2016 19:44:32 +0530</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/vfx-graph/</guid>
-      <description>&lt;p&gt;I made fireworks 🎇 with the new VFX Graph tool.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>[ #Misc ]Shader Graph Effect Works</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effect-works/</link>
-      <pubDate>Sat, 05 Nov 2016 19:50:47 +0530</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/shadergraph-effect-works/</guid>
-      <description>Followed the tutorials of bilibili&amp;rsquo;s 浮生若梦Jason, I got started with HDRP and Shader Graph
-This flame is an outer flame, inner flame, flame core, halo, fire sparks, and smoke, made from sequence images
-Iron flower. Particle collision was added so that there is a fire sparks flying effect on the ground; added point lights to particles; particles stretch with speed
-A meteor/fireball summoning spell. Using Sub Emitters, this feature can also be used for fireworks and the like!</description>
-    </item>
-    
-    <item>
-      <title>[ #Misc ] Unity Shader Works</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/unity-shader-works/</link>
-      <pubDate>Sat, 05 Nov 2016 19:56:17 +0530</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/unity-shader-works/</guid>
-      <description>RenderTexture red-cyan 3D effect
-Billboard Effect
-Water surface - transparency, Fresnel, focal dispersion, perturbation Effect
-Effect shader adjusts brightness, transparency, disturbance intensity, and disturbance amplitude
-Color affected by absolute height, viewing angle and light angle
-UV flow</description>
-    </item>
-    
-    <item>
-      <title>[ #Misc ] Substance Designer Material Works</title>
-      <link>https://cindy-cao-portfolio.netlify.app/portfolio/substance-designer-material-works/</link>
-      <pubDate>Sat, 05 Nov 2016 19:57:40 +0530</pubDate>
-      
-      <guid>https://cindy-cao-portfolio.netlify.app/portfolio/substance-designer-material-works/</guid>
-      <description>Substance Designer PBR ground
-Substance Designer brick ground Tiling
-Substance Designer brick ground details
-Brick ground graph in Substance Designer</description>
     </item>
     
   </channel>
