@@ -8,13 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Nov 2016 13:00:25 +0530</lastBuildDate><atom:link href="https://cindy-cao-portfolio.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Unity VR - Real-Time Chinese Ink Rendering</title>
+      <title>Real-Time Chinese Ink Rendering for VR</title>
       <link>https://cindy-cao-portfolio.netlify.app/portfolio/unity-ink-painting-effect-rendering-vr-scene/</link>
       <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
       
       <guid>https://cindy-cao-portfolio.netlify.app/portfolio/unity-ink-painting-effect-rendering-vr-scene/</guid>
       <description>ROLE
-Technical Artist (Project Lead)
+Project Lead &amp; Technical Artist
 YEAR
 2022
 ENGINE
@@ -22,8 +22,9 @@ Unity
 TECH
 ShaderLab / HLSL, Unity XR
 PLATFORM
-Oculus Rift SFOCUS
-NPR, Stylized Rendering, Shader Development, VR Integration, Technical Art
+Oculus Rift S
+FOCUS
+Stylized Rendering, Shader Development, VR Integration
 RESPONSIBILITYLed the project’s visual and technical direction, developing the real-time Chinese ink rendering system for characters and environments.Designed and implemented custom shaders, VR interaction, and spatial UI in Unity, integrating them into a complete three-scene VR experience.Profiled and optimized the final experience for Oculus Rift S, averaging 89.</description>
     </item>
     

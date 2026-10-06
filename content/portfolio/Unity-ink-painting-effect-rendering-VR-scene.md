@@ -1,6 +1,6 @@
 +++
 date = "2016-11-05T19:41:01+05:30"
-title = "Unity VR - Real-Time Chinese Ink Rendering"
+title = "Real-Time Chinese Ink Rendering for VR"
 description = "This Unity VR project explores how the visual language of Chinese ink painting can be translated into real-time 3D rendering. I developed separate rendering treatments for characters and environments, then brought them together in a three-scene VR experience with interaction, spatial UI, and performance optimization for Oculus Rift S. I led the overall project, with additional programming support on parts of the gameplay implementation."
 draft = false
 image = "img/portfolio/Unity-ink-painting-effect-rendering-VR-scene.png"
@@ -15,7 +15,7 @@ math = true
     <div class="row">
         <div class="cell border-right col-1">
             <strong>ROLE</strong><br>
-            Technical Artist (Project Lead)<br><br>
+            Project Lead & Technical Artist<br><br>
             <strong>YEAR</strong><br>
             2022<br><br>
             <strong>ENGINE</strong><br>
@@ -23,9 +23,9 @@ math = true
             <strong>TECH</strong><br>
             ShaderLab / HLSL, Unity XR<br><br>
             <strong>PLATFORM</strong><br>
-            Oculus Rift S
+            Oculus Rift S<br><br>
             <strong>FOCUS</strong><br>
-            NPR, Stylized Rendering, Shader Development, VR Integration, Technical Art<br><br>
+            Stylized Rendering, Shader Development, VR Integration<br><br>
         </div>
         <div class="cell border-right col-2">
             <strong>RESPONSIBILITY</strong>
@@ -37,7 +37,7 @@ math = true
                     Designed and implemented custom shaders, VR interaction, and spatial UI in Unity, integrating them into a complete three-scene VR experience.
                 </li>
                 <li>
-                    Profiled and optimized the final experience for Oculus Rift S, averaging 89.9 FPS in headset testing and maintaining UPR performance scores above 90.
+                    Profiled and optimized the final experience for Oculus Rift S, averaging 89.9 FPS in headset testing and maintaining UPR performance scores of 90+.
                 </li>
             </ol>
         </div>
@@ -56,66 +56,49 @@ math = true
 *["The Creation of Adam"](https://skfb.ly/6RnWL) by Loïc Norgeot is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/).*
 <br>
 
-I started by narrowing the visual language of Chinese ink painting into three ideas that could guide the rendering.
+### 01 From Artistic Principles to Rendering Rules
 
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; gap: 24px; margin: 0 0 24px;">
-  <a href="/img/portfolio/Unity-ink-bone.jpg" style="min-width: 0;">
-    <img src="/img/portfolio/Unity-ink-bone.jpg"
-         alt="Chinese ink painting using expressive brush lines to define form"
-         style="display: block; width: 100%; height: auto;">
-  </a>
-  <div style="min-width: 0;">
-    <h5 style="margin-top: 0;">Form Through Line / Bone Method in Brushwork<br><small>以线造形 / 骨法用笔</small></h5>
+I started by narrowing the visual language of Chinese ink painting into four principles that could guide the rendering.
+
+<div class="ink-principles-grid">
+  <article class="ink-principle-card">
+    <h5>Form Through Line / Bone Method in Brushwork<small>以线造形 / 骨法用笔</small></h5>
+    <a href="/img/portfolio/Unity-ink-bone.jpg">
+      <img src="/img/portfolio/Unity-ink-bone.jpg" alt="Chinese ink painting using expressive brush lines to define form" loading="lazy">
+    </a>
     <p>Line defines form, while changes in weight, dryness, and rhythm give the line its character.</p>
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; gap: 24px; margin: 0 0 24px;">
-  <a href="/img/portfolio/Unity-ink-5-tones.jpeg" style="min-width: 0;">
-    <img src="/img/portfolio/Unity-ink-5-tones.jpeg"
-         alt="Chinese ink painting showing tonal variation from light to dark ink"
-         style="display: block; width: 100%; height: auto;">
-  </a>
-  <div style="min-width: 0;">
-    <h5 style="margin-top: 0;">Five Tones of Ink / Three Faces of Rock<br><small>墨分五色 / 石分三面</small></h5>
+  </article>
+  <article class="ink-principle-card">
+    <h5>Five Tones of Ink<small>墨分五色</small></h5>
+    <a href="/img/portfolio/Unity-ink-5-tones.jpeg">
+      <img src="/img/portfolio/Unity-ink-5-tones.jpeg" alt="Chinese ink painting showing tonal variation from light to dark ink" loading="lazy">
+    </a>
     <p>Five Tones of Ink uses tonal variation to organize light and dark, which later informed the diffuse warp.</p>
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; gap: 24px; margin: 0 0 24px;">
-  <a href="/img/portfolio/Unity-ink-3-faces-stone.jpg" style="min-width: 0;">
-    <img src="/img/portfolio/Unity-ink-3-faces-stone.jpg"
-         alt="Chinese ink landscape painting showing rock planes and volume"
-         style="display: block; width: 100%; height: auto;">
-  </a>
-  <div style="min-width: 0;">
+  </article>
+  <article class="ink-principle-card">
+    <h5>Three Faces of Rock<small>石分三面</small></h5>
+    <a href="/img/portfolio/Unity-ink-3-faces-stone.jpg">
+      <img src="/img/portfolio/Unity-ink-3-faces-stone.jpg" alt="Chinese ink landscape painting showing rock planes and volume" loading="lazy">
+    </a>
     <p>Three Faces of Rock emphasizes how the planes of a rock turn in space, which guided how I used lighting to show volume.</p>
-  </div>
-</div>
-
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; gap: 24px; margin: 0 0 24px;">
-  <a href="/img/portfolio/Unity-ink-cun-texture.jpg" style="min-width: 0;">
-    <img src="/img/portfolio/Unity-ink-cun-texture.jpg"
-         alt="Chinese ink painting using cun texture strokes to describe rock surfaces"
-         style="display: block; width: 100%; height: auto;">
-  </a>
-  <div style="min-width: 0;">
-    <h5 style="margin-top: 0;">Brush Texture / Cun Texture Strokes<br><small>笔墨肌理 / 皴法</small></h5>
+  </article>
+  <article class="ink-principle-card">
+    <h5>Brush Texture / Cun Texture Strokes<small>笔墨肌理 / 皴法</small></h5>
+    <a href="/img/portfolio/Unity-ink-cun-texture.jpg">
+      <img src="/img/portfolio/Unity-ink-cun-texture.jpg" alt="Chinese ink painting using cun texture strokes to describe rock surfaces" loading="lazy">
+    </a>
     <p>Brush marks describe the texture and character of a surface, not just its detail.</p>
-  </div>
+  </article>
 </div>
 
 These became three rendering goals: **contour**, **tone and volume**, and **surface texture**.
 
-[![Snapshot 1 of Unity ink painting effect rendering VR scene][1]][1]
-
 [![Snapshot 2 of Unity ink painting effect rendering VR scene][2]][2]
 
-[1]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png
 [2]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-2.png
 <br>
 
-### 01 Character Rendering: View-Dependent Contours and Brushwork<br>
+### 02 Character Rendering: View-Dependent Contours and Brushwork<br>
 
 #### View-Dependent Contours
 
@@ -123,11 +106,11 @@ For the character shader, I translated the line-based visual language into view-
 
 I used ***v*** ∙ ***n*** to pick out the silhouette, clothing folds, and other surface structure, then remapped the result through a 1D lookup texture to control line width, darkness, and falloff.
 
-{{< figure src="/img/portfolio/Unity-ink-人物轮廓abcde.png" caption="a) The original model shaded according to the Blinn-Phong lighting model; b) The result of ***v*** ∙ ***n***; c) The result of calculating *C<small>edge</small>*; d) Silhouette after texture warping; e ) Silhouette with normal map (final result for Silhouette)" >}}
+{{< figure src="/img/portfolio/Unity-ink-人物轮廓abcde.png" caption="Character contour development. a) Original model with Blinn-Phong shading; b) ***v*** · ***n*** result; c) contour calculated from *C<sub>edge</sub>*; d) silhouette after texture warping; e) final silhouette with normal-map detail" >}}
 
 The first result kept too much small-scale detail, so the linework became noisy. I added a normal strength control to dial the detail back until the folds still read without overwhelming the character.
 
-{{< figure src="/img/portfolio/Unity-ink-normal-details.jpg" caption="full normal detail vs reduced normal strength" width="400" >}}
+{{< figure src="/img/portfolio/Unity-ink-normal-details.jpg" caption="Full normal detail vs. reduced normal strength" width="400" >}}
 
 #### Colour and Brush Texture
 
@@ -156,17 +139,19 @@ Because the character moves, I used object space to keep the brush texture locke
   </div> 
  
   <figcaption style="text-align: center; margin-top: 8px; font-size: 14px; color: #777;"> 
-    Triplanar results 
+    Two object-space triplanar ink-texture variations 
   </figcaption> 
 </figure>
 
 The final character treatment combines view-dependent contours, adjusted texture colour, and object-space splashing-ink texture.
 
+#### Character Rendering Overview
+
 [![Snapshot 3 of Unity ink painting effect rendering VR scene][3]][3]
 
 [3]: /img/portfolio/Unity-ink-MonkeyKing.png
 
-### 02 Environment Rendering: Silhouette, Volume, and Brush Texture
+### 03 Environment Rendering: Silhouette, Volume, and Brush Texture
 
 Mountains and rocks needed a different treatment. The character shader relied on fine internal lines, while the environment needed stronger silhouettes, dry-brush edges, and clearer volume.
 
@@ -176,11 +161,11 @@ I used a multi-pass **Shell Method** for the outer contour. The base pass render
 
 Testing at a wider VR FOV exposed a problem with the standard view-space Z offset. Near the edge of the view, the outline could shift, change width, or disappear behind the front surface.
 
-{{< figure src="/img/portfolio/Unity-ink-frustum.png" caption="**Left**: the view frustum; **Right**: the contour misalignment gets worse as the object gets closer to the edge of the viewport. This is unsatisfactory, especially in VR, when the player has a huge FOV." width="600px" >}}
+{{< figure src="/img/portfolio/Unity-ink-frustum.png" caption="**Left**: view frustum; **Right**: contour misalignment becomes more visible toward the edge of the viewport, especially with the wider FOV used in VR" width="600px" >}}
 
 I changed the offset so each vertex first moves along its own **view direction**, then expands mainly in view-space XY. This kept the outline much more consistent across the frustum.
 
-{{< figure src="/img/portfolio/Unity-ink-mountainContour.png" caption="a) My silhouette rendering effect; b) The silhouette rendering effect in the reference. The circled area is where the stroke thickness is uneven near the edge of the frustum." width="550px" >}}
+{{< figure src="/img/portfolio/Unity-ink-mountainContour.png" caption="a) Adjusted silhouette; b) reference implementation. Circled regions show uneven outline thickness near the frustum edge" width="550px" >}}
 
 To make the edge feel less mechanical, I layered two slightly different contour passes. Noise offsets the vertices, while the wider pass drops selected fragments to break the edge into a dry-brush pattern inspired by **flying-white (飞白)** brushwork.
 
@@ -198,12 +183,12 @@ The result still looked too smooth, so I added noise and brush texture through t
 {{< figure src="/img/portfolio/Unity-ink-漫反射加噪声结果.png" width="550px" >}}
 <br>
 
-The result still looked too smooth, so I added noise and brush texture through triplanar mapping, then applied a Gaussian blur to mimic the soft diffusion of ink.
+I then applied a Gaussian blur to soften the transitions and mimic ink diffusion.
 
 {{< figure src="/img/portfolio/Unity-ink-漫反射加噪声加高斯结果.png" width="550px" >}}
 <br>
 
-Final Environment Rendering Overview
+#### Environment Rendering Overview
 
 [![Snapshot 5 of Unity ink painting effect rendering VR scene][5]][5]
 
@@ -234,7 +219,7 @@ Oculus Store guidelines specified 80 FPS for Rift S on the target PC specificati
 <br>
 
 I also used Unity Performance Reporting (UPR) to compare the original Standard Shader scene with the ink-rendered version.
-Both remained in a strong performance range, and the ink version stayed above 90 across repeated UPR tests.
+Both remained in a strong performance range, with the ink version scoring 90+ across repeated UPR tests.
 
 <figure style="margin: 0 0 24px;">
   <div style="display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 16px;">
@@ -263,12 +248,13 @@ The experience also included gameplay logic, UI, VFX, and scene transitions.
 
 #### Interaction Architecture
 
+<br>
 {{< figure
   src="/img/portfolio/Unity-ink-structure-of-scripts.png"
   link="/img/portfolio/Unity-ink-structure-of-scripts.png"
   alt="Simplified gameplay / interaction architecture"
   caption="Simplified gameplay / interaction architecture"
-  width="350">}}
+  width="430">}}
 
 #### Spatial UI in VR
 
@@ -295,7 +281,7 @@ Viewer-Facing Billboard rotates the UI toward the viewer position. It creates mo
 
 I used this version in the final experience.
 
-Camera-Forward Billboard keeps the text plane parallel to the camera reduced edge distortion and looked cleaner on a flat screen. In VR, though, it felt more like a screen-space layer following the viewer.
+Keeping the text plane parallel to the camera reduced edge distortion and looked cleaner on a flat screen. In VR, though, it felt more like a screen-space layer following the viewer.
 
 The comparison made the choice less about geometric neatness and more about how the UI actually felt in space.
 
@@ -311,11 +297,12 @@ Distant mountains use lighter ink, lower contrast, and a different brush scale t
 [![Snapshot 1 of Unity ink painting effect rendering VR scene][1]][1]
 [![Snapshot 3 of Unity ink painting effect rendering VR scene][7]][7]
 
+[1]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-1.png
 [7]: /img/portfolio/Unity-ink-painting-effect-rendering-VR-scene-3.png
 
 Characters and environments also use different contour methods, so the final look comes from a set of related rendering treatments rather than one shader applied everywhere.
 
-One last shader tester…
+**One last shader tester…**
 
 {{< figure src="/img/portfolio/Unity-ink-UnityChan.gif" caption="Unity Chan, with wind effects applied to her hair and skirt using Magica Cloth." width="300px" >}}
 
