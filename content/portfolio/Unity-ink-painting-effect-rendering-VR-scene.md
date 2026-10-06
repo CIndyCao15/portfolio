@@ -191,17 +191,23 @@ The rocks still needed light and dark structure to show their volume.
 I started with **Half-Lambert**, then remapped the diffuse result through a 1D diffuse warp texture. This compressed the smooth lighting gradient into a smaller range of ink tones while keeping the main planes of the rock readable.
 
 {{< figure src="/img/portfolio/Unity-ink-漫反射结果图片.png" width="550px" >}}
+<br>
 
 The result still looked too smooth, so I added noise and brush texture through triplanar mapping.
 
 {{< figure src="/img/portfolio/Unity-ink-漫反射加噪声结果.png" width="550px" >}}
 <br>
-【然后加了高斯模糊来模拟墨水扩散】
+
+The result still looked too smooth, so I added noise and brush texture through triplanar mapping, then applied a Gaussian blur to mimic the soft diffusion of ink.
+
 {{< figure src="/img/portfolio/Unity-ink-漫反射加噪声加高斯结果.png" width="550px" >}}
+<br>
 
 Final Environment Rendering Overview
 
 [![Snapshot 5 of Unity ink painting effect rendering VR scene][5]][5]
+
+[5]: /img/portfolio/Unity-ink-MountainStone.png
 
 #### Curvature Experiment
 

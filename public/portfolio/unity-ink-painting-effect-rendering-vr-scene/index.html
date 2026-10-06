@@ -296,20 +296,22 @@ if (!doNotTrack) {
 <h4 id="ink-shading-and-brush-texture">Ink Shading and Brush Texture</h4>
 <p>The rocks still needed light and dark structure to show their volume.</p>
 <p>I started with <strong>Half-Lambert</strong>, then remapped the diffuse result through a 1D diffuse warp texture. This compressed the smooth lighting gradient into a smaller range of ink tones while keeping the main planes of the rock readable.</p>
-<figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e7%bb%93%e6%9e%9c%e5%9b%be%e7%89%87.png" width="550px"/>
+<p><figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e7%bb%93%e6%9e%9c%e5%9b%be%e7%89%87.png" width="550px"/>
 </figure>
 
+<br></p>
 <p>The result still looked too smooth, so I added noise and brush texture through triplanar mapping.</p>
 <p><figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%8a%a0%e5%99%aa%e5%a3%b0%e7%bb%93%e6%9e%9c.png" width="550px"/>
 </figure>
 
-<br>
-【然后加了高斯模糊来模拟墨水扩散】
-<figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%8a%a0%e5%99%aa%e5%a3%b0%e5%8a%a0%e9%ab%98%e6%96%af%e7%bb%93%e6%9e%9c.png" width="550px"/>
+<br></p>
+<p>The result still looked too smooth, so I added noise and brush texture through triplanar mapping, then applied a Gaussian blur to mimic the soft diffusion of ink.</p>
+<p><figure><img src="/img/portfolio/Unity-ink-%e6%bc%ab%e5%8f%8d%e5%b0%84%e5%8a%a0%e5%99%aa%e5%a3%b0%e5%8a%a0%e9%ab%98%e6%96%af%e7%bb%93%e6%9e%9c.png" width="550px"/>
 </figure>
-</p>
+
+<br></p>
 <p>Final Environment Rendering Overview</p>
-<p>[![Snapshot 5 of Unity ink painting effect rendering VR scene][5]][5]</p>
+<p><a href="/img/portfolio/Unity-ink-MountainStone.png"><img src="/img/portfolio/Unity-ink-MountainStone.png" alt="Snapshot 5 of Unity ink painting effect rendering VR scene"></a></p>
 <h4 id="curvature-experiment">Curvature Experiment</h4>
 <p>I also tried driving the cun texture from real-time curvature.</p>
 <p>It looked promising on dense meshes, but low-poly rocks exposed obvious triangle-shaped faceting.</p>
