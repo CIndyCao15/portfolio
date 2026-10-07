@@ -3,24 +3,27 @@
     <div class="grid">
         <div class="row">
           {{ range .Data.Pages }}
+              {{ $cardOnly := eq .Params.cardonly true }}
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 masonry-item">
-                  <div class="box-masonry">
+                  <div class="box-masonry{{ if $cardOnly }} portfolio-card{{ end }}">
                       {{ if and (isset .Params "image") .Params.image }}
-                        {{ if eq .Params.showonlyimage true }}
+                        {{ if $cardOnly }}
+                        <div class="box-masonry-image">
+                        {{ else if eq .Params.showonlyimage true }}
                         <a href="{{ .Permalink }}" title="" class="box-masonry-image with-hover-overlay">
                         {{ else }}
                         <a href="{{ .Permalink }}" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
                         {{ end }}
                             <img src="{{.Params.image | absURL}}" alt="" class="img-responsive">
-                        </a>
+                        {{ if $cardOnly }}</div>{{ else }}</a>{{ end }}
                       {{ end }}
-                      {{ if eq .Params.showonlyimage true }}
+                      {{ if and (not $cardOnly) (eq .Params.showonlyimage true) }}
                       <div class="box-masonry-hover-text-header">
                       {{ else }}
                       <div class="box-masonry-text">
                       {{ end }}
-                          <div class="portfolio-title-row{{ if .Params.status }} has-status{{ end }}">
-                            <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                          <div class="portfolio-title-row{{ if .Params.status }} has-status{{ end }}{{ if .Params.originaltitle }} has-original-title{{ end }}">
+                            <h4>{{ if $cardOnly }}{{ .Title }}{{ else }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ end }}</h4>
                             {{- with .Params.status }}
                             <span class="portfolio-status">{{ . }}</span>
                             {{- end }}

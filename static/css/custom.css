@@ -105,7 +105,7 @@ figcaption {
 
 /* Optional metadata on portfolio cards. */
 .box-masonry p.portfolio-original-title {
-  margin: -12px 0 5px;
+  margin: 0 0 10px;
   color: #888;
   font-size: 14px;
   font-weight: 400;
@@ -115,7 +115,7 @@ figcaption {
 .box-masonry .portfolio-title-row {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   gap: 4px 8px;
   margin: 10px 0;
 }
@@ -126,8 +126,8 @@ figcaption {
   max-width: 100%;
 }
 
-.box-masonry .portfolio-title-row.has-status + p.portfolio-original-title {
-  margin-top: 0;
+.box-masonry .portfolio-title-row.has-original-title {
+  margin-bottom: 0px;
 }
 
 .box-masonry span.portfolio-status {
@@ -155,4 +155,15 @@ figcaption {
   font-size: 13px;
   font-weight: 600;
   line-height: 1.5;
+}
+
+/* Homepage-only cards. */
+.box-masonry.portfolio-card {
+  cursor: default;
+  box-shadow: none;
+  border: 1px solid #dddddd;
+}
+
+.box-masonry.portfolio-card:hover {
+  box-shadow: none;
 }
