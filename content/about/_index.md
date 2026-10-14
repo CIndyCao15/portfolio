@@ -19,7 +19,7 @@ title = "XINYI (CINDY) CAO"
 
 Hi, I’m Cindy, a Technical Artist based in Vancouver. I currently work as a **Lighting Technical Assistant at Netflix Animation Studios**, where I support lighting artists in a proprietary DCC, troubleshoot production issues, and contribute artist-facing workflow and validation tools.
 
-My background spans **animation, games, virtual production, and real-time rendering**. Before Netflix, I supported Unreal Engine virtual studio workflows at China Education Television and worked as a Technical Artist Intern at Perfect World, developing shaders and optimizing rendering for mobile games. My graduate research focused on real-time non-photorealistic rendering, where I developed a Chinese ink-painting rendering system in Unity for VR.
+My background spans **animation, games, virtual production, and real-time rendering**. Before Netflix, I supported Unreal Engine virtual studio workflows at China Education Television and worked as a Technical Artist Intern at Perfect World, developing shaders and optimizing rendering for mobile games. I also developed a real-time Chinese ink-painting rendering system in Unity for VR, exploring non-photorealistic rendering techniques for characters and environments.
 
 What interests me most about technical art is the space between **artists and technology**. I enjoy understanding how artists work, tracing technical problems through complex systems, and turning those findings into practical tools or workflows.
 

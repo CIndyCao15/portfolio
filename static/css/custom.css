@@ -104,6 +104,11 @@ figcaption {
 }
 
 /* Optional metadata on portfolio cards. */
+.box-masonry .portfolio-year {
+  color: #888;
+  font-weight: 400;
+}
+
 .box-masonry p.portfolio-original-title {
   margin: 0 0 10px;
   color: #888;
@@ -166,4 +171,36 @@ figcaption {
 
 .box-masonry.portfolio-card:hover {
   box-shadow: none;
+}
+
+/* Subtle link below the last card in the rightmost portfolio column. */
+.portfolio-studies-link {
+  --portfolio-studies-gap: 20px;
+  margin: 0 0 32px;
+  text-align: right;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.portfolio-studies-link.is-positioned {
+  position: absolute;
+  top: calc(var(--portfolio-studies-card-bottom) + var(--portfolio-studies-gap));
+  right: var(--portfolio-studies-right);
+  width: var(--portfolio-studies-width);
+}
+
+.grid.has-portfolio-studies {
+  margin-bottom: var(--portfolio-studies-clearance, 0px);
+}
+
+.portfolio-studies-link a {
+  color: #888;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.portfolio-studies-link a:hover,
+.portfolio-studies-link a:focus {
+  color: #ef5285;
+  text-decoration: underline;
 }

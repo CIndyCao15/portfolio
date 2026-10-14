@@ -12,7 +12,7 @@ googleAnalytics = "G-G0F7Z00VB5"
   # Use custom.css for your custom styling
   style = "default"
   description = "Describe your website"
-  copyright = "&copy;2025 Cindy Cao"
+  copyright = "&copy;2026 Cindy Cao"
   sidebarAbout = [
     "Technical Artist | Tools, Pipeline & Real-Time Rendering",
     "I build artist-facing tools, pipeline workflows, and rendering solutions for animation and games.",

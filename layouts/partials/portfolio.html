@@ -23,7 +23,7 @@
                       <div class="box-masonry-text">
                       {{ end }}
                           <div class="portfolio-title-row{{ if .Params.status }} has-status{{ end }}{{ if .Params.originaltitle }} has-original-title{{ end }}">
-                            <h4>{{ if $cardOnly }}{{ .Title }}{{ else }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ end }}</h4>
+                            <h4>{{ if $cardOnly }}{{ .Title }}{{ with .Params.year }} <span class="portfolio-year">({{ . }})</span>{{ end }}{{ else }}<a href="{{ .Permalink }}">{{ .Title }}{{ with .Params.year }} <span class="portfolio-year">({{ . }})</span>{{ end }}</a>{{ end }}</h4>
                             {{- with .Params.status }}
                             <span class="portfolio-status">{{ . }}</span>
                             {{- end }}
@@ -49,4 +49,12 @@
           {{ end }}
         </div>
     </div>
+    {{ if and .IsSection (eq .Section "portfolio") }}
+    {{ with .Site.GetPage "/portfolio/Technical Studies" }}
+    <p class="portfolio-studies-link">
+      <a href="{{ .RelPermalink }}">More Technical Studies <span aria-hidden="true">→</span></a>
+    </p>
+    <script src="{{ "js/portfolio-studies.js" | relURL }}" defer></script>
+    {{ end }}
+    {{ end }}
 </div>

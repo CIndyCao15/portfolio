@@ -4,6 +4,7 @@ image = "img/portfolio/Steps-cover.jpg"
 showonlyimage = false
 cardonly = true
 title = "Steps"
+year = "2026"
 status = "UPCOMING ANIMATED FEATURE"
 role = "Lighting Technical Assistant"
 studio = "Netflix Animation Studios"
